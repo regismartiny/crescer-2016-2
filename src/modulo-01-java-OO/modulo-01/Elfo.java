@@ -17,6 +17,14 @@ public class Elfo {
     public String getNome() {
         return nome;
     }
+    
+    public Item getArco(){
+        return arco;
+    }
+    
+    public Item getFlecha(){
+        return flecha;
+    }
 
     public void atirarFlecha() {
         flecha.setQuantidade(flecha.getQuantidade() - 1);
