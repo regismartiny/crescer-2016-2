@@ -5,9 +5,8 @@ public class Elfo {
     private int experiencia;
 
     public Elfo(String n) {
-        nome = n;
-        arco = new Item("Arco", 1);
-        flecha = new Item("Flechas", 42);
+        // Chamando construtor de baixo
+        this(n, 42);
     }
     
     public Elfo(String nome, int flechas){
