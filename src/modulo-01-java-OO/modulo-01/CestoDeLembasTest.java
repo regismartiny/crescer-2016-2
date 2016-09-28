@@ -18,7 +18,7 @@ public class CestoDeLembasTest
         // Arrange
         CestoDeLembas cesto = new CestoDeLembas(2);
         // Assert
-        assertEquals(true, cesto.podeDividirEmPares());
+        assertFalse(cesto.podeDividirEmPares());
     }
     
     @Test
@@ -26,15 +26,23 @@ public class CestoDeLembasTest
         // Arrange
         CestoDeLembas cesto = new CestoDeLembas(3);
         // Assert
-        assertEquals(false, cesto.podeDividirEmPares());
+        assertFalse(cesto.podeDividirEmPares());
     }
     
     @Test
-    public void cestoComLimiteDePaes() {
+    public void cestoComQuatroPaes(){
+        // Arrange
+        CestoDeLembas cesto = new CestoDeLembas(4);
+        // Assert
+        assertTrue(cesto.podeDividirEmPares());
+    }
+    
+    @Test
+    public void cestoCom101Paes(){
         // Arrange
         CestoDeLembas cesto = new CestoDeLembas(101);
         // Assert
-        assertEquals(0, cesto.getPaes());        
+        assertFalse(cesto.podeDividirEmPares());
     }
 
 }
