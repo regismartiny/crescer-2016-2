@@ -40,4 +40,47 @@ public class ElfoTest
        assertEquals("Flechas", elfoDoTeste.getFlecha().getDescricao());
        assertEquals(42, elfoDoTeste.getFlecha().getQuantidade());
     }
+    
+    @Test
+    public void elfoAtiraUmaFlecha() {
+        // Act
+        Elfo elfo = new Elfo("legolas");
+        int flechasAntes = elfo.getFlecha().getQuantidade();
+        int expAntes = elfo.getExperiencia();
+        elfo.atirarFlecha();
+        int flechasDepois = elfo.getFlecha().getQuantidade();
+        int expDepois = elfo.getExperiencia();
+        // Assert
+        assertEquals(flechasAntes-1, flechasDepois);
+        assertEquals(expAntes+1, expDepois);
+    }
+    
+    @Test
+    public void elfoAtiraTresFlechas() {
+        // Act
+        Elfo elfo = new Elfo("legolas");
+        int flechasAntes = elfo.getFlecha().getQuantidade();
+        int expAntes = elfo.getExperiencia();
+        elfo.atirarFlecha();
+        elfo.atirarFlecha();
+        elfo.atirarFlecha();
+        int flechasDepois = elfo.getFlecha().getQuantidade();
+        int expDepois = elfo.getExperiencia();
+        // Assert
+        assertEquals(flechasAntes-3, flechasDepois);
+        assertEquals(expAntes+3, expDepois);
+    }
+    
+    @Test
+    public void superavitFlechas() {
+        // Act
+        Elfo elfo = new Elfo("legolas");
+        while(elfo.getFlecha().getQuantidade() > 0){
+            elfo.atirarFlecha();
+        }
+        elfo.atirarFlecha();
+        // Assert
+        assertEquals(0, elfo.getFlecha().getQuantidade());
+    }
+    
 }
