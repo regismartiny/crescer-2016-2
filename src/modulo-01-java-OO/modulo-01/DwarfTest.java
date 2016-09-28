@@ -49,7 +49,7 @@ public class DwarfTest
     }
     
     @Test
-    public void dwarfAlvejadoAposMorto() {
+    public void dwarfAlvejadoAposMortoContinuaMorto() {
         // Arrange
         Dwarf dwarf = new Dwarf();
         // Act
@@ -59,5 +59,35 @@ public class DwarfTest
         dwarf.levarFlechada();
         // Assert
         assertEquals("MORTO", dwarf.getStatus());
+    }
+    
+    @Test
+    public void dwarfAlvejadoUmaVezAposMortoTemVida0() {
+        // Arrange
+        Dwarf dwarf = new Dwarf();
+        // Act
+        while(dwarf.getVida() > 0) {
+            dwarf.levarFlechada();
+        }
+        dwarf.levarFlechada();
+        // Assert
+        assertEquals(0, dwarf.getVida());
+    }
+    
+    @Test
+    public void dwarfAlvejado5VezesAposMortoTemVida0() {
+        // Arrange
+        Dwarf dwarf = new Dwarf();
+        // Act
+        while(dwarf.getVida() > 0) {
+            dwarf.levarFlechada();
+        }
+        dwarf.levarFlechada();
+        dwarf.levarFlechada();
+        dwarf.levarFlechada();
+        dwarf.levarFlechada();
+        dwarf.levarFlechada();
+        // Assert
+        assertEquals(0, dwarf.getVida());
     }
 }

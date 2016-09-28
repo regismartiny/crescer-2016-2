@@ -16,7 +16,11 @@ public class Dwarf
     }
     
     private void setVida(int vida) {
-        this.vida = vida;
+        if (vida < 0) {
+            vida = 0;
+        }else {
+            this.vida = vida;
+        }
         if (vida == 0) {
             status = "MORTO";
         }
