@@ -18,11 +18,11 @@ public class Elfo {
         return nome;
     }
     
-    public Item getArco(){
+    public Item getArco() {
         return arco;
     }
     
-    public Item getFlecha(){
+    public Item getFlecha() {
         return flecha;
     }
     
@@ -32,7 +32,7 @@ public class Elfo {
 
     public void atirarFlecha() {
         int qtdFlechas = flecha.getQuantidade();
-        if(qtdFlechas > 0){
+        if (qtdFlechas > 0) {
             flecha.setQuantidade(qtdFlechas - 1);
             experiencia++;
         }
@@ -44,6 +44,7 @@ public class Elfo {
     }*/
     
     public void atiraFlechaEmDwarf(Dwarf dwarf) {
+        atirarFlecha();
         dwarf.levarFlechada();
     }
 }

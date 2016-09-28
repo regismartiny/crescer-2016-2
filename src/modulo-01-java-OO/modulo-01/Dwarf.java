@@ -1,11 +1,13 @@
 public class Dwarf
 {
     private int vida;
-
-    public Dwarf()
+    
+    // Java type initializer
+    // vai ser replicado para cada construtor
     {
         vida = 110;
     }
+
     
     public int getVida() {
         return vida;
@@ -16,12 +18,7 @@ public class Dwarf
     }
     
     public void levarFlechada(){
-        if (getVida() >= 10){
-            setVida(getVida() - 10);
-        }
-        else{
-            System.out.println("Dwarf já está morto!");
-        }
+        setVida(getVida() - 10);
     }
 }
 
