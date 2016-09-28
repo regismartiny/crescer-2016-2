@@ -130,28 +130,30 @@ public class ElfoTest
         Elfo elfo = new Elfo("Legolas");
         elfo.atirarFlecha();
         // Assert
-        assertEquals("Legolas possui 41 flechas e 1 níveis de experiência.", elfo.toString());
+        assertEquals("Legolas possui 41 flechas e 1 nível de experiência.", elfo.toString());
     }
     
     @Test
     public void elfoComNomeE2Flechas() {
-        //Act
+        // Act
         Elfo elfo = new Elfo("Legolas", 2);
         // Assert
         assertEquals("Legolas", elfo.getNome());
         assertEquals(2, elfo.getFlecha().getQuantidade());
     }
     
+    @Test
     public void elfoComNomeE100Flechas() {
-        //Act
+        // Act
         Elfo elfo = new Elfo("Batman", 100);
         // Assert
         assertEquals("Batman", elfo.getNome());
         assertEquals(100, elfo.getFlecha().getQuantidade());
     }
     
+    @Test
     public void elfoComNomeE100FlechasToString() {
-        //Act
+        // Act
         Elfo elfo = new Elfo("Batman", 100);
         // Assert
         assertEquals("Batman", elfo.getNome());
@@ -159,17 +161,15 @@ public class ElfoTest
         assertEquals("Batman possui 100 flechas e 0 níveis de experiência.", elfo.toString());
     }
     
+    @Test
     public void elfoComNomeE100FlechasExperienteToString() {
-        //Act
+        // Act
         Elfo elfo = new Elfo("Batman", 100);
         elfo.atirarFlecha();
         // Assert
         assertEquals("Batman", elfo.getNome());
-        assertEquals(100, elfo.getFlecha().getQuantidade());
+        assertEquals(99, elfo.getFlecha().getQuantidade());
         assertEquals(1, elfo.getExperiencia());
-        assertEquals("Batman possui 100 flechas e 1 níveis de experiência.", elfo.toString());
+        assertEquals("Batman possui 99 flechas e 1 nível de experiência.", elfo.toString());
     }
-    
-    
-    
 }
