@@ -47,6 +47,10 @@ public class Elfo {
         atirarFlecha();
         dwarf.levarFlechada();
     }
+    
+    public String toString() {
+        return nome + " possui " + flecha.getQuantidade() + " flechas e " + experiencia + " níveis de experiência.";
+    }
 }
 
 
