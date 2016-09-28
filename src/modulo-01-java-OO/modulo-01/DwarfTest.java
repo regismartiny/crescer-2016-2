@@ -25,4 +25,39 @@ public class DwarfTest
         // Assert
         assertEquals(vida - 10, dwarf.getVida());        
     }
+    
+    @Test
+    public void dwarfMachucadoMasVivo() {
+        // Arrange
+        Dwarf dwarf = new Dwarf();
+        // Act
+        dwarf.levarFlechada();
+        // Assert
+        assertEquals("VIVO", dwarf.getStatus());
+    }
+    
+    @Test
+    public void dwarfMorto() {
+        // Arrange
+        Dwarf dwarf = new Dwarf();
+        // Act
+        while(dwarf.getStatus() == "VIVO") {
+            dwarf.levarFlechada();
+        }
+        // Assert
+        assertEquals("MORTO", dwarf.getStatus());
+    }
+    
+    @Test
+    public void dwarfAlvejadoAposMorto() {
+        // Arrange
+        Dwarf dwarf = new Dwarf();
+        // Act
+        while(dwarf.getStatus() == "VIVO") {
+            dwarf.levarFlechada();
+        }
+        dwarf.levarFlechada();
+        // Assert
+        assertEquals("MORTO", dwarf.getStatus());
+    }
 }
