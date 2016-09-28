@@ -100,4 +100,20 @@ public class ElfoTest
         assertEquals(0, elfo.getFlecha().getQuantidade());
     }
     
+    @Test
+    public void elfoAtiraFlechaEmUmDwarf() {
+        // Arrange
+        Elfo elfo = new Elfo("legolas");
+        int flechas = elfo.getFlecha().getQuantidade();
+        int exp = elfo.getExperiencia();
+        Dwarf dwarf = new Dwarf();
+        int vida = dwarf.getVida();
+        // Act
+        elfo.atiraFlechaEmDwarf(dwarf);
+        // Assert
+        assertEquals(flechas - 1, elfo.getFlecha().getQuantidade());
+        assertEquals(exp + 1, elfo.getExperiencia());
+        assertEquals(vida - 10, dwarf.getVida());
+    }
+    
 }
