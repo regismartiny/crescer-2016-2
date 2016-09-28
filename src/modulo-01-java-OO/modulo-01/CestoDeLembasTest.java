@@ -15,7 +15,7 @@ public class CestoDeLembasTest
 {
     @Test
     public void cestoComDoisPaes(){
-        //
+        // Arrange
         CestoDeLembas cesto = new CestoDeLembas(2);
         // Assert
         assertEquals(true, cesto.podeDividirEmPares());
@@ -23,7 +23,7 @@ public class CestoDeLembasTest
     
     @Test
     public void cestoComTresPaes(){
-        //
+        // Arrange
         CestoDeLembas cesto = new CestoDeLembas(3);
         // Assert
         assertEquals(false, cesto.podeDividirEmPares());
@@ -31,6 +31,7 @@ public class CestoDeLembasTest
     
     @Test
     public void cestoComLimiteDePaes() {
+        // Arrange
         CestoDeLembas cesto = new CestoDeLembas(101);
         // Assert
         assertEquals(0, cesto.getPaes());        

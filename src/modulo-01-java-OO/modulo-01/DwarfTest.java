@@ -12,6 +12,7 @@ public class DwarfTest
         // Assert
         Dwarf dwarf = new Dwarf();
         int vida = dwarf.getVida();
+        // Act
         dwarf.levarFlechada();
         // Assert
         assertEquals(vida - 10, dwarf.getVida());        
@@ -19,13 +20,15 @@ public class DwarfTest
     
     @Test
     public void dwarfMortoNaoPerdeVida() {
-        //
+        // Arrange
         Dwarf dwarf = new Dwarf();
         int vida = dwarf.getVida();
+        // Act
         while(dwarf.getVida() > 0){
             dwarf.levarFlechada();
         }
         dwarf.levarFlechada();
+        // Assert
         assertEquals(0, dwarf.getVida());
     }
 }

@@ -34,7 +34,7 @@ public class ElfoTest
     
     @Test
     public void elfoNasceComFlechas() {
-       // Act
+       // Arrange
        Elfo elfoDoTeste = new Elfo("Elrond");
        // Assert
        assertEquals("Flechas", elfoDoTeste.getFlecha().getDescricao());
@@ -42,39 +42,56 @@ public class ElfoTest
     }
     
     @Test
-    public void elfoAtiraUmaFlecha() {
-        // Act
+    public void elfoNaoAtiraFlecha() {
+        // Arrange
         Elfo elfo = new Elfo("legolas");
-        int flechasAntes = elfo.getFlecha().getQuantidade();
-        int expAntes = elfo.getExperiencia();
-        elfo.atirarFlecha();
-        int flechasDepois = elfo.getFlecha().getQuantidade();
-        int expDepois = elfo.getExperiencia();
         // Assert
-        assertEquals(flechasAntes-1, flechasDepois);
-        assertEquals(expAntes+1, expDepois);
+        assertEquals(42, elfo.getFlecha().getQuantidade());
+        assertEquals(0, elfo.getExperiencia());
+    }
+    
+    @Test
+    public void elfoAtiraUmaFlecha() {
+        // Arrange
+        Elfo elfo = new Elfo("legolas");
+        // Act
+        elfo.atirarFlecha();
+        // Assert
+        assertEquals(41, elfo.getFlecha().getQuantidade());
+        assertEquals(1, elfo.getExperiencia());
     }
     
     @Test
     public void elfoAtiraTresFlechas() {
-        // Act
+        // Arrange
         Elfo elfo = new Elfo("legolas");
-        int flechasAntes = elfo.getFlecha().getQuantidade();
-        int expAntes = elfo.getExperiencia();
+        // Act
         elfo.atirarFlecha();
         elfo.atirarFlecha();
         elfo.atirarFlecha();
-        int flechasDepois = elfo.getFlecha().getQuantidade();
-        int expDepois = elfo.getExperiencia();
         // Assert
-        assertEquals(flechasAntes-3, flechasDepois);
-        assertEquals(expAntes+3, expDepois);
+        assertEquals(39, elfo.getFlecha().getQuantidade());
+        assertEquals(3, elfo.getExperiencia());
+    }
+    
+     @Test
+    public void elfoAtira42Flechas() {
+        // Arrange
+        Elfo elfo = new Elfo("legolas");
+        //Act
+        for(int i=0; i < 42; i++) {
+            elfo.atirarFlecha();
+        }
+        // Assert
+        assertEquals(0, elfo.getFlecha().getQuantidade());
+        assertEquals(42, elfo.getExperiencia());
     }
     
     @Test
     public void superavitFlechas() {
-        // Act
+        // Arrange
         Elfo elfo = new Elfo("legolas");
+        // Act
         while(elfo.getFlecha().getQuantidade() > 0){
             elfo.atirarFlecha();
         }
