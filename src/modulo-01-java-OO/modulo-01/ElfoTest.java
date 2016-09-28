@@ -152,6 +152,22 @@ public class ElfoTest
     }
     
     @Test
+    public void elfoComFlechasNegativas() {
+        // Act
+        Elfo elfo = new Elfo("Superman", -52);
+        // Assert
+        assertEquals(42, elfo.getFlecha().getQuantidade());
+    }
+    
+    @Test
+    public void elfoCom0Flechas() {
+        // Act
+        Elfo elfo = new Elfo("Superman", 0);
+        // Assert
+        assertEquals(0, elfo.getFlecha().getQuantidade());
+    }
+    
+    @Test
     public void elfoComNomeE100FlechasToString() {
         // Act
         Elfo elfo = new Elfo("Batman", 100);

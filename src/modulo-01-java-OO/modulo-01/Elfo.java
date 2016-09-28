@@ -12,7 +12,7 @@ public class Elfo {
     public Elfo(String nome, int flechas){
         this.nome = nome;
         arco = new Item("Arco", 1);
-        flecha = new Item("Flechas", flechas);
+        flecha = new Item("Flechas", flechas >= 0 ? flechas : 42);
     }
 
     public void setNome(String n) {
