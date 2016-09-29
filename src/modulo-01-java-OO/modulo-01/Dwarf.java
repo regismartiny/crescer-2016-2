@@ -5,6 +5,7 @@ public class Dwarf
     private Status status;
     private DataTerceiraEra dataNascimento;
     private int experiencia;
+    private Inventario inventario;
     
     // Java type initializer
     // vai ser replicado para cada construtor
@@ -20,6 +21,7 @@ public class Dwarf
         this.status = Status.VIVO;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
+        this.inventario = new Inventario();
     }
     
     public int getVida() {
@@ -71,6 +73,18 @@ public class Dwarf
             value = (value * 33)%100;
         }
         return value;
+    }
+    
+    public void adicionarItem(Item item) {
+        inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item) {
+        inventario.removerItem(item);
+    }
+    
+    public Inventario getInventario() {
+        return inventario;
     }
 }
 

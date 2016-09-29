@@ -251,4 +251,51 @@ public class DwarfTest
         assertEquals(0, d.getVida());
         assertEquals(Status.MORTO, d.getStatus());
     }
+    
+    @Test
+    public void dwarfGanha1Item() {
+        Dwarf d = new Dwarf();
+        Item i = new Item("Revólver", 1);
+        d.adicionarItem(i);
+        
+        assertTrue(d.getInventario().temItem(i));
+    }
+    
+    @Test
+    public void dwarfGanha2Itens() {
+        Dwarf d = new Dwarf();
+        Item i = new Item("Revólver", 1);
+        Item i2 = new Item("Faca", 1);
+        d.adicionarItem(i);
+        d.adicionarItem(i2);
+        Inventario invent = d.getInventario();
+        
+        assertTrue(invent.temItem(i));
+        assertTrue(invent.temItem(i2));
+    }
+    
+    @Test
+    public void dwarfPerde1Item() {
+        Dwarf d = new Dwarf();
+        Item i = new Item("Revólver", 1);
+        d.adicionarItem(i);
+        d.perderItem(i);
+        
+        assertFalse(d.getInventario().temItem(i));
+    }
+    
+    @Test
+    public void dwarfPerde2Itens() {
+        Dwarf d = new Dwarf();
+        Item i1 = new Item("Revólver", 1);
+        Item i2 = new Item("Faca", 1);
+        d.adicionarItem(i1);
+        d.adicionarItem(i2);
+        d.perderItem(i1);
+        d.perderItem(i2);
+        Inventario invent = d.getInventario();
+        
+        assertFalse(invent.temItem(i1));
+        assertFalse(invent.temItem(i2));
+    }
 }
