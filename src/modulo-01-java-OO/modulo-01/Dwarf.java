@@ -9,7 +9,6 @@ public class Dwarf
     // Java type initializer
     // vai ser replicado para cada construtor
     {
-        vida = 110;
     }
     
     public Dwarf() {
@@ -17,6 +16,7 @@ public class Dwarf
     }
     
     public Dwarf(String nome, DataTerceiraEra dataNascimento) {
+        this.vida = 110;
         this.status = Status.VIVO;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
