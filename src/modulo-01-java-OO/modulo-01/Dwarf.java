@@ -44,6 +44,14 @@ public class Dwarf
     public void levarFlechada(){
         setVida(getVida() - 10);
     }
+    
+    public DataTerceiraEra getDataNascimento() {
+        return dataNascimento;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
 }
 
 
