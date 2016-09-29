@@ -188,4 +188,10 @@ public class ElfoTest
         assertEquals(1, elfo.getExperiencia());
         assertEquals("Batman possui 99 flechas e 1 nível de experiência.", elfo.toString());
     }
+    
+    @Test
+    public void elfoNasceVivo() {
+        Elfo e = new Elfo("Legolas");
+        assertEquals(Status.VIVO, e.getStatus());
+    }
 }

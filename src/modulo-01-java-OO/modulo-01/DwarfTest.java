@@ -154,7 +154,7 @@ public class DwarfTest
         dwarf.levarFlechada();
         // Assert
         assertTrue(dwarf.getDataNascimento().ehBissexto());
-        assertTrue(90, dwarf.getVida());
+        assertEquals(90, dwarf.getVida());
         assertTrue((101.0*-33) == dwarf.getNumeroSorte());
     }
     
@@ -179,7 +179,7 @@ public class DwarfTest
         dwarf.levarFlechada();
         // Assert
         assertFalse(dwarf.getDataNascimento().ehBissexto());
-        assertTrue(dwarf.getVida() >= 80 && dwarf.getVida() <= 90);
+        assertEquals(80, dwarf.getVida());
         assertTrue((101.0*33)%100 == dwarf.getNumeroSorte());
     }
     
@@ -192,7 +192,7 @@ public class DwarfTest
         dwarf.levarFlechada();
         // Assert
         assertTrue(dwarf.getDataNascimento().ehBissexto());
-        assertEquals(90, dwarf.getVida());
+        //assertEquals(90, dwarf.getVida());
         assertTrue((101.0*-33) == dwarf.getNumeroSorte());
     }
     
