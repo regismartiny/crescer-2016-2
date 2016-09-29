@@ -6,7 +6,7 @@ import org.junit.Test;
 public class DataTerceiraEraTest
 {
     @Test
-    public void Ano2015Bissexto() { // nao é
+    public void Ano2015NaoBissexto() { // nao é
         // Act
         DataTerceiraEra data = new DataTerceiraEra(1,1,2015);
         // Assert
@@ -22,7 +22,7 @@ public class DataTerceiraEraTest
     }
     
     @Test
-    public void Ano3000Bissexto() {
+    public void Ano3000NaoBissexto() {
         // Act
         DataTerceiraEra data = new DataTerceiraEra(1,1,3000);
         // Assert
