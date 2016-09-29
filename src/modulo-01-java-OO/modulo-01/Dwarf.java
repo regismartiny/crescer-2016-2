@@ -10,7 +10,6 @@ public class Dwarf
     // vai ser replicado para cada construtor
     {
         vida = 110;
-        status = "VIVO";
     }
     
     public Dwarf() {
@@ -44,8 +43,11 @@ public class Dwarf
     
     public void levarFlechada(){
         //if (getNumeroSorte() < 0){
-        //    experiencia += 2;
-        //}else if(!(getNumeroSorte() >= 0 && getNumeroSorte() <= 100)){
+        //     experiencia += 2;
+        //}
+        //else if(!(getNumeroSorte() >= 0 && getNumeroSorte() <= 100)){
+        //}
+        //else{
             setVida(getVida() - 10);
         //}
     }

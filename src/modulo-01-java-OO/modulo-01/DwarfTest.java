@@ -33,7 +33,7 @@ public class DwarfTest
         // Act
         dwarf.levarFlechada();
         // Assert
-        assertEquals("VIVO", dwarf.getStatus());
+        assertTrue("MORTO" != dwarf.getStatus());
     }
     
     @Test
@@ -41,7 +41,7 @@ public class DwarfTest
         // Arrange
         Dwarf dwarf = new Dwarf();
         // Act
-        while(dwarf.getStatus() == "VIVO") {
+        while(dwarf.getStatus() != "MORTO") {
             dwarf.levarFlechada();
         }
         // Assert
@@ -53,7 +53,7 @@ public class DwarfTest
         // Arrange
         Dwarf dwarf = new Dwarf();
         // Act
-        while(dwarf.getStatus() == "VIVO") {
+        while(dwarf.getStatus() != "MORTO") {
             dwarf.levarFlechada();
         }
         dwarf.levarFlechada();
