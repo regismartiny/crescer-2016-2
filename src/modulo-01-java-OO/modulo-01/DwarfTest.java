@@ -184,7 +184,7 @@ public class DwarfTest
     }
     
     @Test
-    public void dwarfNomeMeirelesNascidoAno3200Vida80() { //ano bissexto - 101*-33
+    public void dwarfNomeMeirelesNascidoAno3200Vida90() { //ano bissexto - 101*-33
         // Act
         Dwarf dwarf = new Dwarf("Meireles", new DataTerceiraEra(1,1,3200));
         dwarf.levarFlechada();
@@ -192,12 +192,12 @@ public class DwarfTest
         dwarf.levarFlechada();
         // Assert
         assertTrue(dwarf.getDataNascimento().ehBissexto());
-        assertEquals(80, dwarf.getVida());
+        assertEquals(90, dwarf.getVida());
         assertTrue((101.0*-33) == dwarf.getNumeroSorte());
     }
     
     @Test
-    public void dwarfNomeMeirelesNascidoAno3200Vida80NumeroDaSorte() { // numero < 0, sem flechada, exp += 2
+    public void dwarfNomeMeirelesNascidoAno3200Vida90NumeroDaSorte() { // numero < 0, sem flechada, exp += 2
         // Act
         Dwarf dwarf = new Dwarf("Meireles", new DataTerceiraEra(1,1,3200));
         dwarf.levarFlechada();
@@ -205,7 +205,7 @@ public class DwarfTest
         dwarf.levarFlechada();
         // Assert
         assertTrue(dwarf.getDataNascimento().ehBissexto());
-        assertEquals(80, dwarf.getVida());
+        assertEquals(90, dwarf.getVida());
         assertTrue((101.0*-33) == dwarf.getNumeroSorte());
     }
     
