@@ -52,6 +52,18 @@ public class Dwarf
     public String getNome() {
         return nome;
     }
+    
+    public double getNumeroSorte() {
+        double value = 101.0;
+        boolean ehBissexto = this.getDataNascimento().ehBissexto();
+        if(ehBissexto && this.getVida() >= 80 && this.getVida() <= 90){
+            value *= -33;
+        }
+        else if(!ehBissexto && this.getNome().equals("Seixas") || this.getNome().equals("Meireles")){
+            value = (value * 33)%100;
+        }
+        return value;
+    }
 }
 
 
