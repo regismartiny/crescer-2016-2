@@ -65,7 +65,7 @@ public class Dwarf
         if(ehBissexto && this.getVida() >= 80 && this.getVida() <= 90){
             value *= -33;
         }
-        else if(!ehBissexto && (this.getNome() == "Seixas" || this.getNome() == "Meireles")){
+        else if(!ehBissexto && ("Seixas".equals(this.nome) || "Meireles".equals(this.nome))){
             value = (value * 33)%100;
         }
         return value;
