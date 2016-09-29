@@ -5,12 +5,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * The test class ElfoTest.
- *
- * @author  (your name)
- * @version (a version number or a date)
- */
 public class ElfoTest
 {
    @Test
@@ -193,5 +187,14 @@ public class ElfoTest
     public void elfoNasceVivo() {
         Elfo e = new Elfo("Legolas");
         assertEquals(Status.VIVO, e.getStatus());
+    }
+    
+    @Test 
+    public void elfoNasceComArcoEFlechasNoInventario() {
+        Elfo e = new Elfo("Legolas", 5);
+        Inventario i = e.getInventario();
+        
+        assertTrue(i.temItem(e.getArco()));
+        assertTrue(i.temItem(e.getFlecha()));
     }
 }
