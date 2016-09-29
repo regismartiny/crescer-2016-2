@@ -22,16 +22,6 @@ public class DataTerceiraEra
     }    
     
     public boolean ehBissexto() {
-        boolean bissexto = false;;
-        // se o ano for maior que 400
-        if(ano % 400 == 0){
-            bissexto = true;
-        // se o ano for menor que 400
-        } else if((ano % 4 == 0) && (ano % 100 != 0)){
-            bissexto = true;
-        } else{
-            bissexto = false;
-        }
-        return bissexto;
+        return this.ano % 400 == 0 || this.ano % 4 == 0 && this.ano % 100 != 0;
     }
 }
