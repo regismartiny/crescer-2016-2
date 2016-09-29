@@ -224,7 +224,7 @@ public class DwarfTest
     
     @Test
     public void dwarfComVida0EstaMorto() {
-        Dwarf d = new Dwarf("Fulano", new DataTerceiraEra(1,1,1));
+        Dwarf d = new Dwarf();
         for(int i=0; i < 11; i++){
             d.levarFlechada();
         }
@@ -234,7 +234,7 @@ public class DwarfTest
     
     @Test
     public void dwarfAlvejadoUmaVezAposMortoNaoTemVidaNegativa() {
-        Dwarf d = new Dwarf("Fulano", new DataTerceiraEra(1,1,1));
+        Dwarf d = new Dwarf();
         for(int i=0; i < 12; i++){
             d.levarFlechada();
         }
@@ -244,7 +244,7 @@ public class DwarfTest
     
     @Test
     public void dwarfAlvejadoDezVezesAposMortoNaoTemVidaNegativa() {
-        Dwarf d = new Dwarf("Fulano", new DataTerceiraEra(1,1,1));
+        Dwarf d = new Dwarf();
         for(int i=0; i < 21; i++){
             d.levarFlechada();
         }
