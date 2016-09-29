@@ -20,4 +20,16 @@ public class DataTerceiraEra
     public int getAno() {
         return ano;
     }    
+    
+    public boolean ehBissexto() {
+        boolean bissexto = false;
+        if(ano%4==0){
+            if (ano%100!=0){
+                bissexto = true;
+            }
+        }else if(ano%400==0){
+            bissexto = true;
+        }
+        return bissexto;
+    }
 }
