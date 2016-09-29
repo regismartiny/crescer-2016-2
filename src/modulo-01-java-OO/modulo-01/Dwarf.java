@@ -1,5 +1,6 @@
 public class Dwarf
 {
+    private String nome;
     private int vida;
     private String status;
     private DataTerceiraEra dataNascimento;
@@ -9,6 +10,14 @@ public class Dwarf
     {
         vida = 110;
         status = "VIVO";
+    }
+    
+    public Dwarf() {
+    }
+    
+    public Dwarf(String nome, DataTerceiraEra dataNascimento) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
     }
 
     
