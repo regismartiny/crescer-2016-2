@@ -43,12 +43,11 @@ public class Dwarf
     
     
     public void levarFlechada(){
-        if (getNumeroSorte() < 0){
-            experiencia += 2;
-        }else if(getNumeroSorte() >= 0 && getNumeroSorte() <= 100){
-        }else{
+        //if (getNumeroSorte() < 0){
+        //    experiencia += 2;
+        //}else if(!(getNumeroSorte() >= 0 && getNumeroSorte() <= 100)){
             setVida(getVida() - 10);
-        }
+        //}
     }
     
     public DataTerceiraEra getDataNascimento() {
