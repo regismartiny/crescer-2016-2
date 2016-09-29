@@ -13,13 +13,14 @@ public class Dwarf
     }
     
     public Dwarf() {
+        nome = "Fulano";
+        dataNascimento = new DataTerceiraEra(1,1,1);
     }
     
     public Dwarf(String nome, DataTerceiraEra dataNascimento) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
     }
-
     
     public int getVida() {
         return vida;
@@ -40,16 +41,15 @@ public class Dwarf
         return status;
     }
     
-    
     public void levarFlechada(){
-        //if (getNumeroSorte() < 0){
-        //     experiencia += 2;
-        //}
+        if (getNumeroSorte() < 0){
+             experiencia += 2;
+        }
         //else if(!(getNumeroSorte() >= 0 && getNumeroSorte() <= 100)){
         //}
-        //else{
+        else{
             setVida(getVida() - 10);
-        //}
+        }
     }
     
     public DataTerceiraEra getDataNascimento() {
@@ -66,7 +66,7 @@ public class Dwarf
         if(ehBissexto && this.getVida() >= 80 && this.getVida() <= 90){
             value *= -33;
         }
-        else if(!ehBissexto && this.getNome().equals("Seixas") || this.getNome().equals("Meireles")){
+        else if(!ehBissexto && (this.getNome().equals("Seixas") || this.getNome().equals("Meireles"))){
             value = (value * 33)%100;
         }
         return value;
