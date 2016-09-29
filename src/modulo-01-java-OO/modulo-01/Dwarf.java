@@ -4,6 +4,7 @@ public class Dwarf
     private int vida;
     private String status;
     private DataTerceiraEra dataNascimento;
+    private int experiencia;
     
     // Java type initializer
     // vai ser replicado para cada construtor
@@ -42,7 +43,12 @@ public class Dwarf
     
     
     public void levarFlechada(){
-        setVida(getVida() - 10);
+        if (getNumeroSorte() < 0){
+            experiencia += 2;
+        }else if(getNumeroSorte() >= 0 && getNumeroSorte() <= 100){
+        }else{
+            setVida(getVida() - 10);
+        }
     }
     
     public DataTerceiraEra getDataNascimento() {
