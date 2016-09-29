@@ -13,8 +13,7 @@ public class Dwarf
     }
     
     public Dwarf() {
-        nome = "Fulano";
-        dataNascimento = new DataTerceiraEra(1,1,1);
+        this(null, new DataTerceiraEra(1,1,1));
     }
     
     public Dwarf(String nome, DataTerceiraEra dataNascimento) {
@@ -66,7 +65,7 @@ public class Dwarf
         if(ehBissexto && this.getVida() >= 80 && this.getVida() <= 90){
             value *= -33;
         }
-        else if(!ehBissexto && (this.getNome().equals("Seixas") || this.getNome().equals("Meireles"))){
+        else if(!ehBissexto && (this.getNome() == "Seixas" || this.getNome() == "Meireles")){
             value = (value * 33)%100;
         }
         return value;
