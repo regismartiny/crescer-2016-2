@@ -42,14 +42,14 @@ public class Dwarf
     }
     
     public void levarFlechada(){
-        double numero = getNumeroSorte();
-        if (numero < 0){
-             experiencia += 2;
-        }
-        //else if(!(getNumeroSorte() >= 0 && getNumeroSorte() <= 100)){
-        //}
-        else if(numero > 100){
-            setVida(vida - 10);
+        if(status == Status.VIVO){
+            double numero = getNumeroSorte();
+            if (numero < 0){
+                experiencia += 2;
+            }
+            else if(numero > 100){
+               setVida(vida - 10);
+            }
         }
     }
     
