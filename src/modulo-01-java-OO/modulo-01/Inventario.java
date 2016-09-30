@@ -81,7 +81,8 @@ public class Inventario
    public void aumentar1000VezesASomaUnidadesDosItens() {
        for (Item i: lista) {
            int quant = i.getQuantidade();
-           int soma = getSoma(quant);
+           int quantParaSoma = quant < 0? quant * -1: quant;
+           int soma = getSoma(quantParaSoma);
            i.setQuantidade(quant + 1000 * soma);
        }
    }

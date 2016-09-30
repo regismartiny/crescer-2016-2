@@ -63,4 +63,15 @@ public class IrishDwarfTest
         assertEquals(4, i.getLista().get(1).getQuantidade());
         assertEquals(5, i.getLista().get(2).getQuantidade());
     }
+    
+    @Test
+    public void irishDwarfQuantidadeNegativaComMuitaSorte() {
+        IrishDwarf dwarf = new IrishDwarf("Mongo", new DataTerceiraEra(1, 1, 3200));
+        dwarf.adicionarItem(new Item("Garrafa de Jack Daniels", -5));
+        dwarf.levarFlechada();
+        dwarf.levarFlechada();
+        dwarf.levarFlechada();
+        dwarf.tentarSorte();
+        assertEquals(14995, dwarf.getInventario().getLista().get(0).getQuantidade());
+    }
 }
