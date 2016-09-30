@@ -88,10 +88,9 @@ public class Dwarf
     }
     
     public boolean tentarSorte() {
-        if(getNumeroSorte() == -3333.0){
-            for(Item i: inventario.getLista()){
-                i.setQuantidade(i.getQuantidade()+1000);
-            }
+        boolean temSorte = getNumeroSorte() == -3333.0;
+        if(temSorte){
+            inventario.aumentar1000UnidadesDosItens();
             return true;
         }
         return false;
