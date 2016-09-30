@@ -128,6 +128,41 @@ public class InventarioTest
         assertEquals(item2, i.getItemMaisPopular());
     }
     
+    @Test
+    public void aumentar1000UnidadesItem() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 10);
+        i.adicionarItem(item1);
+        i.aumentar1000UnidadesDosItens();
+        
+        assertEquals(1010, i.getLista().get(0).getQuantidade());
+    }
+    
+    @Test
+    public void aumentar2000UnidadesItem() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 20);
+        i.adicionarItem(item1);
+        i.aumentar1000UnidadesDosItens();
+        i.aumentar1000UnidadesDosItens();
+        
+        assertEquals(2020, i.getLista().get(0).getQuantidade());
+    }
+    
+    @Test
+    public void aumentar2000Unidades2Itens() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 20);
+        Item item2 = new Item("Martelo", 20);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.aumentar1000UnidadesDosItens();
+        i.aumentar1000UnidadesDosItens();
+        
+        assertEquals(2020, i.getLista().get(0).getQuantidade());
+        assertEquals(2020, i.getLista().get(1).getQuantidade());
+    }
+    
     
     
 }
