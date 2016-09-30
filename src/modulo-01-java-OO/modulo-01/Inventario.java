@@ -19,5 +19,14 @@ public class Inventario
    public boolean temItem(Item item) {
        return lista.contains(item);
    }
-    
+   
+   public String getDescricoesItens() {
+       String print = "";
+       for(int i=0; i < lista.size(); i++){
+           if (i>0) print += ",";
+           print += lista.get(i).getDescricao(); 
+       }
+       System.out.println(print);
+       return print;
+   }
 }
