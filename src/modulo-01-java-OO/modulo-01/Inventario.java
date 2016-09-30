@@ -63,6 +63,21 @@ public class Inventario
        }
    }
    
+   public void ordenarItensDesc() {
+       boolean troca = true;
+       while(troca) {
+           troca = false;
+           for(int i=lista.size()-1; i > 0; i--) {
+               if (lista.get(i).getQuantidade() > lista.get(i-1).getQuantidade()) {
+                   Item tmp = lista.get(i);
+                   lista.set(i, lista.get(i-1));
+                   lista.set(i-1, tmp);
+                   troca = true;
+               }
+           }
+       }
+   }
+   
    public void aumentar1000VezesASomaUnidadesDosItens() {
        for (Item i: lista) {
            int quant = i.getQuantidade();
@@ -77,5 +92,13 @@ public class Inventario
         } else {
             return getSoma(num - 1) + num;
         }
+   }
+   
+   public void ordenarItens(TipoOrdenacao ord) {
+       if(TipoOrdenacao.ASCENDENTE == ord) {
+           ordenarItens();
+       }else{
+           ordenarItensDesc();
+       }
    }
 }
