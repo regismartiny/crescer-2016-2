@@ -47,4 +47,19 @@ public class Inventario
            i.setQuantidade(i.getQuantidade()+1000);
        }
    }
+   
+   public void ordenarItens() {
+       boolean troca = true;
+       while(troca) {
+           troca = false;
+           for(int i=0; i < lista.size() - 1; i++) {
+               if (lista.get(i).getQuantidade() > lista.get(i+1).getQuantidade()) {
+                   Item tmp = lista.get(i);
+                   lista.set(i, lista.get(i+1));
+                   lista.set(i+1, tmp);
+                   troca = true;
+               }
+           }
+       }
+   }
 }

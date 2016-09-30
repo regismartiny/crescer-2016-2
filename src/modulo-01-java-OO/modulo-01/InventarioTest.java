@@ -163,6 +163,30 @@ public class InventarioTest
         assertEquals(2020, i.getLista().get(1).getQuantidade());
     }
     
+    @Test
+    public void ordenar3Itens() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 15);
+        Item item2 = new Item("Dardo", 20);
+        Item item3 = new Item("Pistola", 10);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.adicionarItem(item3);
+        i.ordenarItens();
+        
+        assertEquals(item3, i.getLista().get(0));
+        assertEquals(item1, i.getLista().get(1));
+        assertEquals(item2, i.getLista().get(2));
+    }
+    
+    @Test
+    public void ordenar0Item() {
+        Inventario i = new Inventario();
+        i.ordenarItens();
+        
+        assertEquals(0, i.getLista().size());
+    }
+    
     
     
 }
