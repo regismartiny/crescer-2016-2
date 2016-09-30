@@ -66,7 +66,7 @@ public class InventarioTest
     public void inventarioVisualizarDescricao3Itens() {
         Inventario i = new Inventario();
         Item item = new Item("Faca", 1);
-        Item item2 = new Item("Dardo", 1);
+        Item item2 = new Item("Dardo", 2);
         Item item3 = new Item("Pistola", 1);
         i.adicionarItem(item);
         i.adicionarItem(item2);
@@ -74,5 +74,46 @@ public class InventarioTest
         
         assertEquals("Faca,Dardo,Pistola", i.getDescricoesItens());
     }
+    
+    @Test
+    public void inventarioItemMaisPopularFaca() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 10);
+        Item item2 = new Item("Dardo", 2);
+        Item item3 = new Item("Pistola", 1);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.adicionarItem(item3);
+        
+        assertEquals(item1, i.getItemMaisPopular());
+    }
+    
+    @Test
+    public void inventarioItemMaisPopularPistola() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 10);
+        Item item2 = new Item("Dardo", 2);
+        Item item3 = new Item("Pistola", 12);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.adicionarItem(item3);
+        
+        assertEquals(item3, i.getItemMaisPopular());
+    }
+    
+    @Test
+    public void inventarioItemMaisPopularDardo() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 10);
+        Item item2 = new Item("Dardo", 20);
+        Item item3 = new Item("Pistola", 1);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.adicionarItem(item3);
+        
+        assertEquals(item2, i.getItemMaisPopular());
+    }
+    
+    
     
 }

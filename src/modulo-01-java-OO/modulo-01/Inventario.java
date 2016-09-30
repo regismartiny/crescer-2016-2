@@ -33,4 +33,17 @@ public class Inventario
    public ArrayList<Item> getLista() {
        return lista;
    }
+   
+   public Item getItemMaisPopular() {
+       Item itemMaisPopular = lista.get(0);
+       int maiorQuantidade = 0;
+       for(Item i: lista){
+           int quant = i.getQuantidade();
+           if(quant > maiorQuantidade){
+               maiorQuantidade = quant;
+               itemMaisPopular = i;
+           }
+       }
+       return itemMaisPopular;
+   }
 }
