@@ -187,6 +187,32 @@ public class InventarioTest
         assertEquals(0, i.getLista().size());
     }
     
+    @Test
+    public void aumentar1000VezesASomaUnidades2Itens() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 3);
+        Item item2 = new Item("Martelo", 4);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.aumentar1000VezesASomaUnidadesDosItens();
+        
+        assertEquals(6003, i.getLista().get(0).getQuantidade());
+        assertEquals(10004, i.getLista().get(1).getQuantidade());
+    }
     
-    
+    @Test
+    public void aumentar1000VezesASomaUnidades3Itens() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 3);
+        Item item2 = new Item("Martelo", 4);
+        Item item3 = new Item("Espada", 5);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.adicionarItem(item3);
+        i.aumentar1000VezesASomaUnidadesDosItens();
+        
+        assertEquals(6003, i.getLista().get(0).getQuantidade());
+        assertEquals(10004, i.getLista().get(1).getQuantidade());
+        assertEquals(15005, i.getLista().get(2).getQuantidade());
+    }
 }

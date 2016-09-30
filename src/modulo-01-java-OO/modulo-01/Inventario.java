@@ -62,4 +62,20 @@ public class Inventario
            }
        }
    }
+   
+   public void aumentar1000VezesASomaUnidadesDosItens() {
+       for (Item i: lista) {
+           int quant = i.getQuantidade();
+           int soma = getSoma(quant);
+           i.setQuantidade(quant + 1000 * soma);
+       }
+   }
+   
+   private int getSoma(int num) {
+       if (num <= 0) {
+            return 0;
+        } else {
+            return getSoma(num - 1) + num;
+        }
+   }
 }
