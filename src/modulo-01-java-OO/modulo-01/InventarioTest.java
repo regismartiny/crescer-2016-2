@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.ArrayList;
 
 public class InventarioTest
 {
@@ -11,7 +12,7 @@ public class InventarioTest
         Item item = new Item("Faca", 1);
         i.adicionarItem(item);
         
-        assertTrue(i.temItem(item));
+        assertTrue(i.getLista().contains(item));
     }
     
     @Test
@@ -23,10 +24,11 @@ public class InventarioTest
         i.adicionarItem(item);
         i.adicionarItem(item2);
         i.adicionarItem(item3);
+        ArrayList<Item> lista = i.getLista();
         
-        assertTrue(i.temItem(item));
-        assertTrue(i.temItem(item2));
-        assertTrue(i.temItem(item3));
+        assertTrue(lista.contains(item));
+        assertTrue(lista.contains(item2));
+        assertTrue(lista.contains(item3));
     }
     
     @Test
@@ -35,8 +37,9 @@ public class InventarioTest
         Item item = new Item("Faca", 1);
         i.adicionarItem(item);
         i.removerItem(item);
+        ArrayList<Item> lista = i.getLista();
         
-        assertFalse(i.temItem(item));
+        assertFalse(lista.contains(item));
     }
     
     @Test
@@ -48,9 +51,10 @@ public class InventarioTest
         i.adicionarItem(item2);
         i.removerItem(item);
         i.removerItem(item2);
+        ArrayList<Item> lista = i.getLista();
         
-        assertFalse(i.temItem(item));
-        assertFalse(i.temItem(item2));
+        assertFalse(lista.contains(item));
+        assertFalse(lista.contains(item2));
     }
     
     @Test

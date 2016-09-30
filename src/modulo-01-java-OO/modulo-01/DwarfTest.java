@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.ArrayList;
 
 public class DwarfTest
 {
@@ -257,8 +258,9 @@ public class DwarfTest
         Dwarf d = new Dwarf();
         Item i = new Item("Revólver", 1);
         d.adicionarItem(i);
+        ArrayList<Item> lista = d.getInventario().getLista();
         
-        assertTrue(d.getInventario().temItem(i));
+        assertTrue(lista.contains(i));
     }
     
     @Test
@@ -268,10 +270,10 @@ public class DwarfTest
         Item i2 = new Item("Faca", 1);
         d.adicionarItem(i);
         d.adicionarItem(i2);
-        Inventario invent = d.getInventario();
+        ArrayList<Item> lista = d.getInventario().getLista();
         
-        assertTrue(invent.temItem(i));
-        assertTrue(invent.temItem(i2));
+        assertTrue(lista.contains(i));
+        assertTrue(lista.contains(i2));
     }
     
     @Test
@@ -280,8 +282,9 @@ public class DwarfTest
         Item i = new Item("Revólver", 1);
         d.adicionarItem(i);
         d.perderItem(i);
+        ArrayList<Item> lista = d.getInventario().getLista();
         
-        assertFalse(d.getInventario().temItem(i));
+        assertFalse(lista.contains(i));
     }
     
     @Test
@@ -293,10 +296,10 @@ public class DwarfTest
         d.adicionarItem(i2);
         d.perderItem(i1);
         d.perderItem(i2);
-        Inventario invent = d.getInventario();
+        ArrayList<Item> lista = d.getInventario().getLista();
         
-        assertFalse(invent.temItem(i1));
-        assertFalse(invent.temItem(i2));
+        assertFalse(lista.contains(i1));
+        assertFalse(lista.contains(i2));
     }
     
     @Test

@@ -194,7 +194,7 @@ public class ElfoTest
         Elfo e = new Elfo("Legolas", 5);
         Inventario i = e.getInventario();
         
-        assertTrue(i.temItem(e.getArco()));
-        assertTrue(i.temItem(e.getFlecha()));
+        assertTrue(i.getLista().contains(e.getArco()));
+        assertTrue(i.getLista().contains(e.getFlecha()));
     }
 }
