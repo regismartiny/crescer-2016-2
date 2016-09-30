@@ -41,4 +41,10 @@ public class Inventario
        }
        return itemMaisPopular;
    }
+   
+   public void aumentar1000UnidadesDosItens() {
+       for(Item i: lista){
+           i.setQuantidade(i.getQuantidade()+1000);
+       }
+   }
 }
