@@ -30,7 +30,7 @@ public class Inventario
    }
    
    public Item getItemMaisPopular() {
-       Item itemMaisPopular = lista.get(0);
+       Item itemMaisPopular = null;
        int maiorQuantidade = 0;
        for(Item i: lista){
            int quant = i.getQuantidade();
