@@ -1,7 +1,5 @@
 public class Elfo {
     private String nome;
-    private Item arco;
-    private Item flecha;
     private int experiencia;
     private Status status;
     private Inventario inventario;
@@ -13,8 +11,8 @@ public class Elfo {
     
     public Elfo(String nome, int flechas){
         this.nome = nome;
-        arco = new Item("Arco", 1);
-        flecha = new Item("Flechas", flechas >= 0 ? flechas : 42);
+        Item arco = new Item("Arco", 1);
+        Item flecha = new Item("Flechas", flechas >= 0 ? flechas : 42);
         status = Status.VIVO;
         inventario = new Inventario();
         inventario.adicionarItem(arco);
@@ -30,11 +28,11 @@ public class Elfo {
     }
     
     public Item getArco() {
-        return arco;
+        return inventario.getLista().get(0);
     }
     
     public Item getFlecha() {
-        return flecha;
+        return inventario.getLista().get(1);
     }
     
     public int getExperiencia() {
@@ -50,9 +48,9 @@ public class Elfo {
     }
 
     public void atirarFlecha() {
-        int qtdFlechas = flecha.getQuantidade();
+        int qtdFlechas = getFlecha().getQuantidade();
         if (qtdFlechas > 0) {
-            flecha.setQuantidade(qtdFlechas - 1);
+            getFlecha().setQuantidade(qtdFlechas - 1);
             experiencia++;
         }
     }
@@ -68,18 +66,15 @@ public class Elfo {
     }
     
     public String toString() {
-        boolean flechaNoSingular = flecha.getQuantidade() == 1;
+        boolean flechaNoSingular = getFlecha().getQuantidade() == 1;
         boolean expNoSingular = experiencia == 1;
         
         return String.format("%s possui %d %s e %d %s de experiência.", 
             nome, 
-            flecha.getQuantidade(), 
+            getFlecha().getQuantidade(), 
             flechaNoSingular?"flecha":"flechas",
             experiencia,
             expNoSingular?"nível":"níveis");
-        
-        /*return nome + " possui " + flecha.getQuantidade() + (flecha.getQuantidade()>1?" flechas e ":" flecha e ") + 
-            experiencia + (experiencia>1?" níveis ":" nível ") + "  de experiência.";*/
     }
 }
 
