@@ -32,6 +32,16 @@ public class InventarioTest
     }
     
     @Test
+    public void inventarioAdicionar1ItemERemover() {
+        Inventario i = new Inventario();
+        Item item = new Item("Faca", 1);
+        i.adicionarItem(item);
+        i.removerItem(item);
+        
+        assertFalse(i.getLista().contains(item));
+    }
+    
+    @Test
     public void inventarioRemoverItem() {
         Inventario i = new Inventario();
         Item item = new Item("Faca", 1);

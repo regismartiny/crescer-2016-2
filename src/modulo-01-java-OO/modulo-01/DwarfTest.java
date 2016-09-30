@@ -258,9 +258,8 @@ public class DwarfTest
         Dwarf d = new Dwarf();
         Item i = new Item("Revólver", 1);
         d.adicionarItem(i);
-        ArrayList<Item> lista = d.getInventario().getLista();
         
-        assertTrue(lista.contains(i));
+        assertTrue(d.getInventario().getLista().contains(i));
     }
     
     @Test
@@ -282,9 +281,8 @@ public class DwarfTest
         Item i = new Item("Revólver", 1);
         d.adicionarItem(i);
         d.perderItem(i);
-        ArrayList<Item> lista = d.getInventario().getLista();
         
-        assertFalse(lista.contains(i));
+        assertFalse(d.getInventario().getLista().contains(i));
     }
     
     @Test
