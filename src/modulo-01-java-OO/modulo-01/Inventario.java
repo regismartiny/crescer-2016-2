@@ -29,4 +29,8 @@ public class Inventario
        System.out.println(print);
        return print;
    }
+   
+   public ArrayList<Item> getLista() {
+       return lista;
+   }
 }

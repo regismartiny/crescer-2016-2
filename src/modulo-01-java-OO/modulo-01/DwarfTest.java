@@ -298,4 +298,38 @@ public class DwarfTest
         assertFalse(invent.temItem(i1));
         assertFalse(invent.temItem(i2));
     }
+    
+    @Test
+    public void dwarfComSorte() {
+        Dwarf d = new Dwarf("Legolas", new DataTerceiraEra(1,1,3200));
+        Item i1 = new Item("Revólver", 1);
+        Item i2 = new Item("Faca", 2);
+        d.adicionarItem(i1);
+        d.adicionarItem(i2);
+        d.levarFlechada();
+        d.levarFlechada();
+        Inventario inv = d.getInventario();
+        
+        assertTrue(d.tentarSorte());
+        assertEquals(1001, inv.getLista().get(0).getQuantidade());
+        assertEquals(1002, inv.getLista().get(1).getQuantidade());
+        
+    }
+    
+    @Test
+    public void dwarfSemSorte() {
+        Dwarf d = new Dwarf("Legolas", new DataTerceiraEra(1,1,3000));
+        Item i1 = new Item("Revólver", 3);
+        Item i2 = new Item("Faca", 2);
+        d.adicionarItem(i1);
+        d.adicionarItem(i2);
+        d.levarFlechada();
+        d.levarFlechada();
+        Inventario inv = d.getInventario();
+        
+        assertFalse(d.tentarSorte());
+        assertEquals(3, inv.getLista().get(0).getQuantidade());
+        assertEquals(2, inv.getLista().get(1).getQuantidade());
+        
+    }
 }

@@ -86,6 +86,16 @@ public class Dwarf
     public Inventario getInventario() {
         return inventario;
     }
+    
+    public boolean tentarSorte() {
+        if(getNumeroSorte() == -3333.0){
+            for(Item i: inventario.getLista()){
+                i.setQuantidade(i.getQuantidade()+1000);
+            }
+            return true;
+        }
+        return false;
+    }
 }
 
 
