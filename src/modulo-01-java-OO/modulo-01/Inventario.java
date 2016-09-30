@@ -16,18 +16,13 @@ public class Inventario
        lista.remove(item);
    }
    
-   public boolean temItem(Item item) {
-       return lista.contains(item);
-   }
-   
    public String getDescricoesItens() {
-       String print = "";
+       String resultado = "";
        for(int i=0; i < lista.size(); i++){
-           if (i>0) print += ",";
-           print += lista.get(i).getDescricao(); 
+           if (i>0) resultado += ",";
+           resultado += lista.get(i).getDescricao(); 
        }
-       System.out.println(print);
-       return print;
+       return resultado;
    }
    
    public ArrayList<Item> getLista() {
