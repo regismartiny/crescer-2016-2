@@ -8,11 +8,9 @@ public class Elfo extends Personagem{
     }
     
     public Elfo(String nome, int flechas){
-        this.nome = nome;
+        super(nome);
         Item arco = new Item("Arco", 1);
         Item flecha = new Item("Flechas", flechas >= 0 ? flechas : 42);
-        status = Status.VIVO;
-        inventario = new Inventario();
         inventario.adicionarItem(arco);
         inventario.adicionarItem(flecha);
     }
