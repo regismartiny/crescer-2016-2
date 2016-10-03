@@ -247,4 +247,36 @@ public class InventarioTest
         assertEquals(4, i.getLista().get(1).getQuantidade());
         assertEquals(3, i.getLista().get(2).getQuantidade());
     } 
+    
+    @Test 
+    public void ordernar3ItensDescQueEstaoEmAsc() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 3);
+        Item item2 = new Item("Martelo", 4);
+        Item item3 = new Item("Espada", 5);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.adicionarItem(item3);
+        i.ordenarItens(TipoOrdenacao.DESCENDENTE);
+        
+        assertEquals(5, i.getLista().get(0).getQuantidade());
+        assertEquals(4, i.getLista().get(1).getQuantidade());
+        assertEquals(3, i.getLista().get(2).getQuantidade());
+    }
+    
+    @Test 
+    public void ordernar3ItensAscQueEstaoEmDesc() {
+        Inventario i = new Inventario();
+        Item item1 = new Item("Faca", 5);
+        Item item2 = new Item("Martelo", 4);
+        Item item3 = new Item("Espada", 3);
+        i.adicionarItem(item1);
+        i.adicionarItem(item2);
+        i.adicionarItem(item3);
+        i.ordenarItens(TipoOrdenacao.ASCENDENTE);
+        
+        assertEquals(3, i.getLista().get(0).getQuantidade());
+        assertEquals(4, i.getLista().get(1).getQuantidade());
+        assertEquals(5, i.getLista().get(2).getQuantidade());
+    }
 }
