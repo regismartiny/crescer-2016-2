@@ -197,4 +197,11 @@ public class ElfoTest
         assertTrue(i.getLista().contains(e.getArco()));
         assertTrue(i.getLista().contains(e.getFlecha()));
     }
+    
+   @Test
+   public void elfoNasceCom100DeVida() {
+       Elfo e = new Elfo("Elfo");
+       // Assert
+       assertEquals(100, e.getVida());
+    }
 }

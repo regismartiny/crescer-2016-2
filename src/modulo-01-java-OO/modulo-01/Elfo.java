@@ -1,5 +1,5 @@
 public class Elfo extends Personagem{
-    
+    protected int vida;
     
 
     public Elfo(String n) {
@@ -13,6 +13,7 @@ public class Elfo extends Personagem{
         Item flecha = new Item("Flechas", flechas >= 0 ? flechas : 42);
         this.adicionarItem(arco);
         this.adicionarItem(flecha);
+        vida = 100;
     }
     
     public Item getArco() {
@@ -21,6 +22,10 @@ public class Elfo extends Personagem{
     
     public Item getFlecha() {
         return inventario.getLista().get(1);
+    }
+    
+    public int getVida() {
+        return vida;
     }
     
    
