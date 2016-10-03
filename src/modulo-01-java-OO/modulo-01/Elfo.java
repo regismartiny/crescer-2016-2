@@ -11,8 +11,8 @@ public class Elfo extends Personagem{
         super(nome);
         Item arco = new Item("Arco", 1);
         Item flecha = new Item("Flechas", flechas >= 0 ? flechas : 42);
-        inventario.adicionarItem(arco);
-        inventario.adicionarItem(flecha);
+        this.adicionarItem(arco);
+        this.adicionarItem(flecha);
     }
     
     public Item getArco() {
