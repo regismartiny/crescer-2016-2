@@ -1,11 +1,7 @@
-public class Dwarf
+public class Dwarf extends Personagem
 {
-    private String nome;
     private int vida;
-    private Status status;
     private DataTerceiraEra dataNascimento;
-    private int experiencia;
-    private Inventario inventario;
     
     // Java type initializer
     // vai ser replicado para cada construtor
@@ -39,9 +35,6 @@ public class Dwarf
         }
     }
     
-    public Status getStatus() {
-        return status;
-    }
     
     public void levarFlechada(){
         if(status == Status.VIVO){
@@ -59,9 +52,6 @@ public class Dwarf
         return dataNascimento;
     }
     
-    public String getNome() {
-        return nome;
-    }
     
     public double getNumeroSorte() {
         double value = 101.0;
@@ -83,9 +73,6 @@ public class Dwarf
         inventario.removerItem(item);
     }
     
-    public Inventario getInventario() {
-        return inventario;
-    }
     
     public boolean tentarSorte() {
         boolean temSorte = getNumeroSorte() == -3333.0;

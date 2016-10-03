@@ -55,6 +55,7 @@ public class Inventario
            for(int i=0; i < lista.size() - 1; i++) {
                if (lista.get(i).getQuantidade() > lista.get(i+1).getQuantidade()) {
                    Item tmp = lista.get(i);
+                   
                    lista.set(i, lista.get(i+1));
                    lista.set(i+1, tmp);
                    troca = true;
@@ -96,6 +97,7 @@ public class Inventario
    }
    
    public void ordenarItens(TipoOrdenacao ord) {
+       //TO-DO: Refatorar ordenação de itens, trazer para este método
        if(TipoOrdenacao.ASCENDENTE == ord) {
            ordenarItens();
        }else{

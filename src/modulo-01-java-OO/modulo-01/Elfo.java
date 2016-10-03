@@ -1,8 +1,6 @@
-public class Elfo {
-    private String nome;
-    private int experiencia;
-    private Status status;
-    private Inventario inventario;
+public class Elfo extends Personagem{
+    
+    
 
     public Elfo(String n) {
         // Chamando construtor de baixo
@@ -18,14 +16,6 @@ public class Elfo {
         inventario.adicionarItem(arco);
         inventario.adicionarItem(flecha);
     }
-
-    public void setNome(String n) {
-        nome = n;
-    }
-
-    public String getNome() {
-        return nome;
-    }
     
     public Item getArco() {
         return inventario.getLista().get(0);
@@ -35,17 +25,7 @@ public class Elfo {
         return inventario.getLista().get(1);
     }
     
-    public int getExperiencia() {
-        return experiencia;
-    }
-    
-    public Status getStatus() {
-        return status;
-    }
-    
-    public Inventario getInventario() {
-        return inventario;
-    }
+   
 
     public void atirarFlecha() {
         int qtdFlechas = getFlecha().getQuantidade();
