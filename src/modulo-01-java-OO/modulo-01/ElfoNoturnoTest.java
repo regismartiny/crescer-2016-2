@@ -34,4 +34,15 @@ public class ElfoNoturnoTest
         assertEquals(0, en.getExperiencia());
         assertTrue(100. == en.getVida());        
     }
+    
+    @Test //Atualmente elfoNoturno nao morre atirando flechas, pois nao há funcionalidade para "matá-lo" quando a vida chegar em 0.
+    public void elfoNoturnoNaoMorreAtirandoFlechas() {
+        ElfoNoturno en = new ElfoNoturno("Noturno");
+        for(int i=0; i < 42; i++) {
+            en.atirarFlecha();
+        }
+        
+        assertEquals("MORTO", en.getStatus());
+        assertTrue(en.getVida() <= 0.0);
+    }
 }
