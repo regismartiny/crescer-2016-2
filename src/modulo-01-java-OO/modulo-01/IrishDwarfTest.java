@@ -74,4 +74,15 @@ public class IrishDwarfTest
         dwarf.tentarSorte();
         assertEquals(14995, dwarf.getInventario().getLista().get(0).getQuantidade());
     }
+    
+    @Test
+    public void irishDwarfQuantidadeNegativa30ComMuitaSorte() {
+        IrishDwarf dwarf = new IrishDwarf("Lego", new DataTerceiraEra(1, 1, 3200));
+        dwarf.adicionarItem(new Item("Pão", -30));
+        dwarf.levarFlechada();
+        dwarf.levarFlechada();
+        dwarf.levarFlechada();
+        dwarf.tentarSorte();
+        assertEquals(464970, dwarf.getInventario().getLista().get(0).getQuantidade());
+    }
 }
