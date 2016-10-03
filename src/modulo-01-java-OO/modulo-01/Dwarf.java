@@ -1,7 +1,7 @@
 public class Dwarf extends Personagem
 {
-    private int vida;
-    private DataTerceiraEra dataNascimento;
+    protected int vida;
+    protected DataTerceiraEra dataNascimento;
     
     // Java type initializer
     // vai ser replicado para cada construtor
