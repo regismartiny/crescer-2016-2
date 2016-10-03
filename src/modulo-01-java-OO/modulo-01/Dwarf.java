@@ -65,14 +65,6 @@ public class Dwarf extends Personagem
         return value;
     }
     
-    public void adicionarItem(Item item) {
-        inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item) {
-        inventario.removerItem(item);
-    }
-    
     
     public boolean tentarSorte() {
         boolean temSorte = getNumeroSorte() == -3333.0;

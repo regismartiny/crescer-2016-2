@@ -24,4 +24,12 @@ public class Personagem
     public Inventario getInventario() {
         return inventario;
     }
+    
+     public void adicionarItem(Item item) {
+        inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item) {
+        inventario.removerItem(item);
+    }
 }
