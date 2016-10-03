@@ -202,6 +202,6 @@ public class ElfoTest
    public void elfoNasceCom100DeVida() {
        Elfo e = new Elfo("Elfo");
        // Assert
-       assertEquals(100, e.getVida());
+       assertTrue(100.0 == e.getVida());
     }
 }

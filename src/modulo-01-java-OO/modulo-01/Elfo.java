@@ -1,5 +1,5 @@
 public class Elfo extends Personagem{
-    protected int vida;
+    protected double vida;
     
 
     public Elfo(String n) {
@@ -24,7 +24,7 @@ public class Elfo extends Personagem{
         return inventario.getLista().get(1);
     }
     
-    public int getVida() {
+    public double getVida() {
         return vida;
     }
     

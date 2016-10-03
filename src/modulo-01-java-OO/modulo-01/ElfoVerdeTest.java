@@ -60,7 +60,7 @@ public class ElfoVerdeTest
    public void elfoVerdeNasceCom100DeVida() {
        ElfoVerde ev = new ElfoVerde("Elfo");
        // Assert
-       assertEquals(100, ev.getVida());
+       assertTrue(100.0 == ev.getVida());
     }
 
 }
