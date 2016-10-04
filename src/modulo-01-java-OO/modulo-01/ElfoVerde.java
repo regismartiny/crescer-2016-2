@@ -8,7 +8,7 @@ public class ElfoVerde extends Elfo
     public Item getFlecha() {
         Item flecha = null;
         for (Item i: inventario.getLista()) {
-            if ("Arco e Flecha de Vidro".equals(i.getDescricao())) {
+            if ("Flecha de Vidro".equals(i.getDescricao())) {
                 flecha = i;
             }
         }
@@ -21,10 +21,10 @@ public class ElfoVerde extends Elfo
 
     public void adicionarItem(Item item) { 
         String descricao = item.getDescricao();
-        if ("Espada de aço valiriano".equals(descricao) || "Arco e Flecha de Vidro".equals(descricao)) {
+        if ("Espada de aço valiriano".equals(descricao) || "Arco de Vidro".equals(descricao) || "Flecha de Vidro".equals(descricao) ) {
             boolean encontrado = false;
             for (Item i: inventario.getLista()) {
-                if ("Arco e Flecha de Vidro".equals(i.getDescricao())) {
+                if (item.getDescricao().equals(i.getDescricao())) {
                     i.setQuantidade(i.getQuantidade() + item.getQuantidade());
                     encontrado = true;
                 }
@@ -34,6 +34,13 @@ public class ElfoVerde extends Elfo
             }
         }
 
+    }
+    
+     protected void inicializarInventario(int quantFlechas) {
+        Item arco = new Item("Arco de Vidro", 1);
+        Item flecha = new Item("Flecha de Vidro", quantFlechas >= 0 ? quantFlechas : 42);
+        this.adicionarItem(arco);
+        this.adicionarItem(flecha);
     }
 
 }

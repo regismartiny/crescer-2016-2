@@ -36,15 +36,12 @@ public class ElfoVerdeTest
     }
     
     @Test
-    public void elfoGanha2ItensValidos() {
+    public void elfoGanhaItemValido() {
         ElfoVerde e = new ElfoVerde("Elfo");
         Item i1 = new Item("Espada de aço valiriano", 5);
-        Item i2 = new Item("Arco e Flecha de Vidro", 10);
         e.adicionarItem(i1);
-        e.adicionarItem(i2);
-        
-        assertEquals(i1, e.getInventario().getLista().get(0));
-        assertEquals(i2, e.getInventario().getLista().get(1));
+ 
+        assertEquals(i1, e.getInventario().getLista().get(2));
     }
     
     @Test
@@ -53,7 +50,7 @@ public class ElfoVerdeTest
         Item i1 = new Item("Espada de ferro", 1);
         e.adicionarItem(i1);
         
-        assertEquals(0, e.getInventario().getLista().size());
+        assertEquals(2, e.getInventario().getLista().size());
     }
     
    @Test
@@ -64,10 +61,10 @@ public class ElfoVerdeTest
     }
     
    @Test
-   public void elfoVerdeNasceSemItens() {
+   public void elfoVerdeNasceCom2Itens() {
        ElfoVerde ev = new ElfoVerde("Elfo");
        // Assert
-       assertEquals(0, ev.getInventario().getLista().size());
+       assertEquals(2, ev.getInventario().getLista().size());
     }
 
 }
