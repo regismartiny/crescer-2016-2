@@ -31,7 +31,7 @@ public class ElfoVerde extends Elfo
                 }
             }
             if(!encontrado) {
-                inventario.adicionarItem(item);
+                super.adicionarItem(item);
             }
         }
 

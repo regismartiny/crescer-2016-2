@@ -51,7 +51,7 @@ public class ElfoVerdeTest
     public void elfoNaoGanhaItemInvalido() {
         ElfoVerde e = new ElfoVerde("Elfo");
         Item i1 = new Item("Espada de ferro", 1);
-        //e.adicionarItem(i1);
+        e.adicionarItem(i1);
         
         assertEquals(0, e.getInventario().getLista().size());
     }
