@@ -69,8 +69,10 @@ public class ElfoNoturnoTest
     }
     
     @Test
-    public void elfoNoturnoComFlechasAcabandoAindaPerdeVida() {
-        ElfoNoturno en = new ElfoNoturno("Noturno", 1000);
-    
-    }
+    public void elfoNoturnoSemFlechasNaoPerdeVida() {
+       ElfoNoturno elfoSuicida = new ElfoNoturno("Harakiri", 1); 
+       elfoSuicida.atirarFlecha(new Dwarf("Joe Doein", new DataTerceiraEra(1,1,1))); 
+       elfoSuicida.atirarFlecha(new Dwarf("Joe Doein", new DataTerceiraEra(1,1,1))); 
+       assertEquals(95, elfoSuicida.getVida(), 0.);
+    }  
 }

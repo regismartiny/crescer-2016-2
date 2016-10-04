@@ -19,7 +19,7 @@ public class ElfoNoturno extends Elfo
     }
     
     public void atirarFlecha(Dwarf dwarf) {
-       if (status == Status.VIVO) {
+       if (status == Status.VIVO && getFlecha().getQuantidade() > 0) {
            super.atirarFlechas(dwarf, 3);
            setVida(vida * 0.95);
         }
