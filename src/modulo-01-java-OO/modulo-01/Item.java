@@ -22,6 +22,12 @@ public class Item {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    
+    @Override
+    public boolean equals(Object o) {
+        Item i = (Item)o;
+        return (this.descricao == i.descricao && this.quantidade == i.quantidade);
+    }
 }
 
 
