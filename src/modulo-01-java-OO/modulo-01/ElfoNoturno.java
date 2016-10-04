@@ -12,11 +12,9 @@ public class ElfoNoturno extends Elfo
     private void setVida(double vida) {
         if (vida < 1.0) {
             vida = 0.0;
+            status = Status.MORTO;
         }else {
             this.vida = vida;
-        }
-        if (vida == 0.0) {
-            status = Status.MORTO;
         }
     }
     
