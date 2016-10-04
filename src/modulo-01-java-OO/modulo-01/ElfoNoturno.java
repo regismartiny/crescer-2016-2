@@ -18,12 +18,10 @@ public class ElfoNoturno extends Elfo
         }
     }
     
-    public void atirarFlecha() {
-        int qtdFlechas = getFlecha().getQuantidade();
-        if (qtdFlechas > 0) {
-            getFlecha().setQuantidade(qtdFlechas - 1);
-            experiencia+=3;
-            setVida(vida - vida*0.05);
+    public void atirarFlecha(Dwarf dwarf) {
+       if (status == Status.VIVO) {
+           super.atirarFlechas(dwarf, 3);
+           setVida(vida * 0.95);
         }
     }
     
