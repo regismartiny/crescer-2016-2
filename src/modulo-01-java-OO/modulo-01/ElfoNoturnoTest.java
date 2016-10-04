@@ -67,4 +67,10 @@ public class ElfoNoturnoTest
         assertEquals(Status.MORTO, en.getStatus());
         assertEquals(270, en.getExperiencia()); 
     }
+    
+    @Test
+    public void elfoNoturnoComFlechasAcabandoAindaPerdeVida() {
+        ElfoNoturno en = new ElfoNoturno("Noturno", 1000);
+    
+    }
 }
