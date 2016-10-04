@@ -29,22 +29,17 @@ public class Elfo extends Personagem{
     }
     
    
-
-    public void atirarFlecha() {
-        int qtdFlechas = getFlecha().getQuantidade();
-        if (qtdFlechas > 0) {
-            getFlecha().setQuantidade(qtdFlechas - 1);
-            experiencia++;
-        }
-    }
-
     /*public void atirarFlechaRefactory() {
         experiencia++;
         flecha.setQuantidade(flecha.getQuantidade()-1);
     }*/
     
-    public void atiraFlechaEmDwarf(Dwarf dwarf) {
-        atirarFlecha();
+    public void atirarFlecha(Dwarf dwarf) {
+        int qtdFlechas = getFlecha().getQuantidade();
+        if (qtdFlechas > 0) {
+            getFlecha().setQuantidade(qtdFlechas - 1);
+            experiencia++;
+        }
         dwarf.levarFlechada();
     }
     

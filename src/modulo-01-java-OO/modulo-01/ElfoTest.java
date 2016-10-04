@@ -49,7 +49,7 @@ public class ElfoTest
         // Arrange
         Elfo elfo = new Elfo("legolas");
         // Act
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarf());
         // Assert
         assertEquals(41, elfo.getFlecha().getQuantidade());
         assertEquals(1, elfo.getExperiencia());
@@ -60,9 +60,9 @@ public class ElfoTest
         // Arrange
         Elfo elfo = new Elfo("legolas");
         // Act
-        elfo.atirarFlecha();
-        elfo.atirarFlecha();
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarf());
+        elfo.atirarFlecha(new Dwarf());
+        elfo.atirarFlecha(new Dwarf());
         // Assert
         assertEquals(39, elfo.getFlecha().getQuantidade());
         assertEquals(3, elfo.getExperiencia());
@@ -74,7 +74,7 @@ public class ElfoTest
         Elfo elfo = new Elfo("legolas");
         //Act
         for(int i=0; i < 42; i++) {
-            elfo.atirarFlecha();
+            elfo.atirarFlecha(new Dwarf());
         }
         // Assert
         assertEquals(0, elfo.getFlecha().getQuantidade());
@@ -87,9 +87,9 @@ public class ElfoTest
         Elfo elfo = new Elfo("legolas");
         // Act
         while(elfo.getFlecha().getQuantidade() > 0){
-            elfo.atirarFlecha();
+            elfo.atirarFlecha(new Dwarf());
         }
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarf());
         // Assert
         assertEquals(0, elfo.getFlecha().getQuantidade());
     }
@@ -103,7 +103,7 @@ public class ElfoTest
         Dwarf dwarf = new Dwarf();
         int vida = dwarf.getVida();
         // Act
-        elfo.atiraFlechaEmDwarf(dwarf);
+        elfo.atirarFlecha(dwarf);
         // Assert
         assertEquals(flechas - 1, elfo.getFlecha().getQuantidade());
         assertEquals(exp + 1, elfo.getExperiencia());
@@ -122,7 +122,7 @@ public class ElfoTest
     public void elfoExperienteToString() {
         // Arrange
         Elfo elfo = new Elfo("Legolas");
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarf());
         // Assert
         assertEquals("Legolas possui 41 flechas e 1 nível de experiência.", elfo.toString());
     }
@@ -175,7 +175,7 @@ public class ElfoTest
     public void elfoComNomeE100FlechasExperienteToString() {
         // Act
         Elfo elfo = new Elfo("Batman", 100);
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarf());
         // Assert
         assertEquals("Batman", elfo.getNome());
         assertEquals(99, elfo.getFlecha().getQuantidade());

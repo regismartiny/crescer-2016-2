@@ -19,7 +19,7 @@ public class ElfoVerdeTest
         ElfoVerde e = new ElfoVerde("Elfo");
         Item i1 = new Item("Arco e Flecha de Vidro", 1);
         e.adicionarItem(i1);
-        e.atirarFlecha();
+        e.atirarFlecha(new Dwarf());
         
         assertEquals(2, e.getExperiencia());
     }
@@ -29,8 +29,8 @@ public class ElfoVerdeTest
         ElfoVerde e = new ElfoVerde("Elfo");
         Item i1 = new Item("Arco e Flecha de Vidro", 2);
         e.adicionarItem(i1);
-        e.atirarFlecha();
-        e.atirarFlecha();
+        e.atirarFlecha(new Dwarf());
+        e.atirarFlecha(new Dwarf());
         
         assertEquals(4, e.getExperiencia());
     }

@@ -15,15 +15,9 @@ public class ElfoVerde extends Elfo
         return flecha;
     }
 
-    public void atirarFlecha() {
-        Item flecha = getFlecha();
-        if (flecha != null) {
-            int qtdFlechas = flecha.getQuantidade();
-            if (qtdFlechas > 0) {
-                flecha.setQuantidade(qtdFlechas - 1);
-                experiencia += 2;
-            }
-        }
+    public void atirarFlecha(Dwarf dwarf) {
+        super.atirarFlecha(dwarf);
+        experiencia++;
     }
 
     public void adicionarItem(Item item) { 
