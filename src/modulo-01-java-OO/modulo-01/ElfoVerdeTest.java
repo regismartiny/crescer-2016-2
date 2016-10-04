@@ -56,11 +56,18 @@ public class ElfoVerdeTest
         assertEquals(0, e.getInventario().getLista().size());
     }
     
-    @Test
+   @Test
    public void elfoVerdeNasceCom100DeVida() {
        ElfoVerde ev = new ElfoVerde("Elfo");
        // Assert
        assertTrue(100.0 == ev.getVida());
+    }
+    
+   @Test
+   public void elfoVerdeNasceSemItens() {
+       ElfoVerde ev = new ElfoVerde("Elfo");
+       // Assert
+       assertEquals(0, ev.getInventario().getLista().size());
     }
 
 }
