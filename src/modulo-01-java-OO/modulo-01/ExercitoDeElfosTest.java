@@ -68,6 +68,16 @@ public class ExercitoDeElfosTest
     }
     
     @Test
+    public void criarExercitoVazioBuscarPorNome() {
+        assertNull(new ExercitoDeElfos().buscar("Nenhum"));
+    }
+    
+    @Test
+    public void criarExercitoVazioBuscarElfosVivos() {
+        assertNull(new ExercitoDeElfos().buscar(Status.VIVO));
+    }
+    
+    @Test
     public void criarExercitoAlistar2ElfosVivosBuscarElfosVivos() {
         ExercitoDeElfos ee = new ExercitoDeElfos();
         ElfoNoturno en = new ElfoNoturno("Nocturn");
@@ -123,24 +133,16 @@ public class ExercitoDeElfosTest
         ee.alistar(en);
         ee.alistar(ev);
         
-        Elfo[] elfos = ee.buscar(Status.MORTO);
-        
-        assertEquals(0, elfos.length);   
+        assertNull(ee.buscar(Status.MORTO));   
     }
     
     @Test
     public void criarExercitoNaoAlistarElfosBuscarElfosVivos() {
         ExercitoDeElfos ee = new ExercitoDeElfos();
         
-        Elfo[] elfos = ee.buscar(Status.VIVO);
-        
-        assertEquals(0, elfos.length);   
+        assertNull(ee.buscar(Status.VIVO));   
     }
     
-    @Test
-    public void criarExercitoVazioBuscar() {
-        assertNull(new ExercitoDeElfos().buscar("Nenhum"));
-    }
     
     @Test
     public void criarExercitoBuscarPorNomeTendoApenasUmComAqueleNome() {
