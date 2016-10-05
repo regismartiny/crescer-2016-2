@@ -213,7 +213,7 @@ public class ElfoTest
    }
    
    @Test
-   public void elfosIncrementamContador2Vezes() {
+   public void elfosIncrementamContador3Vezes() {
        int contadorAntes = Elfo.getContador();
        Elfo e = new Elfo("");
        ElfoVerde ev = new ElfoVerde("");

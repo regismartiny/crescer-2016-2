@@ -1,6 +1,6 @@
 public class Elfo extends Personagem{
     protected double vida;
-    private static int contador = 0;
+    private static int contador;
     
 
     public Elfo(String n) {
