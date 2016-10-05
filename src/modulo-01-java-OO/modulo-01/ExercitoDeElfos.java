@@ -24,6 +24,16 @@ public class ExercitoDeElfos
         return elfoBuscado;
     }
     
+    public Elfo[] buscar(Status status) {
+        ArrayList<Elfo> elfosEncontrados = new ArrayList<>() ;
+        for(Elfo e: elfos) {
+            if (e.getStatus().equals(status)) {
+                elfosEncontrados.add(e);
+            }
+        }
+        return elfosEncontrados.toArray(new Elfo[elfosEncontrados.size()]);
+    }
+    
     public Elfo[] getElfosArray() {
         return elfos.toArray(new Elfo[elfos.size()]);
     }
