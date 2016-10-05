@@ -25,6 +25,9 @@ public class Item {
     
     @Override
     public boolean equals(Object o) {
+        if (!(o instanceof Item)) {
+            return false;
+        }
         Item i = (Item)o;
         return (this.descricao == i.descricao && this.quantidade == i.quantidade);
     }
