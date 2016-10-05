@@ -9,7 +9,9 @@ public class ExercitoDeElfos
     }
     
     public void alistar(Elfo elfo) {
-        elfos.add(elfo);
+        if (elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde) {
+            elfos.add(elfo);
+        }
     }
     
     public Elfo buscar(String nome) {

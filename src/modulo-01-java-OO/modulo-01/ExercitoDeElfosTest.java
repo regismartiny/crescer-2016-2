@@ -52,6 +52,15 @@ public class ExercitoDeElfosTest
     }
     
     @Test
+    public void criarExercitoTentarAlistarElfo() {
+        ExercitoDeElfos ee = new ExercitoDeElfos();
+        Elfo e = new Elfo("Elf");
+        ee.alistar(e);
+        
+        assertEquals(0, ee.getElfosArray().length);        
+    }
+    
+    @Test
     public void criarExercitoNaoAlistarElfoBuscarElfoVerde() {
         ExercitoDeElfos ee = new ExercitoDeElfos();
         
