@@ -203,5 +203,22 @@ public class ElfoTest
        Elfo e = new Elfo("Elfo");
        // Assert
        assertTrue(100.0 == e.getVida());
-    }
+   }
+   
+   @Test
+   public void elfosNaoCriadosNaoIncrementamOContador() {
+       int contadorAntes = Elfo.getContador();
+       
+       assertEquals(0, Elfo.getContador() - contadorAntes);
+   }
+   
+   @Test
+   public void elfosIncrementamContador2Vezes() {
+       int contadorAntes = Elfo.getContador();
+       Elfo e = new Elfo("");
+       ElfoVerde ev = new ElfoVerde("");
+       ElfoNoturno en = new ElfoNoturno("");
+       
+       assertEquals(3, Elfo.getContador() - contadorAntes);
+   }
 }

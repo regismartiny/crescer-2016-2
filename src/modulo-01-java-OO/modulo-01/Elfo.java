@@ -1,5 +1,6 @@
 public class Elfo extends Personagem{
     protected double vida;
+    private static int contador = 0;
     
 
     public Elfo(String n) {
@@ -11,6 +12,7 @@ public class Elfo extends Personagem{
         super(nome);
         inicializarInventario(quantFlechas);
         vida = 100;
+        Elfo.contador++;
     }
     
     public Item getArco() {
@@ -25,6 +27,9 @@ public class Elfo extends Personagem{
         return vida;
     }
     
+    public static int getContador() {
+        return Elfo.contador;
+    }
    
     /*public void atirarFlechaRefactory() {
         experiencia++;
