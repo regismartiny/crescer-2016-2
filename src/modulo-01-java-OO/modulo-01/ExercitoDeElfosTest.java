@@ -136,4 +136,35 @@ public class ExercitoDeElfosTest
         
         assertEquals(0, elfos.length);   
     }
+    
+    @Test
+    public void criarExercitoVazioBuscar() {
+        assertNull(new ExercitoDeElfos().buscar("Nenhum"));
+    }
+    
+    @Test
+    public void criarExercitoBuscarPorNomeTendoApenasUmComAqueleNome() {
+        ExercitoDeElfos e = new ExercitoDeElfos();
+        Elfo recruta1 = new ElfoVerde("Elfo Recruta 1");
+        Elfo recruta2 = new ElfoNoturno("Elfo Recruta 2");
+        Elfo recruta3 = new ElfoVerde("Elfo Recruta 3");
+        e.alistar(recruta1);
+        e.alistar(recruta2);
+        e.alistar(recruta3);
+        
+        assertEquals(recruta2, e.buscar("Elfo Recruta 2"));
+    }
+    
+    @Test
+    public void criarExercitoBuscarPorNomeTendoVariosComAqueleNome() {
+        ExercitoDeElfos e = new ExercitoDeElfos();
+        Elfo recruta1 = new ElfoVerde("Elfo Recruta");
+        Elfo recruta2 = new ElfoNoturno("Elfo Recruta 2");
+        Elfo recruta3 = new ElfoVerde("Elfo Recruta 3");
+        e.alistar(recruta1);
+        e.alistar(recruta2);
+        e.alistar(recruta3);
+        
+        assertEquals(recruta1, e.buscar("Elfo Recruta"));
+    }
 }

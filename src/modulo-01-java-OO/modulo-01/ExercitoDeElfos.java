@@ -15,6 +15,7 @@ public class ExercitoDeElfos
     }
     
     public Elfo buscar(String nome) {
+        // Java 8: return elfos.filter(elfo -> nome.equals(elfo.getNome()))[0];
         Elfo elfoBuscado = null;
         for(int i=0; i < elfos.size(); i++) {
             Elfo e = elfos.get(i);
