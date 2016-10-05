@@ -7,6 +7,11 @@ import org.junit.Test;
 
 public class ElfoTest
 {
+   @After // Executa após cada cenário de testes.
+   public void tearDown() {
+       System.gc();
+   }
+   
    @Test
    public void elfoNasceComNome() {
        // Arrange
@@ -207,18 +212,15 @@ public class ElfoTest
    
    @Test
    public void elfosNaoCriadosNaoIncrementamOContador() {
-       int contadorAntes = Elfo.getContador();
-       
-       assertEquals(0, Elfo.getContador() - contadorAntes);
+        assertEquals(0, Elfo.getContador());
    }
    
    @Test
    public void elfosIncrementamContador3Vezes() {
-       int contadorAntes = Elfo.getContador();
        Elfo e = new Elfo("");
        ElfoVerde ev = new ElfoVerde("");
        ElfoNoturno en = new ElfoNoturno("");
        
-       assertEquals(3, Elfo.getContador() - contadorAntes);
+       assertEquals(3, Elfo.getContador());
    }
 }

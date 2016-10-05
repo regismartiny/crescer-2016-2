@@ -15,6 +15,12 @@ public class Elfo extends Personagem{
         Elfo.contador++;
     }
     
+    // destrutor
+    protected void finalize() throws Throwable {
+        super.finalize();
+        Elfo.contador--;
+    }
+    
     public Item getArco() {
         return inventario.getLista().get(0);
     }
