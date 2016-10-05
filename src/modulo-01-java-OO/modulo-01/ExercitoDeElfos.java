@@ -34,7 +34,7 @@ public class ExercitoDeElfos
                 elfosEncontrados.add(e);
             }
         }
-        return elfosEncontrados.size() > 0 ? elfosEncontrados.toArray(new Elfo[elfosEncontrados.size()]) : null;
+        return elfosEncontrados.toArray(new Elfo[elfosEncontrados.size()]);
     }
     
     public Elfo[] getElfosArray() {
