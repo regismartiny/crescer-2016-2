@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ExercitoDeElfos
+public class ExercitoDeElfos implements Exercito
 {
     private ArrayList<Elfo> elfos;
     
@@ -27,7 +27,7 @@ public class ExercitoDeElfos
         return elfoBuscado;
     }
     
-    public Elfo[] buscar(Status status) {
+    public Elfo[] buscarArray(Status status) {
         ArrayList<Elfo> elfosEncontrados = new ArrayList<>() ;
         for(Elfo e: elfos) {
             if (e.getStatus().equals(status)) {
@@ -37,7 +37,20 @@ public class ExercitoDeElfos
         return elfosEncontrados.size() > 0 ? elfosEncontrados.toArray(new Elfo[elfosEncontrados.size()]) : null;
     }
     
-    public Elfo[] getElfosArray() {
+    public ArrayList<Elfo> buscar(Status status) {
+        ArrayList<Elfo> elfosEncontrados = new ArrayList<>() ;
+        for(Elfo e: elfos) {
+            if (e.getStatus().equals(status)) {
+                elfosEncontrados.add(e);
+            }
+        }
+        return elfosEncontrados.size() > 0 ? elfosEncontrados : null;
+    }
+    
+    public Elfo[] getContingente() {
         return elfos.toArray(new Elfo[elfos.size()]);
+    }
+    
+    public void atacar() {
     }
 }

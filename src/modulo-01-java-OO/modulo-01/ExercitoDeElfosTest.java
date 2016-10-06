@@ -12,7 +12,7 @@ public class ExercitoDeElfosTest
         ElfoVerde ev = new ElfoVerde("Legolas");
         ee.alistar(ev);
         
-        assertEquals(ev, ee.getElfosArray()[0]);        
+        assertEquals(ev, ee.getContingente()[0]);        
     }
     
     @Test
@@ -21,7 +21,7 @@ public class ExercitoDeElfosTest
         ElfoNoturno en = new ElfoNoturno("Nocturn");
         ee.alistar(en);
         
-        assertEquals(en, ee.getElfosArray()[0]);        
+        assertEquals(en, ee.getContingente()[0]);        
     }
     
     @Test
@@ -57,7 +57,7 @@ public class ExercitoDeElfosTest
         Elfo e = new Elfo("Elf");
         ee.alistar(e);
         
-        assertEquals(0, ee.getElfosArray().length);        
+        assertEquals(0, ee.getContingente().length);        
     }
     
     @Test
@@ -85,7 +85,7 @@ public class ExercitoDeElfosTest
         ee.alistar(en);
         ee.alistar(ev);
         
-        Elfo[] elfos = ee.buscar(Status.VIVO);
+        Elfo[] elfos = ee.buscarArray(Status.VIVO);
         
         assertEquals(en, elfos[0]);     
         assertEquals(ev, elfos[1]);   
@@ -102,7 +102,7 @@ public class ExercitoDeElfosTest
         ee.alistar(en);
         ee.alistar(ev);
         
-        Elfo[] elfos = ee.buscar(Status.VIVO);
+        Elfo[] elfos = ee.buscarArray(Status.VIVO);
         
         assertEquals(ev, elfos[0]);
         assertEquals(1, elfos.length);   
@@ -119,7 +119,7 @@ public class ExercitoDeElfosTest
         ee.alistar(en);
         ee.alistar(ev);
         
-        Elfo[] elfos = ee.buscar(Status.MORTO);
+        Elfo[] elfos = ee.buscarArray(Status.MORTO);
         
         assertEquals(en, elfos[0]);
         assertEquals(1, elfos.length);   

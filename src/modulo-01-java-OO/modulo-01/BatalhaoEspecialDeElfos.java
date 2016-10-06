@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BatalhaoEspecialDeElfos
+public class BatalhaoEspecialDeElfos implements Exercito
 {
     private HashMap<String,ArrayList<Elfo>> contingente;
     private HashMap<Status,ArrayList<Elfo>> statusArrayElfos;
@@ -53,5 +53,8 @@ public class BatalhaoEspecialDeElfos
                 elfoDoStatus.add(elfo);                
             }           
         }
+    }
+    
+    public void atacar() {
     }
 }
