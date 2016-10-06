@@ -7,6 +7,11 @@ import org.junit.Test;
 
 public class ElfoVerdeTest
 {
+    @After // Executa após cada cenário de testes.
+    public void tearDown() {
+       System.gc();
+    }
+   
     @Test
     public void elfoAtira0FlechaEGanha0deExp() {
         ElfoVerde e = new ElfoVerde("Elfo");

@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class IrishDwarfTest
-{
+{   
     @Test
     public void irishDwarfTemMuitaSorte3Itens() {
         IrishDwarf irish = new IrishDwarf("Irish", new DataTerceiraEra(1,1,3200));

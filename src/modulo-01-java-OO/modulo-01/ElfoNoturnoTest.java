@@ -8,6 +8,11 @@ import org.junit.Test;
 
 public class ElfoNoturnoTest
 {
+    @After // Executa após cada cenário de testes.
+    public void tearDown() {
+       System.gc();
+    }
+    
     @Test 
     public void elfoNoturnoAtira1FlechaGanha3DeExperienciaPerde5PorcentoDeVida() {
         ElfoNoturno en = new ElfoNoturno("Noturno");
