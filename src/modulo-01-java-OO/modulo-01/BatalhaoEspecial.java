@@ -4,9 +4,16 @@ import java.util.HashMap;
 public class BatalhaoEspecial
 {
     private HashMap<String,Elfo> contingente;
+    private HashMap<Status,ArrayList<Elfo>> statusArrayElfos;
+    private ArrayList<Elfo> vivos, mortos;
     
     public BatalhaoEspecial() {
         contingente = new HashMap<>();
+        statusArrayElfos = new HashMap<>();
+        vivos = new ArrayList<>();
+        mortos = new ArrayList<>();
+        statusArrayElfos.put(Status.VIVO, vivos);
+        statusArrayElfos.put(Status.MORTO, mortos);
     }
     
     Elfo[] getContingente() {
@@ -17,6 +24,12 @@ public class BatalhaoEspecial
         if (elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde) {
             contingente.put(elfo.getNome(), elfo);
         }
+        if (elfo.getStatus().equals(Status.VIVO)) {
+            vivos.add(elfo);
+        }
+        else{
+            mortos.add(elfo);
+        }
     }
     
     Elfo buscar(String nome) {
@@ -24,12 +37,6 @@ public class BatalhaoEspecial
     }
     
     ArrayList<Elfo> buscar(Status status) {
-        ArrayList<Elfo> encontrados = new ArrayList<>();
-        for(Elfo e: contingente.values()) {
-            if (status.equals(e.getStatus())) {
-                encontrados.add(e);
-            }
-        }
-        return encontrados;
+        return statusArrayElfos.get(status);
     }
 }

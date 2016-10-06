@@ -170,4 +170,32 @@ public class BatalhaEspecialTest
         
         assertEquals(recruta1, e.buscar("Elfo Recruta"));
     }
+    
+    @Test
+    public void criarBatalhaoEspecialBuscarPorStatusVivosTendoVariosComAqueleStatus() {
+        BatalhaoEspecial e = new BatalhaoEspecial();
+        Elfo recruta1 = new ElfoVerde("Elfo Recruta");
+        Elfo recruta2 = new ElfoNoturno("Elfo Recruta 2");
+        Elfo recruta3 = new ElfoVerde("Elfo Recruta 3");
+        e.alistar(recruta1);
+        e.alistar(recruta2);
+        e.alistar(recruta3);
+        
+        assertEquals(recruta1, e.buscar(Status.VIVO).get(0));
+        assertEquals(recruta2, e.buscar(Status.VIVO).get(1));
+        assertEquals(recruta3, e.buscar(Status.VIVO).get(2));
+    }
+    
+    @Test
+    public void criarBatalhaoEspecialBuscarPorStatusMortosTendoVariosComAqueleStatus() {
+        BatalhaoEspecial e = new BatalhaoEspecial();
+        Elfo recruta1 = new ElfoVerde("Elfo Recruta");
+        Elfo recruta2 = new ElfoNoturno("Elfo Recruta 2");
+        Elfo recruta3 = new ElfoVerde("Elfo Recruta 3");
+        e.alistar(recruta1);
+        e.alistar(recruta2);
+        e.alistar(recruta3);
+        
+        assertEquals(0, e.buscar(Status.MORTO).size());
+    }
 }
