@@ -22,8 +22,8 @@ public class ComparadorDePerformance
        Elfo elfoHash = pequisarElfoHash(hashElfos, "Elfo 5000");
        long m2Fim = System.currentTimeMillis();
        
-       System.out.println(String.format("ArrayList: %d", (m1Fim-m1Inicio)/1000));
-       System.out.println(String.format("HashMap: %d",(m2Fim-m2Inicio)/1000));
+       System.out.println("ArrayList: " + String.format("%.10f", (m1Fim-m1Inicio)/1000.0));
+       System.out.println("HashMap: " + String.format("%.10f",(m2Fim-m2Inicio)/1000.0));
    }
    
    private Elfo pesquisarElfoArr(ArrayList<Elfo> elfos, String nome) {
