@@ -10,7 +10,7 @@ public class BatalhaoEspecialDeElfos
         statusArrayElfos = new HashMap<>();
     }
     
-    Elfo[] getContingente() {
+    public Elfo[] getContingente() {
         ArrayList<Elfo> resultado = new ArrayList<>();
         for (ArrayList<Elfo> listas : contingente.values()) {
             resultado.addAll(listas);
@@ -18,7 +18,7 @@ public class BatalhaoEspecialDeElfos
         return resultado.toArray(new Elfo[resultado.size()]);
     }
 
-    void alistar(Elfo elfo) {
+    public void alistar(Elfo elfo) {
         if (elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde) {
             ArrayList<Elfo> arr = contingente.get(elfo.getNome());
             if (arr == null) {
@@ -29,11 +29,11 @@ public class BatalhaoEspecialDeElfos
         }
     }
     
-    Elfo buscar(String nome) {
+    public Elfo buscar(String nome) {
         return contingente.containsKey(nome) ? contingente.get(nome).get(0) : null;
     }
     
-    ArrayList<Elfo> buscar(Status status) {
+    public ArrayList<Elfo> buscar(Status status) {
         agruparPorStatus(); 
         return statusArrayElfos.get(status);
     }
