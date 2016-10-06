@@ -9,10 +9,6 @@ public class ElfoNoturno extends Elfo
         super(nome, quantFlechas);
     }
     
-    // destrutor
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }
     
     private void setVida(double vida) {
         if (vida < 1.0) {

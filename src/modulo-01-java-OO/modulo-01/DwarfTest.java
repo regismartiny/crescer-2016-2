@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class DwarfTest
 {
+   
     @Test
     public void dwarfNascemCom110DeVida() {
         // Act

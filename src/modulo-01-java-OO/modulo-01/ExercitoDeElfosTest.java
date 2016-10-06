@@ -6,6 +6,11 @@ import org.junit.Test;
 
 public class ExercitoDeElfosTest
 {
+    @After // Executa após cada cenário de testes.
+    public void tearDown() {
+        System.gc();
+    }
+   
     @Test
     public void criarExercitoAlistarElfoVerde() {
         ExercitoDeElfos ee = new ExercitoDeElfos();

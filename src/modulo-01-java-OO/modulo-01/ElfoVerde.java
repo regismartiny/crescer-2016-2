@@ -4,11 +4,7 @@ public class ElfoVerde extends Elfo
     public ElfoVerde(String nome) {
         super(nome);
     }
-    
-    // destrutor
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }
+   
 
     public Item getFlecha() {
         Item flecha = null;
