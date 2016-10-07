@@ -18,7 +18,7 @@ public class BatalhaoEspecialDeElfos implements Exercito
         return resultado.toArray(new Elfo[resultado.size()]);
     }
 
-    public void alistar(Elfo elfo) {
+    public void alistar(Elfo elfo) throws NaoPodeAlistarException {
         if (elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde) {
             ArrayList<Elfo> arr = contingente.get(elfo.getNome());
             if (arr == null) {
@@ -26,6 +26,8 @@ public class BatalhaoEspecialDeElfos implements Exercito
                 contingente.put(elfo.getNome(), arr);
             }
             arr.add(elfo);
+        }else{
+            throw new NaoPodeAlistarException();
         }
     }
     

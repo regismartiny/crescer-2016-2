@@ -8,9 +8,11 @@ public class ExercitoDeElfos implements Exercito
         elfos = new ArrayList<>();
     }
     
-    public void alistar(Elfo elfo) {
+    public void alistar(Elfo elfo) throws NaoPodeAlistarException{
         if (elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde) {
             elfos.add(elfo);
+        }else {
+            throw new NaoPodeAlistarException();
         }
     }
     

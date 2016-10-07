@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class BatalhaoEspecialDeElfosTest
 {
      @Test 
-    public void alistarElfoNoBatalhaoEspecial() { 
+    public void alistarElfoNoBatalhaoEspecial() throws NaoPodeAlistarException { 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
         //Elfo recruta2 = new ElfoNoturno("Sinnafain Leothyra"); 
@@ -17,7 +17,7 @@ public class BatalhaoEspecialDeElfosTest
     } 
  
     @Test 
-    public void alistarDoisElfosNoBatalhaoEspecial() { 
+    public void alistarDoisElfosNoBatalhaoEspecial() throws NaoPodeAlistarException { 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
         Elfo recruta2 = new ElfoNoturno("Sinnafain Leothyra"); 
@@ -28,8 +28,8 @@ public class BatalhaoEspecialDeElfosTest
         assertTrue(contem(elfos, recruta2)); 
     } 
  
-    @Test 
-    public void alistarDoisElfosValidosEUmInvalidoNoBatalhaoEspecial() { 
+    @Test(expected=NaoPodeAlistarException.class)
+    public void alistarDoisElfosValidosEUmInvalidoNoBatalhaoEspecial() throws NaoPodeAlistarException { 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
         Elfo recruta2 = new ElfoNoturno("Sinnafain Leothyra"); 
@@ -42,8 +42,8 @@ public class BatalhaoEspecialDeElfosTest
         assertTrue(contem(elfos, recruta2)); 
     } 
  
-    @Test 
-    public void buscarElfoQueNaoFoiAlistado() { 
+    @Test(expected=NaoPodeAlistarException.class)
+    public void buscarElfoQueNaoFoiAlistado() throws NaoPodeAlistarException{ 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
         Elfo recruta2 = new ElfoNoturno("Sinnafain Leothyra"); 
@@ -54,7 +54,7 @@ public class BatalhaoEspecialDeElfosTest
     } 
  
     @Test 
-    public void buscarElfoAlistado() { 
+    public void buscarElfoAlistado() throws NaoPodeAlistarException{ 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
         Elfo recruta2 = new ElfoNoturno("Zezinho de Valfenda"); 
@@ -64,7 +64,7 @@ public class BatalhaoEspecialDeElfosTest
     } 
  
     @Test 
-    public void buscarElfoAlistadoComNomeDuplicado() { 
+    public void buscarElfoAlistadoComNomeDuplicado() throws NaoPodeAlistarException{ 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
         Elfo recruta2 = new ElfoNoturno("Zezinho de Valfenda", 1); 
@@ -76,7 +76,7 @@ public class BatalhaoEspecialDeElfosTest
     } 
  
     @Test 
-    public void alistarDoisElfosVivos() { 
+    public void alistarDoisElfosVivos() throws NaoPodeAlistarException{ 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
         Elfo recruta2 = new ElfoNoturno("Zezinho de Valfenda", 1); 
@@ -90,7 +90,7 @@ public class BatalhaoEspecialDeElfosTest
     } 
  
     @Test 
-    public void alistarDoisElfosMortos() { 
+    public void alistarDoisElfosMortos() throws NaoPodeAlistarException{ 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
         Elfo recruta2 = criarElfoNoturnoEMatalo(); 
@@ -106,7 +106,7 @@ public class BatalhaoEspecialDeElfosTest
     } 
  
     @Test 
-    public void alistarUmElfoVivoEDepoisMatalo() { 
+    public void alistarUmElfoVivoEDepoisMatalo() throws NaoPodeAlistarException{ 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoNoturno("Folluin Qindove", 91); 
         Elfo recruta2 = new ElfoVerde("Phaendar Holabanise"); 
