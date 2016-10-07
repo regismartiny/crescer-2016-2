@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class BatalhaoEspecialDeElfosTest
 {
-     @Test 
+    @Test 
     public void alistarElfoNoBatalhaoEspecial() throws NaoPodeAlistarException { 
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos(); 
         Elfo recruta1 = new ElfoVerde("Folluin Qindove"); 
