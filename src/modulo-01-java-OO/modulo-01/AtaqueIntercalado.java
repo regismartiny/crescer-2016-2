@@ -30,14 +30,24 @@ public class AtaqueIntercalado implements Estrategia
             Elfo proximo = lista.get(i+1);
             listaIntercalada.add(atual);
             boolean ehDoMesmoTipo = atual.getClass() == proximo.getClass();
-            if (ehDoMesmoTipo) {
+            boolean ultimaIteracao = i == lista.size() - 2;
+            if (ultimaIteracao) {
+                if (ehDoMesmoTipo) {
+                    //lista nao proporcional
+                }
+                else {
+                    listaIntercalada.add(proximo);
+                    break;
+                }
+            }
+            else if (ehDoMesmoTipo) {
                 for(int j=i+2; j < lista.size(); j++) {
                     Elfo proximo2 = lista.get(j);
                     boolean aindaEhDoMesmoTipo = proximo.getClass() == proximo2.getClass();
                     if (!aindaEhDoMesmoTipo) {
                         lista.set(i+1, proximo2);
                         lista.set(j, proximo);
-                        listaIntercalada.add(proximo2);
+                        break;
                     }
                 }
             }
