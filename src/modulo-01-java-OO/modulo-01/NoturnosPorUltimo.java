@@ -3,9 +3,9 @@ import java.util.*;
 public class NoturnosPorUltimo implements Estrategia
 {
     public List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes, List<Dwarf> alvos) {
-        ArrayList<Elfo> elfosNoturnos = new ArrayList<>();
-        ArrayList<Elfo> elfosVerdes = new ArrayList<>();
-        List lista = new ArrayList<Elfo>();
+        List<Elfo> elfosNoturnos = new ArrayList<>();
+        List<Elfo> elfosVerdes = new ArrayList<>();
+        List<Elfo> lista = new ArrayList<>();
         for(Elfo elfo: atacantes) {
             if (Status.VIVO.equals(elfo.getStatus())) {
                 if (elfo instanceof ElfoNoturno) {
