@@ -23,7 +23,7 @@ public class AtaqueIntercalado implements Estrategia
     }
     
     
-    private List<Elfo> ordernarListaTiposIntercalados(List<Elfo> lista) {
+    private List<Elfo> ordernarListaTiposIntercalados(List<Elfo> lista) throws ContingenteDesproporcionalException {
         List<Elfo> listaIntercalada = new ArrayList<>();
         for(int i=0; i < lista.size() - 1; i++) {
             Elfo atual = lista.get(i);
@@ -34,6 +34,7 @@ public class AtaqueIntercalado implements Estrategia
             if (ultimaIteracao) {
                 if (ehDoMesmoTipo) {
                     //lista nao proporcional
+                    throw new ContingenteDesproporcionalException();
                 }
                 else {
                     listaIntercalada.add(proximo);
