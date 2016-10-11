@@ -3,6 +3,8 @@ public class Elfo extends Personagem{
     protected static int contador;
     
 
+    private static int contadorDeElfos;
+    
     public Elfo(String n) {
         // Chamando construtor de baixo
         this(n, 42);
@@ -38,8 +40,8 @@ public class Elfo extends Personagem{
     }
    
     /*public void atirarFlechaRefactory() {
-        experiencia++;
-        flecha.setQuantidade(flecha.getQuantidade()-1);
+    experiencia++;
+    flecha.setQuantidade(flecha.getQuantidade()-1);
     }*/
     
     public void atirarFlecha(Dwarf dwarf) {
@@ -74,5 +76,4 @@ public class Elfo extends Personagem{
         this.adicionarItem(flecha);
     }
 }
-
 
