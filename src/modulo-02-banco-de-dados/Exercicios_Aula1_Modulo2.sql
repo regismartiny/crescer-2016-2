@@ -21,7 +21,7 @@ create table Produto
 );
 
 insert into Produto (Nome, Descricao, LocalEstoque, Quantidade, Preco)
-	values ('Alcatra', 'Carne Bovina Alcatra', 'Açougue do Jorge', 1.0, 25.00);
+	values ('Alcatra', 'Carne Bovina Alcatra Kg', 'Açougue do Jorge', 1.0, 25.00);
 	
 insert into Produto (Nome, Descricao, LocalEstoque, Quantidade, Preco)
 	values ('Heineken Long Neck', 'Long Neck Cerveja Heineken', 'Bar', 1, 5.00);
