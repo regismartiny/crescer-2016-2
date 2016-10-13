@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B594AE20-9A83-D98C-F52E-4C757A4F2B2D" name="Projeto">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:47:16 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<engineerTo>
+<item key="49B32AC4-9074-A494-3209-3606F9E69985" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+</Entity>

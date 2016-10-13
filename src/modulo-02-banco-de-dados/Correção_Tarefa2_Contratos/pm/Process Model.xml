@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="B799CF06-6E20-A2A4-33DF-9E8B0FDEC34D">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:29:56 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE6C811A-D439-8F70-C7DB-909E2D657807" name="ProjetoEmpregado">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<ordsAlias>projeto_empregado</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEmpregadoProjeto" id="E7275831-87B1-3FE3-785D-BDA3F2267186">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:04:51 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDProjeto" id="7DEC0111-9FB5-5F77-B854-AB8791EA52ED">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C447FEA6-EB82-6344-7AEF-02F6477AA3C6" referredColumn="4716A52B-671B-C5B4-28B1-505F3CA34A7A"/>
+</associations>
+</Column>
+<Column name="IDEmpregado" id="3FEA7779-7205-38EF-35DD-F620BF0E0DB3">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D111B8AC-9F1C-7BD2-9C2E-7FACE7AA559D" referredColumn="12A87620-D484-92BF-9FB9-0EE827ACE6EF"/>
+</associations>
+</Column>
+<Column name="ParticipacaoPerc" id="32FFB30A-8244-9F38-64C0-81D267F7F080">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:42:07 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B9B2B786-F4F7-F7D4-B426-49C2AE43BCFD" name="Projeto_Empregado_PK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7275831-87B1-3FE3-785D-BDA3F2267186"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6F0A743F-3D71-D977-8A02-59FC72D8C817" name="UK_ProjetoEmpregado">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:06:18 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DEC0111-9FB5-5F77-B854-AB8791EA52ED"/>
+<colUsage columnID="3FEA7779-7205-38EF-35DD-F620BF0E0DB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D20E2C5A-04B0-D3C3-5F09-828B52845BB6" name="FK_EmpregadoProjeto_Projeto">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<generatorID>BB8B9D44-E57F-9527-B8FE-026434F7AFBA</generatorID>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DEC0111-9FB5-5F77-B854-AB8791EA52ED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4A763516-0FDE-0A78-B1D2-6B8EA13E5834" name="FK_EmpregadoProjeto_Empregado">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<generatorID>BB8B9D44-E57F-9527-B8FE-026434F7AFBA</generatorID>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3FEA7779-7205-38EF-35DD-F620BF0E0DB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

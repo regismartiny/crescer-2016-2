@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="02133740-65B2-01F5-6A73-801CEE62F878" mainViewID="DA5D4798-3A10-27F2-C503-4034958F7C44">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:29:55 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

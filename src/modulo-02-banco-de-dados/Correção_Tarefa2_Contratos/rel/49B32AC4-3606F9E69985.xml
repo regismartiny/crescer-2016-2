@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="49B32AC4-9074-A494-3209-3606F9E69985" mainViewID="A20E28EE-3324-F610-E99B-C7818B7BE545">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:47:18 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>980FCE9E-D688-BDF0-C89A-C9FB2DCAED45</selectedRDBMSSite>
+</relationalModel>

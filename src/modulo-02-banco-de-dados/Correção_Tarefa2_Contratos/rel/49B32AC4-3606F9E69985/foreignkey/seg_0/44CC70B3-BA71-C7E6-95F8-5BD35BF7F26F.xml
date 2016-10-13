@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="44CC70B3-BA71-C7E6-95F8-5BD35BF7F26F" containerWithKeyObject="B7F12F1C-7D0B-A310-74F1-D258CE37804A" localFKIndex="B1F26E93-9A70-2A8C-CBB8-B04482280289" name="Projeto_Empregado_FK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:20:04 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A1F3CA17-A429-CAF4-8B3B-63F4A926145E</referredTableID>
+<keyObject>46956078-602D-A2FC-AC50-D22BE545B06D</keyObject>
+<referredKeyID>46956078-602D-A2FC-AC50-D22BE545B06D</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

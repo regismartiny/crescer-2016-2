@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Projeto_Empregado" directorySegmentName="seg_0" id="BB8B9D44-E57F-9527-B8FE-026434F7AFBA">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:53:20 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<engineerTo>
+<item key="49B32AC4-9074-A494-3209-3606F9E69985" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>B594AE20-9A83-D98C-F52E-4C757A4F2B2D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7BDCFDBA-2C6B-EF18-FEAC-7A54E38799C9</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

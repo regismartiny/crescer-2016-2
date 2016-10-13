@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A1F3CA17-A429-CAF4-8B3B-63F4A926145E" name="Empregado">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:00 UTC</createdTime>
+<generatorID>7BDCFDBA-2C6B-EF18-FEAC-7A54E38799C9</generatorID>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEmpregado" id="12A87620-D484-92BF-9FB9-0EE827ACE6EF">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="Nome" id="7F12A8E5-FB41-29FA-FB67-182C6AD2A554">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:22:59 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Situacao" id="34E03E99-320E-3E73-6CC4-E13D1A5D4702">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:28:00 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="46956078-602D-A2FC-AC50-D22BE545B06D" name="Empregado_PK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="12A87620-D484-92BF-9FB9-0EE827ACE6EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

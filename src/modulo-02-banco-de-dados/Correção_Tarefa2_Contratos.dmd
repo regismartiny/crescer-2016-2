@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Correção_Tarefa2_Contratos" id="BCB01FC9-8CB1-DAE3-0D0F-B78DA86A36E2" version="3.5">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:29:55 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>BCB01FC9-8CB1-DAE3-0D0F-B78DA86A36E2</designId>
+</OSDM_Design>

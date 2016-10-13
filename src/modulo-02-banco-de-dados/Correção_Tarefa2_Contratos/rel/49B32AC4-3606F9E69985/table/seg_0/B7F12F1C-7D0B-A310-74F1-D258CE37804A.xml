@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B7F12F1C-7D0B-A310-74F1-D258CE37804A" name="Projeto">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<generatorID>B594AE20-9A83-D98C-F52E-4C757A4F2B2D</generatorID>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDProjeto" id="4716A52B-671B-C5B4-28B1-505F3CA34A7A">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="Nome" id="EBE01E9F-879F-562A-4B9E-6A91C1770857">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:07:23 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDEmpregadoResponsavel" id="C9BC2FCA-E3E0-3D0F-A617-339A2D0BC0C0">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:20:04 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="44CC70B3-BA71-C7E6-95F8-5BD35BF7F26F" referredColumn="12A87620-D484-92BF-9FB9-0EE827ACE6EF"/>
+</associations>
+</Column>
+<Column name="DataInicio" id="FB27981F-9813-4DB2-EC0B-D47D9CEC1150">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:23:52 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataFimPrevisto" id="9CC23EF5-8D37-26D7-E50D-568F199E4DFE">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:24:04 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataFimReal" id="D4F90D11-7D90-7EA9-157C-6858D3F5BF88">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:24:26 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Situacao" id="A2F378F9-0774-2710-84CF-10282913E4CD">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:25:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorEsperado" id="8A6B72A3-2455-CD4D-0014-8736A1FB5C9C">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:37:54 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorRealizado" id="E81707F8-2129-E41F-49CD-9F7C4C6BA4E5">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:38:05 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorFaturado" id="A6050E78-9507-0AC2-86D2-940FE8D318B3">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:38:12 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B3C5C0B2-AA9E-E8C4-2D02-89EDB714F322" name="Projeto_PK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 16:54:01 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="4716A52B-671B-C5B4-28B1-505F3CA34A7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B1F26E93-9A70-2A8C-CBB8-B04482280289" name="Projeto_Empregado_FK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-13 17:20:04 UTC</createdTime>
+<ownerDesignName>Correção_Tarefa2_Contratos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C9BC2FCA-E3E0-3D0F-A617-339A2D0BC0C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
