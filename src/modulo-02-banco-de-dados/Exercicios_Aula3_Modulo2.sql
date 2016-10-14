@@ -24,10 +24,27 @@ group by uf
 
 
 -- ex 4
-select c.Nome
-from Cidade c
-inner join Cidade d
-	on c.UF = d.UF
+select Nome, UF
+from Cidade
+group by Nome, UF
+having count(1) > 1
+
+
+-- ex 5
+
+select max(IDAssociado)+1 As ProximoRegistro
+from Associado
+
+
+-- ex 6
+
+select NomeEmpregado, Salario,
+	case when Salario <= 1164 then '0%'
+		when Salario > 1164 and Salario <= 2326 then '15%'
+		else '27,5%'
+	End PercentualDescontoIR
+from Empregado
+
 
 
 
