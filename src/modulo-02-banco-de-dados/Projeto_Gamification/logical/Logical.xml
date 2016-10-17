@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="F1BAAA87-6089-C60A-C11F-8AB6017A5105" mainViewID="EED13B38-C6B3-E5C5-2B83-37B507AABC62">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:01:59 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

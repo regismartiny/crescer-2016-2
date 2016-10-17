@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BC4F0529-967E-4BBE-C169-93DAC509C6C1" name="Categoria">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>6A03725C-AB98-3899-8AAE-61076940D316</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCategoria" id="48EFF204-1E1B-DA76-08AB-965494CE0FF9">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>EE4DF075-86DD-E69C-02D8-D262707D2444</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="2BF9767C-E035-E948-B35C-0F6FB94BEDCA">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>036E74C6-AE93-BA8C-6424-CF2436785EA1</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pontuacao" id="3C6AC32C-4E88-EBB9-B707-F7ED20910602">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>C5497471-9ACB-153B-FA3D-3C0DD6CBAC14</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E74E82BF-3C0B-0F25-D9B0-4CCD076AEA3E" name="Categoria_PK">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>F4F2363A-A51D-8B9C-BBF8-B60EDD6D7B9A</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48EFF204-1E1B-DA76-08AB-965494CE0FF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

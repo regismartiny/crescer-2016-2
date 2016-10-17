@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="23DC30B5-79D3-F5D7-3771-F9A6615E8FE7" name="CategoriaColaboradorResponsavel">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>74F3C405-F659-6E1B-5376-E07CC5B2FFE1</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDColaboradorResponsavel" id="C19D9ACC-CF50-0DF5-DF19-AA65320E68A9">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>C8A7582C-FFED-3261-436D-205581703F68</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDCategoria" id="0506F31C-6B04-C882-BD8E-7DE5CC298E37">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>B9968ABC-CEAA-47E7-61DC-B898210CB2E2</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4B987CE8-1249-5154-11F4-DABD029D18D0" referredColumn="48EFF204-1E1B-DA76-08AB-965494CE0FF9"/>
+</associations>
+</Column>
+<Column name="IDColaborador" id="21BF35B9-9373-314B-DF5E-AE0F4B18375B">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>38576DB7-2B02-6AC5-DF97-C294F001BC5B</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="86FF88C4-AE96-10EB-D706-22C9A4BD1460" referredColumn="DE739081-FDCE-8720-7B98-8A1857B2891B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C32C3B18-EAFD-B47E-E5EA-25992AB427A0" name="CategoriaColaboradorResponsavel_PK">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>62A30FFA-8C47-9820-6B13-9EF9BFD5F817</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C19D9ACC-CF50-0DF5-DF19-AA65320E68A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="61E50304-CEE9-09E2-6F23-C1D362BFEE45" name="UK_CategoriaColaboradorResponsavel_Colaborador_IDColaborador_Categoria_IDCategoria">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>B0316802-5FF9-DB5E-01C3-2C0179F4862F</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21BF35B9-9373-314B-DF5E-AE0F4B18375B"/>
+<colUsage columnID="0506F31C-6B04-C882-BD8E-7DE5CC298E37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="69038523-E1DB-6ABB-494C-A9D1FE19900B" name="CategoriaColaboradorResponsavel_Categoria_FK">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>DFF56119-8E05-A832-3039-1F3A2E4ABD51</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0506F31C-6B04-C882-BD8E-7DE5CC298E37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="89A3905A-2633-12CB-AABB-ABB3535B2EA9" name="CategoriaColaboradorResponsavel_Colaborador_FK">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>5A003ECC-20EB-3FD3-8271-C656CEDA9BE3</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21BF35B9-9373-314B-DF5E-AE0F4B18375B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

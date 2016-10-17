@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Projeto_Gamification" id="E798EDD9-7345-E97A-2806-3575BD4DE0D3" version="3.5">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 17:07:42 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>E798EDD9-7345-E97A-2806-3575BD4DE0D3</designId>
+</OSDM_Design>

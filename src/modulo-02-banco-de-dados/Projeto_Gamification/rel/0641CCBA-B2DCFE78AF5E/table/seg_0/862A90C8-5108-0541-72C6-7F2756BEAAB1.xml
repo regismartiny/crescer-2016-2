@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="862A90C8-5108-0541-72C6-7F2756BEAAB1" name="Colaborador">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>638A6482-8D17-3662-06C7-3F13FC9DC170</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDColaborador" id="DE739081-FDCE-8720-7B98-8A1857B2891B">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>7C9CE372-390E-CE5F-210B-27E95B7C6E39</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="01F84221-476F-71AC-B415-8F30DA80BD73">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>56A49B84-C90B-2993-84A7-911C4C8AFCDC</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="05398F1F-C43D-BD08-E555-2AC38237C7F3">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>711549A3-73D3-BB59-7451-AED0A0C081FC</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Senha" id="E66E71E0-E258-C86B-3272-8B82D1D0F7B2">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>01FF3935-55FE-FC82-43EF-3F8E4E6A9B41</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PodeAprovarResgate" id="0ECE0CF8-9906-DFDF-101A-CB30A515ADA9">
+<createdBy>user</createdBy>
+<createdTime>2016-10-16 21:25:30 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>FALSE</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SaldoPontos" id="A9D1AE62-DDA3-0410-5973-F0A707CCE27F">
+<createdBy>user</createdBy>
+<createdTime>2016-10-17 00:46:49 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DFDBA309-0D48-83B7-BE2B-D73BC8C8779F" name="Colaborador_PK">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>C5E9B13D-7DCB-859B-DD4F-0576E4A9D13F</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DE739081-FDCE-8720-7B98-8A1857B2891B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7392CFF8-5E42-05D6-D772-F772BAAC1724" name="UK_Colaborador">
+<createdBy>user</createdBy>
+<createdTime>2016-10-16 21:22:07 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="05398F1F-C43D-BD08-E555-2AC38237C7F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

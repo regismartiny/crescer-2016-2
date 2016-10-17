@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C09CDD1F-2B3B-6655-797E-6C5120C9D8C3" name="Lancamento">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>99AC1DD6-65BF-6026-318B-ED5B4F57FCAD</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDLancamento" id="432EFE85-7C39-5920-46D5-CF27BF5D7606">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>64CD1AB5-63AE-3391-866A-C0306D07159C</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDCategoria" id="3022FC65-6946-520E-681B-12363197FC2A">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:11:24 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E2E212B5-7409-2D75-0F10-BAD6CAF7826D" referredColumn="48EFF204-1E1B-DA76-08AB-965494CE0FF9"/>
+</associations>
+</Column>
+<Column name="DataRegistro" id="6EBCF7FD-D91A-CBA0-0AD6-04E22184E555">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>D8B20804-572B-8E10-9C9E-2E4D48B8A73F</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DescricaoAcaoRealizada" id="A01A7451-6B3D-D29F-AF6E-61654793E8E6">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>AB34F639-6FD7-5908-53A3-45ED6A3CFFF2</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DescricaoPublica" id="F9DE1A7E-0DC9-4B6D-9110-77A6EB0B6DD6">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>4ACDE58A-C0A8-D81B-B947-79EA1E086E2E</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Status" id="6DD5772A-60AD-67C3-91B5-A94A12F154EB">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>1FE2CB59-18E0-EEE6-8E63-34CDA9111E1D</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<defaultValue>FALSE</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="33D2B80C-2336-80AF-0E01-C5AFEE76E972" name="Lancamento_PK">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 20:56:01 UTC</createdTime>
+<generatorID>4C15F471-B491-7561-68DC-3B053289A2DF</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="432EFE85-7C39-5920-46D5-CF27BF5D7606"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A90E4672-1D94-19A3-C878-7107E6A08624" name="Lancamento_Categoria_FK">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:11:24 UTC</createdTime>
+<generatorID>F4F2363A-A51D-8B9C-BBF8-B60EDD6D7B9A</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3022FC65-6946-520E-681B-12363197FC2A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D20D0FB3-767F-FEFD-C7EF-597307B08CF8" name="ProdutoResgate">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:03:55 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDProdutoResgate" id="48D30A98-C967-75C3-DAB8-930CD2B88F9E">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:06:00 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDProduto" id="93911B7A-1C55-921E-9D42-F98A98637391">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:03:55 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62BF1CF2-032E-7A84-6F25-78740FBCB93A" referredColumn="6583F844-502C-ADF3-E5C7-ABB8F511C9EA"/>
+</associations>
+</Column>
+<Column name="IDResgate" id="E4110E74-1C5B-37F5-ECA6-43807FEB2077">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:03:55 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1E519EAD-A5E8-2991-C2F4-65B0C9D6F54C" referredColumn="492DF4E1-3017-BA1B-8440-AE2014A9F783"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D8CED154-C434-C7B8-52EF-1B74C19BD65A" name="ProdutoResgate_PK">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:03:55 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48D30A98-C967-75C3-DAB8-930CD2B88F9E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0F58A186-21B6-DD78-8791-610E198A7031" name="UK_ProdutoResgate">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:06:00 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="93911B7A-1C55-921E-9D42-F98A98637391"/>
+<colUsage columnID="E4110E74-1C5B-37F5-ECA6-43807FEB2077"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E534E002-A6C7-7925-BE8F-2BFC5D6A6777" name="FK_ProdutoResgate_Produto">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:03:55 UTC</createdTime>
+<generatorID>DD7FF6C1-DC0B-0E00-5EF7-9D6311E5E295</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="93911B7A-1C55-921E-9D42-F98A98637391"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F5BE6EDE-906B-6D59-99AC-D599CCE86578" name="FK_ProdutoResgate_Resgate">
+<createdBy>user</createdBy>
+<createdTime>2016-10-15 21:03:55 UTC</createdTime>
+<generatorID>DD7FF6C1-DC0B-0E00-5EF7-9D6311E5E295</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E4110E74-1C5B-37F5-ECA6-43807FEB2077"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
