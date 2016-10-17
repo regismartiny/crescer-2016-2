@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="89C0CC19-C235-8B35-FD7C-B447FF48CAAF" containerWithKeyObject="1FA0E57C-6CA6-5B17-54A0-01D3645D0E57" localFKIndex="00D45E97-E50A-EBC6-45CF-F3B988F36E54" name="CategoriaColaboradorSolicitante_Colaborador_FK">
-<createdBy>user</createdBy>
-<createdTime>2016-10-15 20:56:01 UTC</createdTime>
-<generatorID>AF41CD5A-0E9F-7A99-0F8F-BBC3155D9F77</generatorID>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2944A064-F11D-E574-DF24-3FC3D1093E3B" containerWithKeyObject="C09CDD1F-2B3B-6655-797E-6C5120C9D8C3" localFKIndex="E0E3E586-E4DA-3571-C9C8-D8BC0A109932" name="Lancamento_Colaborador_FK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-17 16:12:57 UTC</createdTime>
+<generatorID>C5E9B13D-7DCB-859B-DD4F-0576E4A9D13F</generatorID>
 <ownerDesignName>Projeto_Gamification</ownerDesignName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>862A90C8-5108-0541-72C6-7F2756BEAAB1</referredTableID>
