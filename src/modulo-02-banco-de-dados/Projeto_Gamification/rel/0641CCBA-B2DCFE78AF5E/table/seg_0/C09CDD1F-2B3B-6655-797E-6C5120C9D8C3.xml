@@ -65,6 +65,7 @@
 <createdBy>regis.martiny</createdBy>
 <createdTime>2016-10-17 16:15:21 UTC</createdTime>
 <ownerDesignName>Projeto_Gamification</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
