@@ -72,6 +72,16 @@
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="PontuacaoTotal" id="2E30764B-DF04-67DB-076D-A708DDE60111">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-17 19:07:03 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="76F9921E-8DBC-B9E2-4B09-E33499CF0DC3" name="Resgate_PK">
