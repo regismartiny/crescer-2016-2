@@ -19,6 +19,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="IDSolicitante" id="A2D843B5-70DC-447F-8296-A262CEA3DD1C">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-17 17:44:02 UTC</createdTime>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="66D29D5F-FAC6-5E9A-DEFC-62A4D142C7BE" referredColumn="DE739081-FDCE-8720-7B98-8A1857B2891B"/>
+</associations>
+</Column>
 <Column name="TextoEquivalente" id="D3AC54BC-40B9-5C87-F98E-4548DF265252">
 <createdBy>user</createdBy>
 <createdTime>2016-10-15 20:56:01 UTC</createdTime>
@@ -70,6 +84,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="492DF4E1-3017-BA1B-8440-AE2014A9F783"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EB12537D-36E0-C65C-0862-45A1AAA35BF5" name="Resgate_Colaborador_FK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-17 17:44:01 UTC</createdTime>
+<generatorID>C5E9B13D-7DCB-859B-DD4F-0576E4A9D13F</generatorID>
+<ownerDesignName>Projeto_Gamification</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A2D843B5-70DC-447F-8296-A262CEA3DD1C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
