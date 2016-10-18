@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="57BECC1E-5E2A-2057-7445-EA0DBC681170" name="Votos">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:58:48 UTC</createdTime>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDVoto" id="BC02FB8F-928F-DA92-A935-485ABDEC04D8">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:59:03 UTC</createdTime>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDCandidato" id="E08C54EB-5875-3DB6-B3B6-8FF4E1877BB2">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:59:33 UTC</createdTime>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F2B30DB-0AEA-8887-DC4A-63B372F907D3" referredColumn="712A0A3F-CC5F-C5D4-0B97-6FD92CEA5B17"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A6AEE554-2063-606B-A9B8-10B50BD1D336" name="Votos_PK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:59:06 UTC</createdTime>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC02FB8F-928F-DA92-A935-485ABDEC04D8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B906BB7B-B185-CF80-9B05-426300227005" name="Votos_Candidato_FK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 19:01:01 UTC</createdTime>
+<generatorID>B80A66A2-4B7C-90BD-A95E-3456BD5BF5B9</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E08C54EB-5875-3DB6-B3B6-8FF4E1877BB2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

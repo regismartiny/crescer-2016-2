@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Exercicio_UrnaEletronica" id="318EFBC0-EBF3-B6E9-50AB-90B79C9D24AB" version="3.5">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:43:55 UTC</createdTime>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>318EFBC0-EBF3-B6E9-50AB-90B79C9D24AB</designId>
+</OSDM_Design>

@@ -1,0 +1,179 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B7FEB59B-5FD8-F32C-D499-4F38BD46F846" name="Candidato">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>2C349730-C36C-4286-A909-9EADB47F2110</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCandidato" id="712A0A3F-CC5F-C5D4-0B97-6FD92CEA5B17">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>03EAEBDF-D4D3-AA10-5427-20C54B0BAE93</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomeCompleto" id="73BEB700-9FDB-D32A-2E28-4D7531A22580">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>1BA7D27F-45C3-E456-15FD-B174B7C910C9</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomePopular" id="5645C42B-173D-E082-CA51-94F1F5986794">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>F02A4519-F96A-1EA2-7A22-53A3E5EF8CC7</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataNascimento" id="F2F6F183-76A7-9E0E-D23C-0400B7EAB942">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>39C7CA77-E8AE-BACF-D0E2-4BB7F9E01D55</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cidade" id="43FB7D5B-0CD4-3CC4-0796-F4003108AC94">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>9A7A606E-7100-42C0-B904-A7167E5EA6C1</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado" id="6D22BE01-430A-BB40-9CC2-10724949AC9F">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>C4E14F3B-DBED-1FD6-14D7-30257FA43F88</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RegistroTRE" id="CEC1C27F-1C47-8599-64E3-1BAA312F6CE1">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>29318825-D5E5-0FBD-A174-4F31A4022DB7</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Partido" id="6BBAE474-FB1D-C91B-83B6-14DF4983C451">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>799E38EB-355E-1054-759F-AFE2AE2B4213</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Foto" id="9CBF3AE7-B296-1FA6-04EE-029606A97B0F">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>F1C3EF05-E77A-520E-6DC7-9D3775129404</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Numero" id="51D460E7-CC4C-01FE-279D-8D3B3562F49F">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>277EDD84-1327-F9E6-BAE6-A9BDAF1E4E39</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDCargo" id="0D8AFEE9-9556-3232-A55F-11FD8E45B346">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 19:03:03 UTC</createdTime>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70A75C22-C20A-47B1-D623-11D805177FD5" referredColumn="C57EDE47-632B-D779-7E0C-04AF5D5C5961"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2CB9A52E-4377-CDD9-AC59-414ED8D9BD4E" name="Candidato_PK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 18:55:27 UTC</createdTime>
+<generatorID>B80A66A2-4B7C-90BD-A95E-3456BD5BF5B9</generatorID>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="712A0A3F-CC5F-C5D4-0B97-6FD92CEA5B17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1CA8D6C8-783D-821A-B360-30D578D414BA" name="UK_Candidato">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 19:04:07 UTC</createdTime>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CEC1C27F-1C47-8599-64E3-1BAA312F6CE1"/>
+<colUsage columnID="51D460E7-CC4C-01FE-279D-8D3B3562F49F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CDC18112-80F2-D83B-A627-8974309B5E0F" name="Candidato_Cargo_FK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-10-18 19:03:03 UTC</createdTime>
+<ownerDesignName>Exercicio_UrnaEletronica</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0D8AFEE9-9556-3232-A55F-11FD8E45B346"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
