@@ -59,40 +59,63 @@ from Empregado
 
 -- ex 7
 
-select B.NomeEmpregado, 
-	A.NomeEmpregado as NomeGerente, 
-	C.NomeDepartamento as Departamento_Empregado, 
-	D.NomeDepartamento as Departamento_Gerente
-from Empregado A
-inner join Empregado B
-	on A.IDEmpregado = B.IDGerente
-inner join Departamento C
-	on A.IDDepartamento = C.IDDepartamento
-inner join Departamento D
-	on C.IDDepartamento = D.IDDepartamento
+select emp.NomeEmpregado, 
+	ger.NomeEmpregado as Nome_Gerente, 
+	de.NomeDepartamento as Departamento_Empregado, 
+	dg.NomeDepartamento as Departamento_Gerente
+from Empregado emp
+left join Empregado ger
+	on emp.IDGerente = ger.IDEmpregado
+left join Departamento de
+	on de.IDDepartamento = emp.IDDepartamento
+left join Departamento dg
+	on dg.IDDepartamento = ger.IDDepartamento
 
 
 -- ex 8
-drop Empregado_copia;
-
 select *
 into Empregado_copia
-from Empregado;
+from Empregado
 
-update Empregado_copia 
-set Salario=Salario*1.145
-where IDDepartamento IN (select IDDepartamento from Departamento where Localizacao = 'SAO PAULO');
+begin transaction
+
+update Empregado_copia
+set Salario = Salario * 1.145
+where exists (select 1 
+			  from Departamento d
+			  where d.IDDepartamento = Empregado_copia.IDDepartamento
+			  and d.Localizacao = 'sao paulo');
+rollback
 
 
 -- ex 9
 
-select (select sum(salario) from Empregado_copia) - sum(Salario) As Diferenca_Apos_Reajuste
-from Empregado
+select sum(e.Salario) as Antes_Reajuste, 
+		sum(ec.Salario) as Depois_Reajuste, 
+		sum(ec.Salario)-sum(e.Salario) as Diferenca
+from Empregado_copia ec
+inner join Empregado e on ec.IDEmpregado = e.IDEmpregado;
+
 
 
 -- ex 10
 
-select IDDepartamento, Salario
-from Empregado
-where Salario = (select max(Salario) from Empregado);
+Select IDDepartamento, NomeDepartamento
+From   Departamento dep
+Where  exists (select 1
+               from   Empregado emp
+			   Where  emp.IDDepartamento = dep.IDDepartamento
+			   and    emp.Salario        = (select max(Salario)
+			                                from   empregado
+											where  IDDepartamento is not null) -- prevendo que o departamento seja informado
+			   );
+
+--ou     //solução menos performática, devido ao uso do distinct
+
+Select distinct dep.IDDepartamento, dep.NomeDepartamento
+From   Departamento dep
+inner join Empregado emp on emp.IDDepartamento = dep.IDDepartamento
+Where  emp.Salario = (select max(Salario)
+			          from   empregado
+					  where  IDDepartamento is not null); -- prevendo que o departamento seja informado
 
