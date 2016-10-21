@@ -1,0 +1,20 @@
+p:first-child{
+	color: pink;
+}
+
+.box > p:last-child{
+	color: blue;
+}
+/* ou (especificacao do cliente duvidosa)
+p:last-child{
+	color: blue;
+}
+*/
+
+p:nth-of-type(4) {
+	background-color: yellow;
+}
+
+p + h2 + p{
+	background-color: red;
+}
