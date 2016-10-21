@@ -1,0 +1,56 @@
+body {
+  font-family: arial;
+  background-position: top;
+  background-color: white;
+  background-image: url(../img/back.jpg);
+  background-repeat: no-repeat;
+}
+
+#menu {
+  text-align: center;
+  margin: 100px auto;
+  width: 500px;
+  border: solid;
+  border-radius: 15px;
+  border-color: white;
+  border-width: 1px;
+  font-weight: bold;
+  background-color: rgba(150,150,150,.6);
+  padding: 15px 0 15px 0;
+}
+
+#menu li {
+  display: inline;
+  margin: 0px 15px;
+}
+
+#menu li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+#conteudo {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#titulo {
+  background-color:#333;
+  color: #DDD;
+  padding: 1px 10px 1px 10px;
+}
+
+#texto {
+  background-color:#DDD;
+  padding: 20px;
+  overflow: auto;
+}
+
+#imagem {
+  width: 50%;
+}
+
+#descricao {
+  width:50%;
+  float: right;
+}
