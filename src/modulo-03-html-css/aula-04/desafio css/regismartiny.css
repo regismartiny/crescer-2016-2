@@ -1,0 +1,54 @@
+.autenticacao {
+  text-align: right;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+header h1 span:last-child{
+  display: none;
+}
+
+.historia-pokemon {
+  display: none;
+}
+
+.personagens h2:first-child {
+  display: none;
+}
+
+.treinadores-pokemon {
+  display: none;
+}
+
+body {
+  text-align: center;
+  background: yellow;
+}
+
+
+
+
+
+.personagens {
+  float: left;
+  overflow: scroll;
+  height: 300px;
+  margin-left: 50px;
+  border: solid;
+}
+  .personagens li {
+
+  }
+
+.digiescolhidos {
+  float: right;
+  overflow: scroll;
+  height: 300px;
+  margin-left: 100px;
+  border: solid;
+}
+  .digiescolhidos li {
+
+  }
