@@ -56,7 +56,7 @@ function iguais(x, y)
       if (x[p]) {
           switch(typeof(x[p])) {
               case 'object':
-                  if (!x[p].equals(y[p])) { return false; } break;
+                  if (!iguais(x[p],y[p])) { return false; } break;
               case 'function':
                   if (typeof(y[p])=='undefined' ||
                       (p != 'equals' && x[p].toString() != y[p].toString()))
@@ -82,11 +82,13 @@ function ctrlC(obj) {
 }
 
 function mesclar(objA, objB) {
-  for(param in objA) {
-    if (typeof objB[param] != 'undefined') {
+  for(param in objB) {
+    if (typeof objA[param] != 'undefined') {
       if (objA[param] !== objB[param]) {
         objA[param] = objB[param];
       }
+    }else {
+      objA[param] = objB[param];
     }
   }
 }
