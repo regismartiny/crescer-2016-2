@@ -28,14 +28,14 @@ var ehPar = function (numero) {
 
 function find(arr, fFiltro) {
   if (typeof fFiltro == 'function') {
-    var newArr = [];
+    var nArr = [];
     for(var i=0, len = arr.length; i < len; i++) {
       var element = arr[i];
       if (fFiltro(element)) {
-        newArr.push(element);
+        nArr.push(element);
       }
     }
-    console.log(newArr);
+    console.log(nArr);
   }
 }
 
@@ -46,15 +46,47 @@ function subtrair(numero) {
   numeroAnterior = numero;
 }
 
-function iguais(paramA, paramB) {
-  if (paramA == paramB) {
-    return true;
+function iguais(x, y)
+{
+  var p;
+  for(p in x) {
+      if(typeof(y[p])=='undefined') {return false;}
   }
-  else if (typeof paramA == 'object' && typeof paramB == 'object') {
-    for (var property in paramA) {
-      if (paramA.hasOwnProperty(property)) {
-          console.log(property, paramA[property]);
+  for(p in x) {
+      if (x[p]) {
+          switch(typeof(x[p])) {
+              case 'object':
+                  if (!x[p].equals(y[p])) { return false; } break;
+              case 'function':
+                  if (typeof(y[p])=='undefined' ||
+                      (p != 'equals' && x[p].toString() != y[p].toString()))
+                      return false;
+                  break;
+              default:
+                  if (x[p] != y[p]) { return false; }
+          }
+      } else {
+          if (y[p])
+              return false;
       }
+  }
+  for(p in y) {
+      if(typeof(x[p])=='undefined') {return false;}
+  }
+  return true;
 }
+
+function ctrlC(obj) {
+  var nObj = JSON.parse(JSON.stringify(obj));
+  return nObj;
+}
+
+function mesclar(objA, objB) {
+  for(param in objA) {
+    if (typeof objB[param] != 'undefined') {
+      if (objA[param] !== objB[param]) {
+        objA[param] = objB[param];
+      }
+    }
   }
 }
