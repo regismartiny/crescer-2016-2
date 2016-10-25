@@ -13,11 +13,14 @@ function diglettDig() {
     if (i%3 === 0 && i%5 === 0) {
       console.log('Diglett dig, trio trio trio');
     }
-    if (i%3 === 0){
-      console.log(i, 'Diglett dig');
+    else if (i%3 === 0){
+      console.log('Diglett dig');
     }
     else if (i%5 === 0) {
       console.log('trio trio trio');
+    }
+    else {
+      console.log(i);
     }
   }
 }
@@ -26,28 +29,42 @@ var ehPar = function (numero) {
   return numero % 2 === 0;
 }
 
-function find(arr, fFiltro) {
-  if (typeof fFiltro == 'function') {
+function find(arr, fnFiltro) {
+  if (typeof fnFiltro === 'function') {
     var nArr = [];
     for(var i=0, len = arr.length; i < len; i++) {
-      var element = arr[i];
-      if (fFiltro(element)) {
-        nArr.push(element);
+      var elem = arr[i];
+      if (fnFiltro(elem)) {
+        nArr.push(elem);
       }
     }
-    console.log(nArr);
+    return nArr;
   }
 }
 
+function subtrair(num1) {
+  return function(num2) {
+    return num1 - num2;
+  }
+}
+/*
+//chamando subtrair(a), depois subtrair(b)
 function subtrair(numero) {
-  if (typeof numeroAnterior != 'undefined') {
+  if (typeof numeroAnterior !== 'undefined') {
     console.log(numeroAnterior-numero);
   }
   numeroAnterior = numero;
+}*/
+
+function qtdPropriedades(obj) {
+  return Object.keys(obj).length;
 }
 
 function iguais(x, y)
 {
+  if (typeof x === 'object' && typeof y === 'object' && qtdPropriedades(x) != qtdPropriedades(y)) {
+    return false;
+  }
   var p;
   for(p in x) {
       if(typeof(y[p])=='undefined') {return false;}
@@ -58,8 +75,7 @@ function iguais(x, y)
               case 'object':
                   if (!iguais(x[p],y[p])) { return false; } break;
               case 'function':
-                  if (typeof(y[p])=='undefined' ||
-                      (p != 'equals' && x[p].toString() != y[p].toString()))
+                  if (typeof(y[p])=='undefined' || (x[p].toString() != y[p].toString()))
                       return false;
                   break;
               default:
@@ -83,7 +99,7 @@ function ctrlC(obj) {
 
 function mesclar(objA, objB) {
   for(param in objB) {
-    if (typeof objA[param] != 'undefined') {
+    if (typeof objA[param] !== 'undefined') {
       if (objA[param] !== objB[param]) {
         objA[param] = objB[param];
       }
