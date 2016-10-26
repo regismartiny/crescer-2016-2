@@ -81,6 +81,7 @@ class Herois {
         precoComicMaisCaro = 0,
         heroi;
     for(heroi of this._herois) {
+      var item;
       for (item of heroi.comics.items) {
         var preco,
             totalPrecos = 0;
