@@ -21,6 +21,7 @@ header h1 span:last-child{
 /*/////////////////////////////////////////////////////*/
 
 body {
+  font-family: arial;
   font-weight: bold;
   background: blue;
   background-image: url(img/back.jpg);
@@ -64,22 +65,33 @@ body > nav {
 
 .historia-digimon {
   color: white;
-  margin-top: 300px;
   background-color: rgba(244, 152, 66, 0.8);
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 300px;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .content {
   background-color: rgba(244, 152, 66, 0.8);
   overflow: auto;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 15px;
 }
 
   .personagens {
     float: left;
     height: 450px;
     width: 500px;
-    margin-left: 50px;
     border: solid;
+    border-radius: 15px;
   }
+    .personagens h2 {
+      margin-left: 20px;
+    }
     .personagens li {
       cursor: pointer;
       list-style-type: none;
@@ -104,9 +116,12 @@ body > nav {
     overflow-y: scroll;
     height: 450px;
     width: 650px;
-    margin-left: 100px;
     border: solid;
+    border-radius: 15px;
   }
+    .digiescolhidos h3 {
+      padding-left: 20px;
+    }
     .digiescolhidos li {
       cursor: pointer;
       list-style-type: none;
@@ -119,7 +134,7 @@ body > nav {
         position: relative;
     }
     .digiescolhidos li:nth-child(1):hover:after {
-      content: url(http://vignette3.wikia.nocookie.net/digimon/images/2/24/Taichi_%22Tai%22_Kamiya_t.gif/revision/latest?cb=20121019143002); /* no need for qoutes */
+      content: url(img/taichi.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 270px; /* change this value to one that suits you */
@@ -129,4 +144,5 @@ body > nav {
   footer {
     text-align: center;
     clear: both;
+    padding-top: 50px;
   }
