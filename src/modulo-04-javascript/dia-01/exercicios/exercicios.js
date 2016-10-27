@@ -97,14 +97,12 @@ function ctrlC(obj) {
   return nObj;
 }
 
-function mesclar(objA, objB) {
-  for(param in objB) {
-    if (typeof objA[param] !== 'undefined') {
-      if (objA[param] !== objB[param]) {
-        objA[param] = objB[param];
-      }
+function mesclar(objA, objB, recursiva = false) {
+  for(prop in objB) {
+    if (recursiva && typeof objB[prop] === 'object') {
+      mesclar(objA[prop], objB[prop], recursiva);
     }else {
-      objA[param] = objB[param];
+      objA[prop] = objB[prop];
     }
   }
 }

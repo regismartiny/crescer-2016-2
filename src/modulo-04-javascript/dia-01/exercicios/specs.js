@@ -144,15 +144,15 @@ describe('mesclar(x,y)', function() {
   it('mesclar({a:1}, {b:2})', function () {
     var a = {a:1};
     mesclar(a, {b:2});
-    expect(JSON.stringify(a)).toEqual('{"a":1,"b":2}');
+    expect(a).toEqual({a:1,b:2});
   });
 
   it('mesclar({a:1}, {b:2,c:{d:3}})', function () {
     var a = {a:1};
     mesclar(a, {b:2,c:{d:3}});
-    expect(JSON.stringify(a)).toEqual('{"a":1,"b":2,"c":{"d":3}}');
+    expect(a).toEqual({a:1,b:2,c:{d:3}});
   });
-  /*
+
   it('mesclar(x,y) iterando em subpropriedades', function () {
     var objeto1 = {
       abacaxi: 0,
@@ -169,7 +169,7 @@ describe('mesclar(x,y)', function() {
       cereja: 97,
       damasco: 100
     };
-    mesclar(objeto1, objeto2);
-    expect(JSON.stringify(objetoMesclado)).toEqual(JSON.stringify(objeto1));
-  });*/
+    mesclar(objeto1, objeto2, true);
+    expect(objetoMesclado).toEqual(objeto1);
+  });
 });
