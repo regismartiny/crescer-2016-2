@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NivelDeHabilidade.cs" />
     <Compile Include="Equipamentos\PneusDeCouroDeDragao.cs" />
     <Compile Include="Corredor.cs" />
     <Compile Include="Equipamentos\IEquipamentos.cs" />

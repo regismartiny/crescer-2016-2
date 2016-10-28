@@ -24,10 +24,9 @@ namespace ExercicioMarioKart
             get
             {
                 int velocidadePadrao = 3;
-                int bonusEquipamentos = this.getBonusEquipamentos();
-                int bonusHabilidade = this.getBonusHabilidade();
-                int qtdEquipamentos = this.Equipamentos.Count;
-                return velocidadePadrao + bonusEquipamentos + bonusHabilidade + qtdEquipamentos;
+                int bonusEquipamentos = this.GetBonusEquipamentos();
+                int bonusHabilidade = this.GetBonusHabilidade();
+                return velocidadePadrao + bonusEquipamentos + bonusHabilidade;
             }
             private set
             {
@@ -35,7 +34,7 @@ namespace ExercicioMarioKart
             }
         }
 
-        private int getBonusEquipamentos()
+        private int GetBonusEquipamentos()
         {
             int bonus = 0;
             foreach(IEquipamentos equipamento in this.Equipamentos)
@@ -45,15 +44,18 @@ namespace ExercicioMarioKart
             return bonus;
         }
 
-        private int getBonusHabilidade()
+        private int GetBonusHabilidade()
         {
             int bonus = 0;
-            if (this.Corredor.NivelHabilidade == 1)
+            if (this.Corredor.NivelHabilidade == NivelDeHabilidade.NOOB)
                 bonus = 3;
-            else if (this.Corredor.NivelHabilidade == 2)
+            else if (this.Corredor.NivelHabilidade == NivelDeHabilidade.MEDIANO)
                 bonus = 5;
-            else if (this.Corredor.NivelHabilidade == 3)
-                bonus = 6;
+            else if (this.Corredor.NivelHabilidade == NivelDeHabilidade.PROFISSIONAL)
+            {
+                int qtdEquipamentos = this.Equipamentos.Count;
+                bonus = 6 + qtdEquipamentos;
+            }
             return bonus;
         }
     }
