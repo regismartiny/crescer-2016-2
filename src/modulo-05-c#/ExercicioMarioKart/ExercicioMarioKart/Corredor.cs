@@ -8,12 +8,12 @@ namespace ExercicioMarioKart
 {
     public class Corredor
     {
-        public Corredor(String nome, int nivelHabilidade = 1)
+        public Corredor(String nome, NivelDeHabilidade nivelDeHabilidade)
         {
             this.Nome = nome;
-            this.NivelHabilidade = nivelHabilidade;
+            this.NivelHabilidade = nivelDeHabilidade;
         }
         public string Nome { get; private set; }
-        public int NivelHabilidade { get; set; } //1 = Noob, 2 = Mediano, 3 = Profissional
+        public NivelDeHabilidade NivelHabilidade { get; set; }
     }
 }
