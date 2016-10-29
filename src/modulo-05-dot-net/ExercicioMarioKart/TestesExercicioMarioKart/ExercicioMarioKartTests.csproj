@@ -60,6 +60,7 @@
     <Compile Include="SonnarTest.cs" />
     <Compile Include="DinamTest.cs" />
     <Compile Include="UltraPackTest.cs" />
+    <Compile Include="SkyFusionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExercicioMarioKart\ExercicioMarioKart.csproj">

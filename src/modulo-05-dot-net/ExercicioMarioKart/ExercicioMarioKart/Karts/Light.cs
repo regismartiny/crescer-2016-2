@@ -12,20 +12,7 @@ namespace ExercicioMarioKart
         {
         }
 
-        public override int Velocidade
-        {
-            get
-            {
-                int velocidadePadrao = 3;
-                int bonusEquipamentos = this.GetBonusEquipamentos();
-                int bonusHabilidade = this.GetBonusHabilidade();
-                int bonusExtra = CalcularBonusExtra();
-                
-                return velocidadePadrao + bonusEquipamentos + bonusHabilidade + bonusExtra;
-            }
-        }
-
-        private int CalcularBonusExtra()
+        protected override int GetVelocidadeExtra()
         {
             var habilidade = this.Corredor.NivelHabilidade;
             if (habilidade.Equals(NivelDeHabilidade.NOOB))

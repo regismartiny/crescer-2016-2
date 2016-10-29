@@ -12,18 +12,18 @@ namespace ExercicioMarioKart
         {
         }
 
-        protected override int CalcularBonusExtra()
+        protected override int GetVelocidadeExtra()
         {
-            int bonus = 0;
+            int extra = 0;
             if (this.Corredor.NivelHabilidade == NivelDeHabilidade.NOOB)
-                bonus = 3;
+                extra = 3;
             else if (this.Corredor.NivelHabilidade == NivelDeHabilidade.MEDIANO)
-                bonus = 5;
+                extra = 5;
             else if (this.Corredor.NivelHabilidade == NivelDeHabilidade.PROFISSIONAL)
             {
-                bonus = 6;
+                extra = 6;
             }
-            return bonus;
+            return extra;
         }
     }
 

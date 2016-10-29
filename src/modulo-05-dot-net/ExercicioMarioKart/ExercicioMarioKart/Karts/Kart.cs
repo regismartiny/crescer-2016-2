@@ -23,16 +23,22 @@ namespace ExercicioMarioKart
         {
             get
             {
-                int velocidadePadrao = 3;
-                int bonusEquipamentos = this.GetBonusEquipamentos();
-                int bonusHabilidade = this.GetBonusHabilidade();
-                int bonusExtra = this.CalcularBonusExtra();
-                return velocidadePadrao + bonusEquipamentos + bonusHabilidade + bonusExtra;
+                return CalcularVelocidade();
+                
             }
             private set
             {
                 this.Velocidade = value;
             }
+        }
+
+        protected int CalcularVelocidade()
+        {
+            int velocidadePadrao = 3;
+            int bonusEquipamentos = this.GetBonusEquipamentos();
+            int bonusHabilidade = this.GetBonusHabilidade();
+            int velocidadeExtra = this.GetVelocidadeExtra();
+            return velocidadePadrao + bonusEquipamentos + bonusHabilidade + velocidadeExtra;
         }
 
         protected int GetBonusEquipamentos()
@@ -60,7 +66,7 @@ namespace ExercicioMarioKart
             return bonus;
         }
 
-        protected virtual int CalcularBonusExtra()
+        protected virtual int GetVelocidadeExtra()
         {
             return 0;
         }
