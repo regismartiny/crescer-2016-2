@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart
 {
-    class MotorABaseDeLava : IEquipamentos
+    public class MotorABaseDeLava : IEquipamentos
     {
         public int Bonus
         {
