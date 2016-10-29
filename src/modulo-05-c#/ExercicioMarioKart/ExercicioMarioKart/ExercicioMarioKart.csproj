@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dinam.cs" />
+    <Compile Include="Light.cs" />
     <Compile Include="NivelDeHabilidade.cs" />
     <Compile Include="Equipamentos\PneusDeCouroDeDragao.cs" />
     <Compile Include="Corredor.cs" />
@@ -56,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Compile Include="Sonnar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
