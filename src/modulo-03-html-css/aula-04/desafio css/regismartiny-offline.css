@@ -32,7 +32,7 @@ body {
   font-family: arial;
   font-weight: bold;
   background: blue;
-  background-image: url(http://i.imgur.com/OBi4HuL.jpg);
+  background-image: url(img/back.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -126,98 +126,98 @@ body > nav {
       list-style-type: circle;
     }
     .personagens li:nth-child(1):hover:after {
-      content: url(http://i.imgur.com/2otB4en.gif); /* no need for qoutes */
+      content: url(img/agumon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(2):hover:after {
-      content: url(http://imgur.com/vX9ypjd.gif); /* no need for qoutes */
+      content: url(img/gabumon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(3):hover:after {
-      content: url(http://imgur.com/iTXytKQ.gif); /* no need for qoutes */
+      content: url(img/byiomon_tentomon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(4):hover:after {
-      content: url(http://imgur.com/qCFskmL.gif); /* no need for qoutes */
+      content: url(img/gomamon_patamon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 210px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(5):hover:after {
-      content: url(http://imgur.com/KGAFiYb.gif); /* no need for qoutes */
+      content: url(img/gatomon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(6):hover:after {
-      content: url(http://imgur.com/KCW8dg3.gif); /* no need for qoutes */
+      content: url(img/veemon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 210px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(7):hover:after {
-      content: url(http://imgur.com/NSrMvdD.gif); /* no need for qoutes */
+      content: url(img/hawkmon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(8):hover:after {
-      content: url(http://imgur.com/1y3gDDO.gif); /* no need for qoutes */
+      content: url(img/armadillomon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(9):hover:after {
-      content: url(http://imgur.com/UyX6q6m.gif); /* no need for qoutes */
+      content: url(img/wormmon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 210px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(10):hover:after {
-      content: url(http://imgur.com/SZcOEXN.gif); /* no need for qoutes */
+      content: url(img/palmon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(11):hover:after {
-      content: url(http://imgur.com/7uFJjXE.gif); /* no need for qoutes */
+      content: url(img/renamon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(12):hover:after {
-      content: url(http://imgur.com/ABccUNd.gif); /* no need for qoutes */
+      content: url(img/guilmon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(13):hover:after {
-      content: url(http://imgur.com/Te4cHo1.gif); /* no need for qoutes */
+      content: url(img/lalamon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
       top: 100px; /* change this value to one that suits you */
     }
     .personagens li:nth-child(14):hover:after {
-      content: url(http://imgur.com/VDUlgkp.gif); /* no need for qoutes */
+      content: url(img/falcomon.gif); /* no need for qoutes */
       display: inline;
       position: absolute;
       left: 280px; /* change this value to one that suits you */
@@ -249,98 +249,98 @@ body > nav {
     }
     .digiescolhidos li:nth-child(1):hover:after {
       position: absolute;
-      content: url(http://imgur.com/ZdnRtaz.gif); /* no need for qoutes */
+      content: url(img/taichi.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(2):hover:after {
       position: absolute;
-      content: url(http://imgur.com/o1FSw2S.gif); /* no need for qoutes */
+      content: url(img/matt.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(3):hover:after {
       position: absolute;
-      content: url(http://imgur.com/41KmdqD.gif); /* no need for qoutes */
+      content: url(img/sora.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(4):hover:after {
       position: absolute;
-      content: url(http://imgur.com/A51nA2x.gif); /* no need for qoutes */
+      content: url(img/joe.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(5):hover:after {
       position: absolute;
-      content: url(http://imgur.com/YYwejNJ.gif); /* no need for qoutes */
+      content: url(img/kari.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(6):hover:after {
       position: absolute;
-      content: url(http://imgur.com/5ibavcH.gif); /* no need for qoutes */
+      content: url(img/davis.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(7):hover:after {
       position: absolute;
-      content: url(http://imgur.com/ofKqTjY.gif); /* no need for qoutes */
+      content: url(img/yolei.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(8):hover:after {
       position: absolute;
-      content: url(http://imgur.com/2YFqK23.gif); /* no need for qoutes */
+      content: url(img/cody.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(9):hover:after {
       position: absolute;
-      content: url(http://imgur.com/uRU3E40.gif); /* no need for qoutes */
+      content: url(img/ken.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(10):hover:after {
       position: absolute;
-      content: url(http://imgur.com/RtbgHVR.gif); /* no need for qoutes */
+      content: url(img/mimi.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(11):hover:after {
       position: absolute;
-      content: url(http://imgur.com/QTJl33L.gif); /* no need for qoutes */
+      content: url(img/rika.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(12):hover:after {
       position: absolute;
-      content: url(http://imgur.com/hJtBnkE.gif); /* no need for qoutes */
+      content: url(img/takato.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(13):hover:after {
       position: absolute;
-      content: url(http://imgur.com/Bxq8HOD.gif); /* no need for qoutes */
+      content: url(img/yoshi.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
 
     .digiescolhidos li:nth-child(14):hover:after {
       position: absolute;
-      content: url(http://imgur.com/1H5QgnA.gif); /* no need for qoutes */
+      content: url(img/keenan.gif); /* no need for qoutes */
       left: 370px;
       top: 110px;
     }
