@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart
 {
-    class Dinam : Kart
+    public interface IEquipamentos
     {
-        public Dinam(Corredor corredor) : base(corredor)
-        {
-        }
+        int Bonus { get; }
     }
 }

@@ -7,7 +7,7 @@ using ExercicioMarioKart.Equipamentos;
 
 namespace ExercicioMarioKart
 {
-    public class Kart
+    public abstract class Kart
     {
         public Kart(Corredor corredor)
         {
@@ -57,11 +57,6 @@ namespace ExercicioMarioKart
                 bonus = 6 + qtdEquipamentos;
             }
             return bonus;
-        }
-
-        public void Equipar(IEquipamentos equipamento)
-        {
-            this.Equipamentos.Add(equipamento);
         }
     }
 }

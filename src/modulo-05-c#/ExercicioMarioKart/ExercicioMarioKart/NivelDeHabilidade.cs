@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart
 {
-    class Light : Kart
+    public enum NivelDeHabilidade
     {
-        public Light(Corredor corredor) : base(corredor)
-        {
-        }
+        NOOB, MEDIANO, PROFISSIONAL
     }
 }
