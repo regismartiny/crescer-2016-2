@@ -53,8 +53,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CorredorTest.cs" />
+    <Compile Include="LightTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="KartTest.cs" />
+    <Compile Include="SonnarTest.cs" />
+    <Compile Include="DinamTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExercicioMarioKart\ExercicioMarioKart.csproj">
