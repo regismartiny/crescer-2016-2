@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart
 {
-    public enum NivelDeHabilidade
+    public enum NivelEquipamento
     {
-        NOOB, MEDIANO, PROFISSIONAL
+        UM, DOIS, TRES, QUATRO, CINCO
     }
 }

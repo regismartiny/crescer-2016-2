@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart.Equipamentos
 {
-    class UltraPack : IEquipamentos
+    public class UltraPack : IEquipamentos
     {
         public UltraPack(IEquipamentos equipamentoInterno)
         {
@@ -17,7 +17,8 @@ namespace ExercicioMarioKart.Equipamentos
         {
             get
             {
-                return (int)(this.EquipamentoInterno.Bonus * 1.2);
+                double bonus = EquipamentoInterno.Bonus * 1.2;
+                return (int)Math.Ceiling(bonus);
             }
         }
     }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart
 {
-    class FogueteDePlutonio : IEquipamentos
+    public class FogueteDePlutonio : IEquipamentos
     {
-        public FogueteDePlutonio(Nivel nivel = Nivel.UM)
+        public FogueteDePlutonio(NivelEquipamento nivel = NivelEquipamento.DOIS)
         {
             this.Nivel = nivel;
         }
-        public Nivel Nivel { get; set; }
+        public NivelEquipamento Nivel { get; set; }
         public int Bonus
         {
             get
