@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Street Fighter</title>
+    <link href="~/Content/estilo.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="~/StreetFighter">Início</a></li>
+            <li><a href="https://goo.gl/t3R42e">Notícias</a></li>
+            <li><a href="~/StreetFighter/FichaTecnica">Ficha Técnica</a></li>
+            <li><a href="~/StreetFighter/Sobre.html">Sobre</a></li>
+        </ul>
+    </div>
+    <div id="conteudo">
+        <div id="titulo">
+            <h2>@ViewBag.Title</h2>
+        </div>
+        @RenderBody()
+    </div>
+</body>
+</html>
+
