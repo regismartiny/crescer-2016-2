@@ -90,12 +90,13 @@ namespace Repositorio
 
         public IList<Funcionario> OrdenadosPorCargo()
         {
-            return Funcionarios.OrderBy(funcionario => funcionario.Cargo).ToList();
+            return Funcionarios.OrderBy(funcionario => funcionario.Cargo.Titulo).ThenBy(f=>f.Nome).ToList();
         }
 
         public IList<Funcionario> BuscarPorNome(string nome)
         {
-            return Funcionarios.Where(funcionario => funcionario.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase)).ToList();
+            return Funcionarios.Where(funcionario => 
+                funcionario.Nome.IndexOf(nome, StringComparison.OrdinalIgnoreCase)>=0).ToList();
         }        
 
         public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)
@@ -167,14 +168,14 @@ namespace Repositorio
             var listaFuncionarios = Funcionarios.Where(f => !f.Cargo.Titulo.Equals("Desenvolvedor Júnior"))
                             .Where(f => !f.TurnoTrabalho.Equals(TurnoTrabalho.Tarde));
 
-            Funcionario funcionario = listaFuncionarios.OrderBy(f => ContarConsoantes(f.Nome)).First();
+            Funcionario funcionario = listaFuncionarios.OrderBy(f => ContarConsoantes(f.Nome)).Last();
 
-            int quantidadeMesmoCargo = Funcionarios.Where(f => f.Cargo.Equals(funcionario.Cargo)).Count();
+            int quantidadeMesmoCargo = Funcionarios.Where(f => f.Cargo.Titulo.Equals(funcionario.Cargo.Titulo)).Count();
             var salarioRS = FormatarStringMoeda("pt-BR", funcionario.Cargo.Salario);
             var salarioUS = FormatarStringMoeda("en-US", funcionario.Cargo.Salario);
 
             return new { Nome = funcionario.Nome,
-                         DataNascimento = funcionario.DataNascimento,
+                         DataNascimento = funcionario.DataNascimento.ToShortDateString(),
                          SalarioRS = salarioRS,
                          SalarioUS = salarioUS,
                          QuantidadeMesmoCargo = quantidadeMesmoCargo
@@ -190,7 +191,7 @@ namespace Repositorio
         {
             int contagem = 0;
             string consoantes = "bcdfghjklmnpqrstvwxz";
-            foreach(char c in palavra)
+            foreach(char c in palavra.ToLower())
             {
                 if (consoantes.IndexOf(c) >= 0)
                     contagem++;
