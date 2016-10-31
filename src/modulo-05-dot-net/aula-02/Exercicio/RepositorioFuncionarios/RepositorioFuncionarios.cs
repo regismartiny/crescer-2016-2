@@ -85,37 +85,57 @@ namespace Repositorio
 
         public IList<Funcionario> BuscarPorCargo(Cargo cargo)
         {
-            throw new NotImplementedException();
+            return Funcionarios.Where(funcionario => funcionario.Cargo.Equals(cargo)).ToList();
         }
 
         public IList<Funcionario> OrdenadosPorCargo()
         {
-            throw new NotImplementedException();
+            return Funcionarios.OrderBy(funcionario => funcionario.Cargo).ToList();
         }
 
         public IList<Funcionario> BuscarPorNome(string nome)
         {
-            throw new NotImplementedException();
+            return Funcionarios.Where(funcionario => funcionario.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase)).ToList();
         }        
 
         public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)
         {
-            throw new NotImplementedException();
+            if (turnos.Length == 0)
+            {
+                return Funcionarios;
+            }
+            return Funcionarios.Where(funcionario => turnos.Contains(funcionario.TurnoTrabalho)).ToList();
         }        
 
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
         {
-            throw new NotImplementedException();
+            int idadeMinima = idade - 5;
+            int idadeMaxima = idade + 5;
+            var hoje = DateTime.Now;
+            Func<Funcionario, bool> myFunc = funcionario => 
+                    (hoje.Year - funcionario.DataNascimento.Year) >= idadeMinima &&
+                    (hoje.Year - funcionario.DataNascimento.Year) <= idadeMaxima;
+            return Funcionarios.Where(myFunc).ToList();
         }        
 
         public double SalarioMedio(TurnoTrabalho? turno = null)
         {
-            throw new NotImplementedException();
+            if (turno == null)
+            {
+                return Funcionarios.Select(fun => fun.Cargo.Salario).Average();
+            }
+            else
+            {
+                return Funcionarios.Where(fun => 
+                        fun.TurnoTrabalho.Equals(turno)).Select(fun =>
+                            fun.Cargo.Salario).Average();
+            }
         }
 
         public IList<Funcionario> AniversariantesDoMes()
         {
-            throw new NotImplementedException();
+            var mesAtual = DateTime.Now.Month;
+            return Funcionarios.Where(fun => fun.DataNascimento.Month.Equals(mesAtual)).ToList();
         }
 
         public IList<dynamic> BuscaRapida()
