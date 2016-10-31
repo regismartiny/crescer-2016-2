@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StreetFighter.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,14 +14,19 @@ namespace StreetFighter.Web.Controllers
         {
             return View();
         }
-    }
 
-    public ActionResult FichaTecnica()
-    {
-        var model = new FichaTecnicaModel();
+        public ActionResult FichaTecnica()
+        {
+            var model = new FichaTecnicaModel();
 
-        model.PrimeiraAparicao = "";
+            return View(model);
+        }
 
-        return ViewContext(model);
-    }
+        public ActionResult Sobre()
+        {
+            var model = new SobreModel();
+
+            return View(model);
+        }
+    }   
 }

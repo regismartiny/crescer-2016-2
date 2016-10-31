@@ -1,4 +1,4 @@
-﻿
+﻿﻿@model StreetFighter.Web.Models.FichaTecnicaModel
 @{
     ViewBag.Title = "Ficha Técnica";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,44 +7,44 @@
 <div id="texto">
     <h1>Blanka</h1>
     <span id="imagem">
-        <img src="img/blanka.png">
+        <img src="~/Content/images/blanka.png">
     </span>
     <span id="descricao">
-        <strong>Primeira aparição:</strong> Street Fighter II The World Warrior (1991)
+        <strong>Primeira aparição:</strong> @(Model.PrimeiraAparicao).
         <br>
-        <strong>Nascimento:</strong> 12 de fevereiro de 1966.
+        <strong>Nascimento:</strong> @(Model.Nascimento.ToLongDateString()).
         <br>
-        <strong>Altura:</strong> 192cm.
+        <strong>Altura:</strong> @(Model.Altura)cm.
         <br>
-        <strong>Peso:</strong> 96kg.
+        <strong>Peso:</strong> @(Model.Peso)kg.
         <br>
-        <strong>Medidas:</strong> B198, C120, Q172.
+        <strong>Medidas:</strong> @(Model.Medidas).
         <br>
-        <strong>Tipo sanguíneo:</strong> B.
+        <strong>Tipo sanguíneo:</strong> @(Model.TipoSanguineo).
         <br>
-        <strong>Habilidades especiais:</strong> Caçar, Eletricidade.
+        <strong>Habilidades especiais:</strong> @(Model.HabilidadesEspeciais).
         <br>
-        <strong>Gosta:</strong> Frutas tropicais, Pirarucu, Sua mãe.
+        <strong>Gosta:</strong> @(Model.Gosta).
         <br>
-        <strong>Desgosta:</strong> Army ants (espécie de formiga).
+        <strong>Desgosta:</strong> @(Model.Desgosta).
         <br>
-        <strong>Estilo de luta:</strong> Luta Selvagem autodidata (Army Ants) / Capoeira.
+        <strong>Estilo de luta:</strong> @(Model.EstiloDeLuta).
         <br>
-        <strong>Origem:</strong> Brasil (lugar de nascença é provável como sendo Tailândia).
+        <strong>Origem:</strong> @(Model.Origem).
         <br>
-        <strong>Uma fala de vitória:</strong> "Ver você em ação é uma piada!""
+        <strong>Uma fala de vitória:</strong> @(Model.UmaFalaDeVitoria).
         <br>
-        <strong>SSF2 nickname:</strong> "A selvagem criança da natureza".
+        <strong>SSF2 nickname:</strong> @(Model.SSF2Nickname).
         <br>
-        <strong>SFA3 nickname:</strong> "A animal pessoa amazônica".
+        <strong>SFA3 nickname:</strong> @(Model.SFA3Nickname).
         <br>
-        <strong>SF4 nickname:</strong> "Guerreiro da selva".
+        <strong>SF4 nickname:</strong> @(Model.SF4Nickname).
         <br>
-        <strong>SFA3 stage:</strong> Ramificação do Rio Madeira - pantano, Brasil (ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?).
+        <strong>SFA3 stage:</strong> @(Model.SFA3Stage).
         <br>
-        <strong>SF2 stage:</strong> Bacia do rio Amazonas (Brasil).
+        <strong>SF2 stage:</strong> @(Model.SF2Stage).
         <br>
-        <strong>Golpes especiais famosos:</strong> Electric Thunder, Rolling Attack.
+        <strong>Golpes especiais famosos:</strong> @(Model.GolpesEspeciais).
     </span>
 
 </div>
