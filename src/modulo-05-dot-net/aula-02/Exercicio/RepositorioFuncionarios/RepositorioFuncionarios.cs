@@ -140,17 +140,62 @@ namespace Repositorio
 
         public IList<dynamic> BuscaRapida()
         {
-            throw new NotImplementedException();
+            var listaFuncionarios = new List<Object>();
+            foreach (Funcionario f in Funcionarios)
+            {
+                var item = new { NomeFuncionario = f.Nome, TituloCargo = f.Cargo.Titulo };
+                listaFuncionarios.Add(item);
+            }
+            return listaFuncionarios;
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
         {
-            throw new NotImplementedException();
+            var resultado = new List<Object>();
+            var listaTurnos = Funcionarios.Select(f => f.TurnoTrabalho).Distinct();
+            foreach (TurnoTrabalho turno in listaTurnos)
+            {
+                int quantidade = Funcionarios.Where(f => f.TurnoTrabalho.Equals(turno)).Count();
+                var item = new { Turno = turno, Quantidade = quantidade };
+                resultado.Add(item);
+            }
+            return resultado;
         }
 
         public dynamic FuncionarioMaisComplexo()
         {
-            throw new NotImplementedException();
+            var listaFuncionarios = Funcionarios.Where(f => !f.Cargo.Titulo.Equals("Desenvolvedor Júnior"))
+                            .Where(f => !f.TurnoTrabalho.Equals(TurnoTrabalho.Tarde));
+
+            Funcionario funcionario = listaFuncionarios.OrderBy(f => ContarConsoantes(f.Nome)).First();
+
+            int quantidadeMesmoCargo = Funcionarios.Where(f => f.Cargo.Equals(funcionario.Cargo)).Count();
+            var salarioRS = FormatarStringMoeda("pt-BR", funcionario.Cargo.Salario);
+            var salarioUS = FormatarStringMoeda("en-US", funcionario.Cargo.Salario);
+
+            return new { Nome = funcionario.Nome,
+                         DataNascimento = funcionario.DataNascimento,
+                         SalarioRS = salarioRS,
+                         SalarioUS = salarioUS,
+                         QuantidadeMesmoCargo = quantidadeMesmoCargo
+            };
+        }
+
+        private string FormatarStringMoeda(string cultura, double valor)
+        {
+            return string.Format(CultureInfo.GetCultureInfo(cultura), "{0:C}", valor);
+        }
+
+        private int ContarConsoantes(String palavra)
+        {
+            int contagem = 0;
+            string consoantes = "bcdfghjklmnpqrstvwxz";
+            foreach(char c in palavra)
+            {
+                if (consoantes.IndexOf(c) >= 0)
+                    contagem++;
+            }
+            return contagem;
         }
     }
 }
