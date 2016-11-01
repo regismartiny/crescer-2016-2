@@ -15,17 +15,13 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-        public ActionResult FichaTecnica()
+        public ActionResult FichaTecnica(FichaTecnicaModel model)
         {
-            var model = new FichaTecnicaModel();
-
             return View(model);
         }
 
-        public ActionResult Sobre()
+        public ActionResult Sobre(SobreModel model)
         {
-            var model = new SobreModel();
-
             return View(model);
         }
     }   
