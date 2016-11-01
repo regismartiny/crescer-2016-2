@@ -12,12 +12,12 @@ namespace ExercicioMarioKart
         public Kart(Corredor corredor)
         {
             this.Corredor = corredor;
-            this.Equipamentos = new List<IEquipamentos>();
+            this.Equipamentos = new List<IEquipamento>();
         }
 
         public Corredor Corredor { get; set; }
 
-        public List<IEquipamentos> Equipamentos { get; set; }
+        public List<IEquipamento> Equipamentos { get; set; }
 
         public virtual int Velocidade
         {
@@ -44,7 +44,7 @@ namespace ExercicioMarioKart
         protected int GetBonusEquipamentos()
         {
             int bonus = 0;
-            foreach(IEquipamentos equipamento in this.Equipamentos)
+            foreach(IEquipamento equipamento in this.Equipamentos)
             {
                 bonus += equipamento.Bonus;
             }
@@ -71,7 +71,7 @@ namespace ExercicioMarioKart
             return 0;
         }
 
-        public void Equipar(IEquipamentos equipamento)
+        public void Equipar(IEquipamento equipamento)
         {
             this.Equipamentos.Add(equipamento);
         }

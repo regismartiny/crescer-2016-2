@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart
 {
-    public enum NivelEquipamento
+    public interface IEquipamento
     {
-        UM, DOIS, TRES, QUATRO, CINCO
+        int Bonus { get; }
     }
 }

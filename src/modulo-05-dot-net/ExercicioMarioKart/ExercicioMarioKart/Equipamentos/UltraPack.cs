@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart.Equipamentos
 {
-    public class UltraPack : IEquipamentos
+    public class UltraPack : IEquipamento
     {
-        public UltraPack(IEquipamentos equipamentoInterno)
+        public UltraPack(IEquipamento equipamentoInterno)
         {
             this.EquipamentoInterno = equipamentoInterno;
         }
-        public IEquipamentos EquipamentoInterno { get; set; }
+        public IEquipamento EquipamentoInterno { get; set; }
         public int Bonus
         {
             get

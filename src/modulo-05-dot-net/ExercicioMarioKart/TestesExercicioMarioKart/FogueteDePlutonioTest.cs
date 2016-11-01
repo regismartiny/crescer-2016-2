@@ -13,16 +13,16 @@ namespace TestesExercicioMarioKart
         {
             var foguete = new FogueteDePlutonio();
 
-            Assert.AreEqual(NivelEquipamento.DOIS, foguete.Nivel);
+            Assert.AreEqual(2, foguete.Nivel);
             Assert.AreEqual(2, foguete.Bonus);
         }
 
         [TestMethod]
         public void FogueteDePlutonioNasceComNivel4Bonus4()
         {
-            var foguete = new FogueteDePlutonio(NivelEquipamento.QUATRO);
+            var foguete = new FogueteDePlutonio(4);
 
-            Assert.AreEqual(NivelEquipamento.QUATRO, foguete.Nivel);
+            Assert.AreEqual(4, foguete.Nivel);
             Assert.AreEqual(4, foguete.Bonus);
         }
 
@@ -30,9 +30,9 @@ namespace TestesExercicioMarioKart
         public void FogueteDePlutonioNasceComNive2SobeParaNivel3()
         {
             var foguete = new FogueteDePlutonio();
-            foguete.Nivel = NivelEquipamento.TRES;
+            foguete.Nivel = 3;
 
-            Assert.AreEqual(NivelEquipamento.TRES, foguete.Nivel);
+            Assert.AreEqual(3, foguete.Nivel);
             Assert.AreEqual(3, foguete.Bonus);
         }
     }

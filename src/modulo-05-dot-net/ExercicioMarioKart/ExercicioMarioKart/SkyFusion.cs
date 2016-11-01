@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExercicioMarioKart
 {
-    public class SkyFusion : Kart, IEquipamentos
+    public class SkyFusion : Kart, IEquipamento
     {
         public SkyFusion(Corredor corredor) : base(corredor)
         {

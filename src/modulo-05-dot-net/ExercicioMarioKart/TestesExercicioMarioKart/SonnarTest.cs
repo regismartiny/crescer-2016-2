@@ -50,7 +50,7 @@ namespace TestesExercicioMarioKart
         {
             var corredor = new Corredor("Joao", NivelDeHabilidade.NOOB);
             var kart = new Sonnar(corredor);
-            IEquipamentos equip = new MotorABaseDeLava();
+            IEquipamento equip = new MotorABaseDeLava();
             kart.Equipar(equip);
             equip = new PneusDeCouroDeDragao();
             kart.Equipar(equip);
