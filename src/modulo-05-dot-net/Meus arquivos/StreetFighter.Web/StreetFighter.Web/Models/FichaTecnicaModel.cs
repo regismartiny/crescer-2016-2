@@ -9,7 +9,7 @@ namespace StreetFighter.Web.Models
     public class FichaTecnicaModel
     {
         public string Imagem { get; set; } = "blanka.png";
-        public string Nome { get; set; }
+        public string Nome { get; set; } = "Blanka";
         [DisplayName("Data Nascimento")]
         public DateTime DataNascimento { get; set; } = DateTime.Parse("12/02/1966");
         public int Altura = 192;
