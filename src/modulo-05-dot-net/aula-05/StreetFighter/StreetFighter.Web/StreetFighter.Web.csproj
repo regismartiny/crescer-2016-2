@@ -148,6 +148,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StreetFighter.Aplicativo\StreetFighter.Aplicativo.csproj">
+      <Project>{0bfc06ee-9c27-460e-8778-f8b7d31be60d}</Project>
+      <Name>StreetFighter.Aplicativo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StreetFighter.Dominio\StreetFighter.Dominio.csproj">
+      <Project>{dc77cfea-fbdf-415c-b4d8-f6d4417f7edf}</Project>
+      <Name>StreetFighter.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
