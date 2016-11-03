@@ -15,6 +15,11 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
+        public ActionResult Cadastro(CadastroModel model)
+        {
+            return View(model);
+        }
+
         public ActionResult FichaTecnica(FichaTecnicaModel model)
         {
             return View(model);
