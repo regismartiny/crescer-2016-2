@@ -15,9 +15,26 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-        public ActionResult Cadastro(CadastroModel model)
+        public ActionResult Cadastro()
         {
-            return View(model);
+            PopularPaises();
+            return View();
+        }
+
+        public ActionResult Salvar(FichaTecnicaModel model)
+        {
+            PopularPaises();
+
+            if (ModelState.IsValid)
+            {
+                ViewBag.Mensagem = "Cadastro concluído com sucesso.";
+                return View("FichaTecnica", model);
+            }
+            else
+            {
+                ModelState.AddModelError("", "Ocorreu algum erro.");
+                return View("Cadastro");
+            }
         }
 
         public ActionResult FichaTecnica(FichaTecnicaModel model)
@@ -29,5 +46,19 @@ namespace StreetFighter.Web.Controllers
         {
             return View(model);
         }
-    }   
+
+        private void PopularPaises()
+        {
+            //ViewBag.ListaPersonagens
+            ViewData["ListaPaises"] = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value = "BR", Text = "Brazil" },
+                new SelectListItem() { Value = "AR", Text = "Argentina" },
+                new SelectListItem() { Value = "US", Text = "Estados Unidos" },
+                new SelectListItem() { Value = "CA", Text = "Canadá" },
+                new SelectListItem() { Value = "AU", Text = "Austrália" },
+                new SelectListItem() { Value = "IR", Text = "Irlanda" }
+            };
+        }
+    }
 }

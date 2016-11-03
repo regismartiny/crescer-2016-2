@@ -23,7 +23,7 @@ namespace ExemploModelsComplexas.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Mensagem = "Cadastro concluído com sucesso.";
-                return View("Detalhe", model);
+                return View("FichaTecnica", model);
             }
             else
             {
