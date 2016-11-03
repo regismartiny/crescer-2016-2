@@ -11,7 +11,11 @@ namespace StreetFighter.Repositorio
     {
         public List<Personagem> ListarPersonagens(string filtroNome)
         {
-            throw new NotImplementedException();
+            return new List<Personagem>()
+            {
+                new Personagem(1, "Blanka", "Brasil"),
+                new Personagem(1, "Ryu", "Japão")
+            };
         }
 
         public void IncluirPersonagem(Personagem personagem)

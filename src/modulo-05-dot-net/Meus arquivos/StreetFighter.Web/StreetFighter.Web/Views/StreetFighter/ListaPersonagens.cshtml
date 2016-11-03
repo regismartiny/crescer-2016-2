@@ -1,0 +1,27 @@
+﻿@model List<StreetFighter.Dominio.Personagem>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Personagens";
+}
+
+<div id="texto">
+    <a href="~/StreetFighter/Cadastro" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cadastrar Personagem</a>
+    <br />
+    <br />
+@using (Html.BeginForm("ListaPersonagens", "StreetFighter", FormMethod.Get, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        @Html.Label("Filtro", new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBox("filtro", "", new { @class = "form-control" })
+        </div>
+    </div>
+}
+    <br />
+    <div class="list-group">
+        @foreach (StreetFighter.Dominio.Personagem personagem in Model)
+        {
+        <a href="~/StreetFighter/EdicaoPersonagem/id=@personagem.Id" class="list-group-item list-group-item-action">@personagem.Nome</a>
+        }
+    </div>
+</div>

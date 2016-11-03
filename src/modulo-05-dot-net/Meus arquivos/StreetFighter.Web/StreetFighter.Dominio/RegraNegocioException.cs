@@ -10,7 +10,6 @@ namespace StreetFighter.Dominio
     {
         public RegraNegocioException(string mensagem) : base(mensagem)
         {
-
         }
     }
 }

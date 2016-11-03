@@ -17,6 +17,13 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
+        public ActionResult ListaPersonagens()
+        {
+            var aplicativo = new PersonagemAplicativo();
+            var personagens = aplicativo.ListarPersonagens("");
+            return View(personagens);
+        }
+
         public ActionResult Cadastro()
         {
             PopularPaises();
@@ -65,9 +72,9 @@ namespace StreetFighter.Web.Controllers
             return View(model);
         }
 
+
         private void PopularPaises()
         {
-            //ViewBag.ListaPersonagens
             ViewData["ListaPaises"] = new List<SelectListItem>()
             {
                 new SelectListItem() { Value = "BR", Text = "Brazil" },

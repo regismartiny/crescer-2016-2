@@ -8,12 +8,16 @@ namespace StreetFighter.Web.Models
 {
     public class FichaTecnicaModel
     {
+        [DisplayName("Imagem")]
         public string Imagem { get; set; } = "blanka.png";
+        [DisplayName("Nome")]
         public string Nome { get; set; } = "Blanka";
-        [DisplayName("Data Nascimento")]
+        [DisplayName("Data de nascimento")]
         public DateTime DataNascimento { get; set; } = DateTime.Parse("12/02/1966");
-        public int Altura = 192;
-        public decimal Peso = 96;
+        [DisplayName("Altura")]
+        public int Altura { get; set; } = 192;
+        [DisplayName("Peso")]
+        public decimal Peso { get; set; } = 96;
         /*public string Medidas = "B198, C120, Q172";
         public char TipoSanguineo = 'B';
         public string HabilidadesEspeciais = "Caçar, Eletricidade";
@@ -26,6 +30,7 @@ namespace StreetFighter.Web.Models
         public string SF4Nickname = "\"Guerreiro da selva\"";
         public string SFA3Stage = "Ramificação do Rio Madeira - pantano, Brasil (ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?)";
         public string SF2Stage = "Bacia do rio Amazonas (Brasil)";*/
+        [DisplayName("Origem")]
         public string Origem { get; set; } = "Brasil (lugar de nascença é provável como sendo Tailândia)";
         [DisplayName("Golpes especiais")]
         public string GolpesEspeciais { get; set; } = "Electric Thunder, Rolling Attack";
