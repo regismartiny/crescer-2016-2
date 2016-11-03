@@ -1,4 +1,6 @@
-﻿using StreetFighter.Web.Models;
+﻿using StreetFighter.Aplicativo;
+using StreetFighter.Dominio;
+using StreetFighter.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,22 @@ namespace StreetFighter.Web.Controllers
 
             if (ModelState.IsValid)
             {
+                try
+                {
+                    var aplicativo = new PersonagemAplicativo();
+                    var personagem = new Personagem(model.Nome, model.Origem);
+
+                    aplicativo.Salvar(personagem);
+                }
+                catch (RegraNegocioException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Ocorreu um erro inesperado. Contate o administrador do sistema.");
+                }
+
                 ViewBag.Mensagem = "Cadastro concluído com sucesso.";
                 return View("FichaTecnica", model);
             }
