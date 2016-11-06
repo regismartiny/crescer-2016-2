@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace StreetFighter.Web.Models
 {
@@ -10,12 +8,16 @@ namespace StreetFighter.Web.Models
     {
         [DisplayName("Imagem")]
         public string Imagem { get; set; } = "blanka.png";
+        [Required]
         [DisplayName("Nome")]
         public string Nome { get; set; } = "Blanka";
+        [Required]
         [DisplayName("Data de nascimento")]
         public DateTime DataNascimento { get; set; } = DateTime.Parse("12/02/1966");
+        [Required]
         [DisplayName("Altura")]
         public int Altura { get; set; } = 192;
+        [Required]
         [DisplayName("Peso")]
         public decimal Peso { get; set; } = 96;
         /*public string Medidas = "B198, C120, Q172";
@@ -30,8 +32,10 @@ namespace StreetFighter.Web.Models
         public string SF4Nickname = "\"Guerreiro da selva\"";
         public string SFA3Stage = "Ramificação do Rio Madeira - pantano, Brasil (ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?)";
         public string SF2Stage = "Bacia do rio Amazonas (Brasil)";*/
+        [Required]
         [DisplayName("Origem")]
         public string Origem { get; set; } = "Brasil (lugar de nascença é provável como sendo Tailândia)";
+        [Required]
         [DisplayName("Golpes especiais")]
         public string GolpesEspeciais { get; set; } = "Electric Thunder, Rolling Attack";
         [DisplayName("Personagem oculto?")]

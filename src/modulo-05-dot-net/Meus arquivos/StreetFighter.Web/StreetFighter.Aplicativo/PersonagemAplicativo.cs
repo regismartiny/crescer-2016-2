@@ -29,7 +29,7 @@ namespace StreetFighter.Aplicativo
 
         public void Salvar(Personagem personagem)
         {
-            if (personagem.Id == 0)
+            if (personagem.Id == 0) //inclusão
             {
                 repositorio.IncluirPersonagem(personagem);
             }else

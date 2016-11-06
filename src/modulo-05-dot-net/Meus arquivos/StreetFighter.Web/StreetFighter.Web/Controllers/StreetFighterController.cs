@@ -17,10 +17,11 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-        public ActionResult ListaPersonagens()
+        [HttpGet]
+        public ActionResult ListaPersonagens(string filtro)
         {
             var aplicativo = new PersonagemAplicativo();
-            var personagens = aplicativo.ListarPersonagens("");
+            var personagens = aplicativo.ListarPersonagens(filtro);
             return View(personagens);
         }
 
@@ -39,9 +40,13 @@ namespace StreetFighter.Web.Controllers
                 try
                 {
                     var aplicativo = new PersonagemAplicativo();
-                    var personagem = new Personagem(model.Nome, model.Origem);
+                    var personagem = new Personagem(model.Nome, model.DataNascimento,
+                        model.Altura, model.Peso, model.Origem, model.GolpesEspeciais, model.PersonagemOculto);
 
                     aplicativo.Salvar(personagem);
+
+                    ViewBag.Mensagem = "Cadastro concluído com sucesso.";
+                    return View("FichaTecnica", model);
                 }
                 catch (RegraNegocioException ex)
                 {
@@ -51,9 +56,7 @@ namespace StreetFighter.Web.Controllers
                 {
                     ModelState.AddModelError("", "Ocorreu um erro inesperado. Contate o administrador do sistema.");
                 }
-
-                ViewBag.Mensagem = "Cadastro concluído com sucesso.";
-                return View("FichaTecnica", model);
+                return View("Cadastro");
             }
             else
             {
