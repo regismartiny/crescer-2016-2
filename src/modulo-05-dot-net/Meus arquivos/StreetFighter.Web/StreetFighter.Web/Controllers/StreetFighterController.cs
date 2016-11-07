@@ -31,6 +31,24 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult ExclusaoPersonagem(string id)
+        {
+            var aplicativo = new PersonagemAplicativo();
+            try
+            {
+                bool ok = aplicativo.ExcluirPersonagem(id);
+                if (ok)
+                    ViewBag.Mensagem = "Personagem excluído com sucesso";
+            }
+            catch
+            {
+                ModelState.AddModelError("", "Ocorreu um erro inesperado. Contate o administrador do sistema.");
+            }
+            var personagens = aplicativo.ListarPersonagens("");
+            return View("ListaPersonagens", personagens);
+        }
+
         public ActionResult Salvar(FichaTecnicaModel model)
         {
             PopularPaises();
@@ -40,7 +58,7 @@ namespace StreetFighter.Web.Controllers
                 try
                 {
                     var aplicativo = new PersonagemAplicativo();
-                    var personagem = new Personagem(model.Nome, model.DataNascimento,
+                    var personagem = new Personagem(model.Imagem, model.Nome, model.DataNascimento,
                         model.Altura, model.Peso, model.Origem, model.GolpesEspeciais, model.PersonagemOculto);
 
                     aplicativo.Salvar(personagem);

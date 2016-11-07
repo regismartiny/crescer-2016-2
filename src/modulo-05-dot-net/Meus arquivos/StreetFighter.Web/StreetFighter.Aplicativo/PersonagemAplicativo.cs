@@ -37,5 +37,10 @@ namespace StreetFighter.Aplicativo
                 repositorio.EditarPersonagem(personagem);
             }
         }
+
+        public bool ExcluirPersonagem(string idPersonagem)
+        {
+            return repositorio.ExcluirPersonagem(idPersonagem);
+        }
     }
 }
