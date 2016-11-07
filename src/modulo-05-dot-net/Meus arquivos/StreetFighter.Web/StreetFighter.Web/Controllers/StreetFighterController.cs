@@ -49,6 +49,18 @@ namespace StreetFighter.Web.Controllers
             return View("ListaPersonagens", personagens);
         }
 
+        [HttpGet]
+        public ActionResult EdicaoPersonagem(string id)
+        {
+            var personagemAplicativo = new PersonagemAplicativo();
+            Pesonagem personagem = personagemAplicativo.ObterPersonagem(id);
+            FichaTecnicaModel model = new FichaTecnicaModel
+            {
+                Id = personagem.Id;
+            };
+            return View("Cadastro", model);
+        }
+
         public ActionResult Salvar(FichaTecnicaModel model)
         {
             PopularPaises();

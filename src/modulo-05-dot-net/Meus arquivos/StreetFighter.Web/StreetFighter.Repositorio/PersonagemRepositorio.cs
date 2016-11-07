@@ -7,6 +7,7 @@ namespace StreetFighter.Repositorio
     public class PersonagemRepositorio : IPersonagemRepositorio
     {
         private const string ARQUIVO = @"C:/temp/personagens.csv";
+
         public List<Personagem> ListarPersonagens(string filtroNome)
         {
             List<Personagem> personagems = new List<Personagem>();
