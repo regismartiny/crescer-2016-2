@@ -5,7 +5,7 @@
 }
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <style>
-    .icon {
+    .icons {
     float: right;
 }
 </style>
@@ -30,12 +30,17 @@
             @foreach (StreetFighter.Dominio.Personagem personagem in Model)
             {
                 <li class="list-group-item">
-                    <a href="~/StreetFighter/EdicaoPersonagem/?id=@personagem.Id">
+                    <a href="~/StreetFighter/FichaTecnica/?id=@personagem.Id">
                         @personagem.Nome
                     </a>
-                    <a href="~/StreetFighter/ExclusaoPersonagem/?id=@personagem.Id" class="icon">
-                        <span class="glyphicon glyphicon-trash"></span>
-                    </a>
+                    <span class="icons">
+                        <a href="~/StreetFighter/EdicaoPersonagem/?id=@personagem.Id">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a href="~/StreetFighter/ExclusaoPersonagem/?id=@personagem.Id">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </span>
                 </li>
             }
         </ul>
