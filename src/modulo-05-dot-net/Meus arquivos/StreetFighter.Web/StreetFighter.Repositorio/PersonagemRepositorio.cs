@@ -1,6 +1,9 @@
 ﻿using StreetFighter.Dominio;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace StreetFighter.Repositorio
 {
@@ -24,6 +27,36 @@ namespace StreetFighter.Repositorio
                 return personagems.FindAll(p => p.Nome.ToLower().Contains(filtroNome.ToLower()));
             else
                 return personagems;
+        }
+
+        public List<Personagem> ListarPersonagensBanco(string filtro)
+        {
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["CrescerConnection"]
+                                    .ConnectionString;
+
+            List<Personagem> encontrados = new List<Personagem>();
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = $"SELECT * FROM Personagem WHERE Nome LIKE @param_nome";
+
+                var command = new SqlCommand(sql, connection);
+                command.Parameters.Add(new SqlParameter("param_nome", $"%{filtro}%"));
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    encontrados.Add(ConvertReaderToPersonagem(reader));
+                }
+
+                connection.Close();
+
+            }
+            return encontrados;
         }
 
         public void IncluirPersonagem(Personagem personagem)
@@ -59,15 +92,29 @@ namespace StreetFighter.Repositorio
             return true;
         }
 
-        public void EditarPersonagem(Personagem personagem)
+        public Personagem ObterPersonagem(string idPersonagem)
         {
-            throw new NotImplementedException();
+            List<String> conteudoArquivo = LerArquivo();
+            foreach (String linha in conteudoArquivo)
+            {
+                String[] dados = linha.Split(';');
+                string id = dados[0];
+                if (idPersonagem.Equals(id))
+                {
+                    Personagem personagem = new Personagem(Int32.Parse(id), dados[1], dados[2], DateTime.Parse(dados[3]),
+                        Int32.Parse(dados[4]), Decimal.Parse(dados[5]), dados[6], dados[7], Boolean.Parse(dados[8]));
+                    return personagem;
+                }
+            }
+            return null;
         }
 
 
         private List<String> LerArquivo()
         {
             List<String> conteudo = new List<String>();
+            if (!File.Exists(ARQUIVO))
+                return null;
             using (System.IO.StreamReader file =
             new System.IO.StreamReader(ARQUIVO, true))
             {
@@ -88,6 +135,52 @@ namespace StreetFighter.Repositorio
                     file.WriteLine(linha);
                 }
             }
+        }
+
+        public void EditarPersonagem(Personagem personagem)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+        public Personagem ObterPersonagemBanco(string idPersonagem)
+        {
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["CrescerConnection"]
+                                    .ConnectionString;
+
+            Personagem encontrado = null;
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = $"SELECT * FROM Personagem WHERE Id = @param_id";
+
+                var command = new SqlCommand(sql, connection);
+                command.Parameters.Add(new SqlParameter("param_id", idPersonagem));
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    encontrado = ConvertReaderToPersonagem(reader);
+                }
+
+                connection.Close();
+
+            }
+                return encontrado;
+        }
+
+        private Personagem ConvertReaderToPersonagem(SqlDataReader reader)
+        {
+            return new Personagem(Convert.ToInt32(reader["Id"]), reader["Imagem"].ToString(), 
+                reader["Nome"].ToString(), Convert.ToDateTime(reader["DataNascimento"]), 
+                Convert.ToInt32(reader["Altura"]), Convert.ToDecimal(reader["Peso"]), 
+                reader["Origem"].ToString(), reader["GolpesEspeciais"].ToString(), 
+                Convert.ToBoolean(reader["PersonagemOculto"]));
         }
     }
 }

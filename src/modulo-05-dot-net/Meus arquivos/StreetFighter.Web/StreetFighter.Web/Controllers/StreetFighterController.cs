@@ -12,6 +12,7 @@ namespace StreetFighter.Web.Controllers
     public class StreetFighterController : Controller
     {
         // GET: StreetFighter
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
@@ -21,10 +22,11 @@ namespace StreetFighter.Web.Controllers
         public ActionResult ListaPersonagens(string filtro)
         {
             var aplicativo = new PersonagemAplicativo();
-            var personagens = aplicativo.ListarPersonagens(filtro);
+            var personagens = aplicativo.ListarPersonagensBanco(filtro);
             return View(personagens);
         }
 
+        [HttpGet]
         public ActionResult Cadastro()
         {
             PopularPaises();
@@ -53,14 +55,24 @@ namespace StreetFighter.Web.Controllers
         public ActionResult EdicaoPersonagem(string id)
         {
             var personagemAplicativo = new PersonagemAplicativo();
-            Pesonagem personagem = personagemAplicativo.ObterPersonagem(id);
+            Personagem personagem = personagemAplicativo.ObterPersonagemBanco(id);
             FichaTecnicaModel model = new FichaTecnicaModel
             {
-                Id = personagem.Id;
+                Id = personagem.Id,
+                Imagem = personagem.Imagem,
+                Nome = personagem.Nome,
+                DataNascimento = personagem.DataNascimento,
+                Altura = personagem.Altura,
+                Peso = personagem.Peso,
+                Origem = personagem.Origem,
+                GolpesEspeciais = personagem.GolpesEspeciais,
+                PersonagemOculto = personagem.PersonagemOculto
             };
+            PopularPaises();
             return View("Cadastro", model);
         }
 
+        [HttpPost]
         public ActionResult Salvar(FichaTecnicaModel model)
         {
             PopularPaises();
@@ -95,11 +107,13 @@ namespace StreetFighter.Web.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult FichaTecnica(FichaTecnicaModel model)
         {
             return View(model);
         }
 
+        [HttpGet]
         public ActionResult Sobre(SobreModel model)
         {
             return View(model);

@@ -27,6 +27,11 @@ namespace StreetFighter.Aplicativo
             return repositorio.ListarPersonagens(filtroNome);   
         }
 
+        public List<Personagem> ListarPersonagensBanco(string filtroNome)
+        {
+            return repositorio.ListarPersonagensBanco(filtroNome);
+        }
+
         public void Salvar(Personagem personagem)
         {
             if (personagem.Id == 0) //inclusão
@@ -41,6 +46,16 @@ namespace StreetFighter.Aplicativo
         public bool ExcluirPersonagem(string idPersonagem)
         {
             return repositorio.ExcluirPersonagem(idPersonagem);
+        }
+
+        public Personagem ObterPersonagem(string idPersonagem)
+        {
+            return repositorio.ObterPersonagem(idPersonagem);
+        }
+
+        public Personagem ObterPersonagemBanco(string idPersonagem)
+        {
+            return repositorio.ObterPersonagemBanco(idPersonagem);
         }
     }
 }
