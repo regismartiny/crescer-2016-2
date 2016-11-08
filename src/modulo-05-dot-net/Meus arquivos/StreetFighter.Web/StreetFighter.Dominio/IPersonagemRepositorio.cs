@@ -16,10 +16,10 @@ namespace StreetFighter.Dominio
 
         bool ExcluirPersonagem(string idPersonagem);
 
-        void EditarPersonagem(Personagem personagem);
-
         Personagem ObterPersonagem(string idPersonagem);
 
         Personagem ObterPersonagemBanco(string idPersonagem);
+
+        void SalvarPersonagemBanco(Personagem personagem);
     }
 }

@@ -82,12 +82,18 @@ namespace StreetFighter.Web.Controllers
                 try
                 {
                     var aplicativo = new PersonagemAplicativo();
-                    var personagem = new Personagem(model.Imagem, model.Nome, model.DataNascimento,
+
+                    if (model.Imagem == null) model.Imagem = "";
+                    var personagem = new Personagem(model.Id, model.Imagem, model.Nome, model.DataNascimento,
                         model.Altura, model.Peso, model.Origem, model.GolpesEspeciais, model.PersonagemOculto);
 
                     aplicativo.Salvar(personagem);
 
-                    ViewBag.Mensagem = "Cadastro concluído com sucesso.";
+                    if (personagem.Id == 0)
+                        ViewBag.Mensagem = "Cadastro concluído com sucesso.";
+                    else
+                        ViewBag.Mensagem = "Cadastro atualizado com sucesso.";
+
                     return View("FichaTecnica", model);
                 }
                 catch (RegraNegocioException ex)
@@ -107,9 +113,26 @@ namespace StreetFighter.Web.Controllers
             }
         }
 
+
         [HttpGet]
-        public ActionResult FichaTecnica(FichaTecnicaModel model)
+        public ActionResult FichaTecnica(string id)
         {
+
+            var personagemAplicativo = new PersonagemAplicativo();
+            Personagem personagem = personagemAplicativo.ObterPersonagemBanco(id);
+            FichaTecnicaModel model = new FichaTecnicaModel
+            {
+                Id = personagem.Id,
+                Imagem = personagem.Imagem,
+                Nome = personagem.Nome,
+                DataNascimento = personagem.DataNascimento,
+                Altura = personagem.Altura,
+                Peso = personagem.Peso,
+                Origem = personagem.Origem,
+                GolpesEspeciais = personagem.GolpesEspeciais,
+                PersonagemOculto = personagem.PersonagemOculto
+            };
+
             return View(model);
         }
 
@@ -129,7 +152,8 @@ namespace StreetFighter.Web.Controllers
                 new SelectListItem() { Value = "US", Text = "Estados Unidos" },
                 new SelectListItem() { Value = "CA", Text = "Canadá" },
                 new SelectListItem() { Value = "AU", Text = "Austrália" },
-                new SelectListItem() { Value = "IR", Text = "Irlanda" }
+                new SelectListItem() { Value = "IR", Text = "Irlanda" },
+                new SelectListItem() { Value = "JP", Text = "Japão" }
             };
         }
     }

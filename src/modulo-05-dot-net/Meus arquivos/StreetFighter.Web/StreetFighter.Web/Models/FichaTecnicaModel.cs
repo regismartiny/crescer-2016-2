@@ -6,7 +6,7 @@ namespace StreetFighter.Web.Models
 {
     public class FichaTecnicaModel
     {
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
         [DisplayName("Imagem")]
         public string Imagem { get; set; } = "blanka.png";
         [Required]
