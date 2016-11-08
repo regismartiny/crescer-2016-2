@@ -6,11 +6,11 @@
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <style>
     .icons {
-    float: right;
-}
+        float: right;
+    }
 </style>
 <div id="texto">
-    <a href="~/StreetFighter/Cadastro" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cadastrar Personagem</a>
+    <a href="~/StreetFighter/Cadastro" class="btn btn-primary" role="button" aria-pressed="true" style="float:right">Cadastrar Novo</a>
     <br />
     <br />
 @using (Html.BeginForm("ListaPersonagens", "StreetFighter", FormMethod.Get, new { @class = "form-horizontal" }))
@@ -20,7 +20,7 @@
     <div class="form-group">
         @Html.Label("Filtro", new { @class = "col-sm-2 control-label" })
         <div class="col-sm-10">
-            @Html.TextBox("filtro", "", new { @class = "form-control" })
+            @Html.TextBox("filtro", "", new { @class = "form-control", placeholder = "Insira um critério de busca" })
         </div>
     </div>
 }

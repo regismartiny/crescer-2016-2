@@ -185,8 +185,6 @@ namespace StreetFighter.Repositorio
                 ConfigurationManager.ConnectionStrings["CrescerConnection"]
                                     .ConnectionString;
 
-            var result = new List<Personagem>();
-
             using (var transaction = new TransactionScope(TransactionScopeOption.Required))
             using (var connection = new SqlConnection(connectionString))
             {
