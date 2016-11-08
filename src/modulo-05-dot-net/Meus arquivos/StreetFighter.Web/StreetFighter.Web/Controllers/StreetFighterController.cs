@@ -117,22 +117,24 @@ namespace StreetFighter.Web.Controllers
         [HttpGet]
         public ActionResult FichaTecnica(string id)
         {
-
-            var personagemAplicativo = new PersonagemAplicativo();
-            Personagem personagem = personagemAplicativo.ObterPersonagemBanco(id);
-            FichaTecnicaModel model = new FichaTecnicaModel
+            FichaTecnicaModel model = new FichaTecnicaModel();
+            if (id != "")
             {
-                Id = personagem.Id,
-                Imagem = personagem.Imagem,
-                Nome = personagem.Nome,
-                DataNascimento = personagem.DataNascimento,
-                Altura = personagem.Altura,
-                Peso = personagem.Peso,
-                Origem = personagem.Origem,
-                GolpesEspeciais = personagem.GolpesEspeciais,
-                PersonagemOculto = personagem.PersonagemOculto
-            };
-
+                var personagemAplicativo = new PersonagemAplicativo();
+                Personagem personagem = personagemAplicativo.ObterPersonagemBanco(id);
+                model = new FichaTecnicaModel
+                {
+                    Id = personagem.Id,
+                    Imagem = personagem.Imagem,
+                    Nome = personagem.Nome,
+                    DataNascimento = personagem.DataNascimento,
+                    Altura = personagem.Altura,
+                    Peso = personagem.Peso,
+                    Origem = personagem.Origem,
+                    GolpesEspeciais = personagem.GolpesEspeciais,
+                    PersonagemOculto = personagem.PersonagemOculto
+                };
+            }
             return View(model);
         }
 

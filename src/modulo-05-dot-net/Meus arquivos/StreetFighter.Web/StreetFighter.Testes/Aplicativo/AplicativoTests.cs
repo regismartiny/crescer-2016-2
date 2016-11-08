@@ -6,10 +6,10 @@ using StreetFighter.Aplicativo;
 namespace StreetFighter.Testes
 {
     [TestClass]
-    public class UnitTest1
+    public class AplicativoTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ObterPersonagemId1DoBanco()
         {
             var personagemAplicativo = new PersonagemAplicativo();
             Personagem p = personagemAplicativo.ObterPersonagemBanco("1");

@@ -10,6 +10,10 @@ namespace StreetFighter.Repositorio
 {
     public class PersonagemRepositorio : IPersonagemRepositorio
     {
+
+        /// <summary>
+        ////////////////////////// ARQUIVO //////////////////////////////////////////////////////////////
+        /// </summary>
         private const string ARQUIVO = @"C:/temp/personagens.csv";
 
         public List<Personagem> ListarPersonagens(string filtroNome)
@@ -30,36 +34,6 @@ namespace StreetFighter.Repositorio
                 return personagems;
         }
 
-        public List<Personagem> ListarPersonagensBanco(string filtro)
-        {
-            string connectionString =
-                ConfigurationManager.ConnectionStrings["CrescerConnection"]
-                                    .ConnectionString;
-
-            List<Personagem> encontrados = new List<Personagem>();
-
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string sql = $"SELECT * FROM Personagem WHERE Nome LIKE @param_nome";
-
-                var command = new SqlCommand(sql, connection);
-                command.Parameters.Add(new SqlParameter("param_nome", $"%{filtro}%"));
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    encontrados.Add(ConvertReaderToPersonagem(reader));
-                }
-
-                connection.Close();
-
-            }
-            return encontrados;
-        }
-
         public void IncluirPersonagem(Personagem personagem)
         {
             String txt = $"{personagem.Id};{personagem.Imagem};{personagem.Nome};{personagem.DataNascimento};{personagem.Altura};{personagem.Peso};{personagem.Origem};{personagem.GolpesEspeciais};{personagem.PersonagemOculto}";
@@ -75,7 +49,7 @@ namespace StreetFighter.Repositorio
         {
             List<String> conteudoArquivo = LerArquivo();
             int linhaPersonagem = -1;
-            for(int i=0; i < conteudoArquivo.Count; i++)
+            for (int i = 0; i < conteudoArquivo.Count; i++)
             {
                 String linha = conteudoArquivo[i];
                 String[] dados = linha.Split(';');
@@ -110,6 +84,71 @@ namespace StreetFighter.Repositorio
             return null;
         }
 
+        private List<String> LerArquivo()
+        {
+            List<String> conteudo = new List<String>();
+            if (!File.Exists(ARQUIVO))
+                return null;
+            using (System.IO.StreamReader file =
+            new System.IO.StreamReader(ARQUIVO, true))
+            {
+                while (!file.EndOfStream)
+                {
+                    conteudo.Add(file.ReadLine());
+                }
+            }
+            return conteudo;
+        }
+
+        private void GravarArquivo(List<String> conteudo)
+        {
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(ARQUIVO, false))
+            {
+                foreach (String linha in conteudo)
+                {
+                    file.WriteLine(linha);
+                }
+            }
+        }
+
+        /// <summary>
+        /// ///////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// 
+        ////////////////////////////////////////BANCO/////////////////////////////////////////////////
+
+        public List<Personagem> ListarPersonagensBanco(string filtro)
+        {
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["CrescerConnection"]
+                                    .ConnectionString;
+
+            List<Personagem> encontrados = new List<Personagem>();
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = $"SELECT * FROM Personagem WHERE Nome LIKE @param_nome";
+
+                var command = new SqlCommand(sql, connection);
+                command.Parameters.Add(new SqlParameter("param_nome", $"%{filtro}%"));
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    encontrados.Add(ConvertReaderToPersonagem(reader));
+                }
+
+                connection.Close();
+
+            }
+            return encontrados;
+        }
+
+        
         public Personagem ObterPersonagemBanco(string idPersonagem)
         {
             string connectionString =
@@ -202,34 +241,5 @@ namespace StreetFighter.Repositorio
                 reader["Origem"].ToString(), reader["GolpesEspeciais"].ToString(),
                 Convert.ToBoolean(reader["PersonagemOculto"]));
         }
-
-
-        private List<String> LerArquivo()
-        {
-            List<String> conteudo = new List<String>();
-            if (!File.Exists(ARQUIVO))
-                return null;
-            using (System.IO.StreamReader file =
-            new System.IO.StreamReader(ARQUIVO, true))
-            {
-                while (!file.EndOfStream) {
-                    conteudo.Add(file.ReadLine());
-                }
-            }
-            return conteudo;
-        }
-
-        private void GravarArquivo(List<String> conteudo)
-        {
-            using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(ARQUIVO, false))
-            {
-                foreach (String linha in conteudo)
-                {
-                    file.WriteLine(linha);
-                }
-            }
-        }
-
     }
 }
