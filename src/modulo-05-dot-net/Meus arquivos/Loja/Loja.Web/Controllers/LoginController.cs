@@ -31,7 +31,7 @@ namespace Loja.Web.Controllers
             {
                 ServicoDeAutenticacao.Autenticar(new UsuarioLogadoModel(
                     usuarioAutenticado.Email/*,usuarioAutenticado.Permissoes*/));
-                return View("../Home/Index");
+                return RedirectToAction("Index", "Home");
             }else
             {
                 ViewBag.Mensagem = "Erro de login.";

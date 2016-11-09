@@ -1,4 +1,5 @@
-﻿using Loja.Web.Filters;
+﻿using Loja.Dominio;
+using Loja.Web.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,12 @@ namespace Loja.Web.Controllers
     [CwiAutorizador]
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(string filtro)
         {
-            return View();
+            var servico = new ProdutoServico(new ProdutoRepositorio());
+            List<Produto> produtos = servico.BuscarProdutos(filtro);
+            return View(produtos);
         }
 
         public ActionResult About()

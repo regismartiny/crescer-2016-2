@@ -8,6 +8,16 @@ namespace Loja.Repositorio.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Produto",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Nome = c.String(),
+                        Valor = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Usuario",
                 c => new
                     {
@@ -22,6 +32,7 @@ namespace Loja.Repositorio.Migrations
         public override void Down()
         {
             DropTable("dbo.Usuario");
+            DropTable("dbo.Produto");
         }
     }
 }
