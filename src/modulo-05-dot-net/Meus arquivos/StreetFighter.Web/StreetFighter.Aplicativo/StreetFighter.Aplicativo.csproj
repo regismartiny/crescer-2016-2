@@ -48,6 +48,10 @@
       <Project>{f0f22311-8f4a-40b4-9076-fd40f485c978}</Project>
       <Name>StreetFighter.Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StreetFighter.RepositorioEntityFramework\StreetFighter.RepositorioEntityFramework.csproj">
+      <Project>{2b849d81-3fee-491c-a365-37c228fb2f0a}</Project>
+      <Name>StreetFighter.RepositorioEntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StreetFighter.Repositorio\StreetFighter.Repositorio.csproj">
       <Project>{c98475e9-fb9e-4df4-8647-5d655cafc772}</Project>
       <Name>StreetFighter.Repositorio</Name>

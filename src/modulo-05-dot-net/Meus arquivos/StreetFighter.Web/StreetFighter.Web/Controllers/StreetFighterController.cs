@@ -52,7 +52,7 @@ namespace StreetFighter.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult EdicaoPersonagem(string id)
+        public ActionResult EdicaoPersonagem(int id)
         {
             var personagemAplicativo = new PersonagemAplicativo();
             Personagem personagem = personagemAplicativo.ObterPersonagemBanco(id);
@@ -115,10 +115,10 @@ namespace StreetFighter.Web.Controllers
 
 
         [HttpGet]
-        public ActionResult FichaTecnica(string id)
+        public ActionResult FichaTecnica(int id)
         {
             FichaTecnicaModel model = new FichaTecnicaModel();
-            if (id != "")
+            if (id != 0)
             {
                 var personagemAplicativo = new PersonagemAplicativo();
                 Personagem personagem = personagemAplicativo.ObterPersonagemBanco(id);
