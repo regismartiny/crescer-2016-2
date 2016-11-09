@@ -37,7 +37,12 @@ namespace StreetFighter.RepositorioEntityFramework
         {
             using (var context = new DatabaseContext())
             {
-                context.Entry<Personagem>(personagem).State = EntityState.Added;
+                EntityState state;
+                if (personagem.Id == 0)
+                    state = EntityState.Added;
+                else
+                    state = EntityState.Modified;
+                context.Entry<Personagem>(personagem).State = state;
                 context.SaveChanges();
             }
         }

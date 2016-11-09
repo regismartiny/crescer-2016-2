@@ -84,7 +84,7 @@ namespace StreetFighter.Web.Controllers
                     var aplicativo = new PersonagemAplicativo();
 
                     if (model.Imagem == null) model.Imagem = "";
-                    var personagem = new Personagem(model.Id, model.Imagem, model.Nome, model.DataNascimento,
+                    var personagem = new Personagem(Convert.ToInt32(model.Id), model.Imagem, model.Nome, model.DataNascimento,
                         model.Altura, model.Peso, model.Origem, model.GolpesEspeciais, model.PersonagemOculto);
 
                     aplicativo.Salvar(personagem);
