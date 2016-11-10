@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loja.Dominio.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,38 @@ namespace Loja.Dominio
             return null;
         }
 
+        public Produto BuscarPorNome(string nome)
+        {
+            Produto produtoEncontrado = this.produtoRepositorio.BuscarPorNome(nome);
+
+            if (produtoEncontrado != null)
+            {
+                return produtoEncontrado;
+            }
+
+            return null;
+        }
+
         public List<Produto> BuscarProdutos(string filtroNome)
         {
-            return this.produtoRepositorio.BuscarProdutos(filtroNome);
+            return this.produtoRepositorio.Buscar(filtroNome);
+        }
+
+        public void Validar(Produto produto)
+        {
+            Produto produtoEncontrado = this.BuscarPorNome(produto.Nome);
+            if (produtoEncontrado != null && produto.Id != produtoEncontrado.Id)
+                throw new NomeRepetidoException();
+        }
+
+        public void Salvar(Produto produto)
+        {
+            this.produtoRepositorio.Salvar(produto);
+        }
+
+        public void ExcluirPorId(int id)
+        {
+            this.produtoRepositorio.ExcluirPorId(id);
         }
     }
 }

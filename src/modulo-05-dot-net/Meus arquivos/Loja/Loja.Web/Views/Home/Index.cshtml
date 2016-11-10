@@ -10,7 +10,7 @@
     }
 </style>
 <div id="texto">
-    <a href="~/Loja.Web/Home/Cadastro" class="btn btn-primary" role="button" aria-pressed="true" style="float:right">Cadastrar Novo</a>
+    <a href="~/Home/CadastroEdicaoProduto" class="btn btn-primary" role="button" aria-pressed="true" style="float:right">Cadastrar Novo</a>
     <br />
     <br />
     @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-horizontal" }))
@@ -34,7 +34,7 @@
                         @produto.Nome
                     </a>
                     <span class="icons">
-                        <a href="~/Home/EdicaoProduto/?id=@produto.Id">
+                        <a href="~/Home/CadastroEdicaoProduto/?id=@produto.Id">
                             <span class="glyphicon glyphicon-edit"></span>
                         </a>
                         <a href="~/Home/ExclusaoProduto/?id=@produto.Id">

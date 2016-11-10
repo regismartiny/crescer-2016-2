@@ -7,13 +7,13 @@ using System.Web;
 
 namespace Loja.Web.Models
 {
-    public class UsuarioModel
+    public class UsuarioViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "O Email é obrigatório.")]
         [DisplayName("Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "A Senha é obrigatória.")]
         [DisplayName("Senha")]
         public String Senha { get; set; }
     }

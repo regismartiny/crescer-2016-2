@@ -14,11 +14,11 @@ namespace Loja.Web.Models
 
         public int? Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O Nome é obrigatório.")]
         [DisplayName("Nome")]
         public String Nome { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O Valor é obrigatório.")]
         [DisplayName("Valor")]
         public decimal Valor { get; set; }
     }

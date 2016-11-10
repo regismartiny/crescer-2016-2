@@ -1,0 +1,12 @@
+﻿﻿@model Loja.Web.Models.ProdutoViewModel
+@{
+    ViewBag.Title = "Ficha Técnica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="texto">
+    <h1>@Model.Nome</h1>
+    <span id="descricao">
+        <strong>Valor:</strong> @(Model.Valor).
+    </span>
+</div>
+

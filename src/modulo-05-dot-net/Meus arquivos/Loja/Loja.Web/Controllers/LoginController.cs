@@ -21,7 +21,7 @@ namespace Loja.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Entrar(UsuarioModel model)
+        public ActionResult Entrar(UsuarioViewModel model)
         {
             UsuarioServico usuarioServico = ServicoDeDependencias.MontarUsuarioServico();
 

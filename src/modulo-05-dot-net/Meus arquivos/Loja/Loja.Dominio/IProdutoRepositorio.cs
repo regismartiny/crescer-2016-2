@@ -9,6 +9,9 @@ namespace Loja.Dominio
     public interface IProdutoRepositorio
     {
         Produto BuscarPorId(int id);
-        List<Produto> BuscarProdutos(string filtroNome);
+        Produto BuscarPorNome(string nome);
+        List<Produto> Buscar(string filtroNome);
+        void Salvar(Produto produto);
+        void ExcluirPorId(int id);
     }
 }
