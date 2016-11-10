@@ -3,25 +3,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Personagens";
 }
-
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<style>
+    .icons {
+        float: right;
+    }
+</style>
 <div id="texto">
-    <a href="~/StreetFighter/Cadastro" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cadastrar Personagem</a>
+    <a href="~/StreetFighter/Cadastro" class="btn btn-primary" role="button" aria-pressed="true" style="float:right">Cadastrar Novo</a>
     <br />
     <br />
 @using (Html.BeginForm("ListaPersonagens", "StreetFighter", FormMethod.Get, new { @class = "form-horizontal" }))
 {
+    <h3>@ViewBag.Mensagem</h3>
+
     <div class="form-group">
         @Html.Label("Filtro", new { @class = "col-sm-2 control-label" })
         <div class="col-sm-10">
-            @Html.TextBox("filtro", "", new { @class = "form-control" })
+            @Html.TextBox("filtro", "", new { @class = "form-control", placeholder = "Insira um critério de busca" })
         </div>
     </div>
 }
     <br />
     <div class="list-group">
-        @foreach (StreetFighter.Dominio.Personagem personagem in Model)
-        {
-        <a href="~/StreetFighter/EdicaoPersonagem/id=@personagem.Id" class="list-group-item list-group-item-action">@personagem.Nome</a>
-        }
+        <ul>
+            @foreach (StreetFighter.Dominio.Personagem personagem in Model)
+            {
+                <li class="list-group-item">
+                    <a href="~/StreetFighter/FichaTecnica/?id=@personagem.Id">
+                        @personagem.Nome
+                    </a>
+                    <span class="icons">
+                        <a href="~/StreetFighter/EdicaoPersonagem/?id=@personagem.Id">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a href="~/StreetFighter/ExclusaoPersonagem/?id=@personagem.Id">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </span>
+                </li>
+            }
+        </ul>
     </div>
 </div>

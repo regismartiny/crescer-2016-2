@@ -18,14 +18,16 @@ namespace StreetFighter.Dominio
         public string GolpesEspeciais { get; set; }
         public Boolean PersonagemOculto { get; set; }
 
-        public Personagem(int id, string nome, DateTime dataNascimento, int altura, 
+        public Personagem() { }
+
+        public Personagem(int id, string imagem, string nome, DateTime dataNascimento, int altura, 
             decimal peso,string origem, string golpesEspeciais, bool personagemOculto)
-            : this(nome, dataNascimento, altura, peso, origem, golpesEspeciais, personagemOculto)
+            : this(imagem, nome, dataNascimento, altura, peso, origem, golpesEspeciais, personagemOculto)
         {
             this.Id = id;
         }
 
-        public Personagem(string nome, DateTime dataNascimento, int altura,
+        public Personagem(string imagem, string nome, DateTime dataNascimento, int altura,
             decimal peso, string origem, string golpesEspeciais, bool personagemOculto)
         {
             if (nome.ToUpperInvariant().Contains("NUNES"))
@@ -34,7 +36,7 @@ namespace StreetFighter.Dominio
                 if (origem.ToUpperInvariant().Contains("Morro da Pedra"))
                     throw new RegraNegocioException($"Somente um personagem pode ser dessa região e esse personagem não é o {nome}.");
             }
-
+            this.Imagem = imagem;
             this.Nome = nome;
             this.DataNascimento = dataNascimento;
             this.Altura = altura;

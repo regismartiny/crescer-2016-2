@@ -1,0 +1,48 @@
+﻿@model List<Loja.Dominio.Produto>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Listagem de Produtos";
+}
+
+<style>
+    .icons {
+        float: right;
+    }
+</style>
+<div id="texto">
+    <a href="~/Home/CadastroEdicaoProduto" class="btn btn-primary" role="button" aria-pressed="true" style="float:right">Cadastrar Novo</a>
+    <br />
+    <br />
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-horizontal" }))
+    {
+        <h3>@ViewBag.Mensagem</h3>
+
+        <div class="form-group">
+            @Html.Label("Filtro", new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-10">
+                @Html.TextBox("filtro", "", new { @class = "form-control", placeholder = "Insira um critério de busca" })
+            </div>
+        </div>
+    }
+    <br />
+    <div class="list-group">
+        <ul>
+            @foreach (Loja.Dominio.Produto produto in Model)
+            {
+                <li class="list-group-item">
+                    <a href="~/Home/FichaTecnica/?id=@produto.Id">
+                        @produto.Nome
+                    </a>
+                    <span class="icons">
+                        <a href="~/Home/CadastroEdicaoProduto/?id=@produto.Id">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a href="~/Home/ExclusaoProduto/?id=@produto.Id">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </span>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

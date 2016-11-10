@@ -12,6 +12,7 @@ namespace StreetFighter.Web.Controllers
     public class StreetFighterController : Controller
     {
         // GET: StreetFighter
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
@@ -21,16 +22,57 @@ namespace StreetFighter.Web.Controllers
         public ActionResult ListaPersonagens(string filtro)
         {
             var aplicativo = new PersonagemAplicativo();
-            var personagens = aplicativo.ListarPersonagens(filtro);
+            var personagens = aplicativo.ListarPersonagensBanco(filtro);
             return View(personagens);
         }
 
+        [HttpGet]
         public ActionResult Cadastro()
         {
             PopularPaises();
             return View();
         }
 
+        [HttpGet]
+        public ActionResult ExclusaoPersonagem(string id)
+        {
+            var aplicativo = new PersonagemAplicativo();
+            try
+            {
+                bool ok = aplicativo.ExcluirPersonagem(id);
+                if (ok)
+                    ViewBag.Mensagem = "Personagem excluído com sucesso";
+            }
+            catch
+            {
+                ModelState.AddModelError("", "Ocorreu um erro inesperado. Contate o administrador do sistema.");
+            }
+            var personagens = aplicativo.ListarPersonagens("");
+            return View("ListaPersonagens", personagens);
+        }
+
+        [HttpGet]
+        public ActionResult EdicaoPersonagem(int id)
+        {
+            var personagemAplicativo = new PersonagemAplicativo();
+            Personagem personagem = personagemAplicativo.ObterPersonagemBanco(id);
+            FichaTecnicaModel model = new FichaTecnicaModel
+            {
+                Id = personagem.Id,
+                Imagem = personagem.Imagem,
+                Nome = personagem.Nome,
+                DataNascimento = personagem.DataNascimento,
+                Altura = personagem.Altura,
+                Peso = personagem.Peso,
+                Origem = personagem.Origem,
+                GolpesEspeciais = personagem.GolpesEspeciais,
+                PersonagemOculto = personagem.PersonagemOculto
+            };
+            PopularPaises();
+            return View("Cadastro", model);
+        }
+
+        [HttpPost]
         public ActionResult Salvar(FichaTecnicaModel model)
         {
             PopularPaises();
@@ -40,12 +82,18 @@ namespace StreetFighter.Web.Controllers
                 try
                 {
                     var aplicativo = new PersonagemAplicativo();
-                    var personagem = new Personagem(model.Nome, model.DataNascimento,
+
+                    if (model.Imagem == null) model.Imagem = "";
+                    var personagem = new Personagem(Convert.ToInt32(model.Id), model.Imagem, model.Nome, model.DataNascimento,
                         model.Altura, model.Peso, model.Origem, model.GolpesEspeciais, model.PersonagemOculto);
 
                     aplicativo.Salvar(personagem);
 
-                    ViewBag.Mensagem = "Cadastro concluído com sucesso.";
+                    if (personagem.Id == 0)
+                        ViewBag.Mensagem = "Cadastro concluído com sucesso.";
+                    else
+                        ViewBag.Mensagem = "Cadastro atualizado com sucesso.";
+
                     return View("FichaTecnica", model);
                 }
                 catch (RegraNegocioException ex)
@@ -65,11 +113,32 @@ namespace StreetFighter.Web.Controllers
             }
         }
 
-        public ActionResult FichaTecnica(FichaTecnicaModel model)
+
+        [HttpGet]
+        public ActionResult FichaTecnica(int id)
         {
+            FichaTecnicaModel model = new FichaTecnicaModel();
+            if (id != 0)
+            {
+                var personagemAplicativo = new PersonagemAplicativo();
+                Personagem personagem = personagemAplicativo.ObterPersonagemBanco(id);
+                model = new FichaTecnicaModel
+                {
+                    Id = personagem.Id,
+                    Imagem = personagem.Imagem,
+                    Nome = personagem.Nome,
+                    DataNascimento = personagem.DataNascimento,
+                    Altura = personagem.Altura,
+                    Peso = personagem.Peso,
+                    Origem = personagem.Origem,
+                    GolpesEspeciais = personagem.GolpesEspeciais,
+                    PersonagemOculto = personagem.PersonagemOculto
+                };
+            }
             return View(model);
         }
 
+        [HttpGet]
         public ActionResult Sobre(SobreModel model)
         {
             return View(model);
@@ -85,7 +154,8 @@ namespace StreetFighter.Web.Controllers
                 new SelectListItem() { Value = "US", Text = "Estados Unidos" },
                 new SelectListItem() { Value = "CA", Text = "Canadá" },
                 new SelectListItem() { Value = "AU", Text = "Austrália" },
-                new SelectListItem() { Value = "IR", Text = "Irlanda" }
+                new SelectListItem() { Value = "IR", Text = "Irlanda" },
+                new SelectListItem() { Value = "JP", Text = "Japão" }
             };
         }
     }

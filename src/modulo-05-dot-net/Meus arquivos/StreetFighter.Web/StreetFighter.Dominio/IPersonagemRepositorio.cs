@@ -10,8 +10,16 @@ namespace StreetFighter.Dominio
     {
         List<Personagem> ListarPersonagens(string filtroNome);
 
+        List<Personagem> ListarPersonagensBanco(string filtroNome);
+
         void IncluirPersonagem(Personagem personagem);
 
-        void EditarPersonagem(Personagem personagem);
+        bool ExcluirPersonagem(string idPersonagem);
+
+        Personagem ObterPersonagem(string idPersonagem);
+
+        Personagem ObterPersonagemBanco(string idPersonagem);
+
+        void SalvarPersonagemBanco(Personagem personagem);
     }
 }

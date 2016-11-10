@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F018C9BA-FF9A-5C0B-73A4-75895521D1C1" name="Personagem">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:34:44 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="F499196A-1F1A-3DC4-B25A-6AB8C007764E">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:35:12 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Imagem" id="FB375410-CCAF-E786-9CE6-7B49898E85DD">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:35:31 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nome" id="245D3D6B-D00C-7660-0522-2801E427F8BE">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:36:34 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataNascimento" id="493B4359-0B0E-1AB8-B541-54CE1ED56518">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:36:49 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Altura" id="C740A2E6-F8C8-15D1-D46C-CB021394A378">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:37:06 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Peso" id="046E48B2-C356-07FB-B6D7-A06DC9BF1739">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:37:27 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Origem" id="3F9072F3-89C6-7E5E-E63A-1A20D0F8C53F">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:38:08 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="GolpesEspeciais" id="B53B1A4F-2FF3-FC5C-68FC-78F05A2DBF97">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:40:40 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PersonagemOculto" id="96D7EA1A-A4F6-E4C1-D30F-99159B61E7A0">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 19:01:29 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT034</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AED97AEE-A600-710D-B695-F39280C8D23B" name="Personagem PK">
+<createdBy>regis.martiny</createdBy>
+<createdTime>2016-11-07 17:35:22 UTC</createdTime>
+<ownerDesignName>modeloBanco</ownerDesignName>
+<engineerTo>
+<item key="B5FB1833-B669-DE1D-1A58-D912DE0E7DE8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F499196A-1F1A-3DC4-B25A-6AB8C007764E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
