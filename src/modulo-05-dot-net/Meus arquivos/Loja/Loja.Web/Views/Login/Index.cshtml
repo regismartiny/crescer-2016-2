@@ -3,14 +3,33 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<style>
+    .login-form{
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .enter{
+         margin: 0 auto !important;
+         width: 25%;
+         padding: 0 !important;
+    }
+    .formgroup {
+        overflow: auto;
+        width: 50%;
+        margin: 0 auto;
+    }
 
+</style>
+
+<div class="login-form">
+    <h2>Login</h2>
 @using (Html.BeginForm("Entrar", "Login", FormMethod.Post))
 {
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.AntiForgeryToken()
 
-    <div class="form-group">
+    <div class="formgroup">
         @Html.LabelFor(model => model.Email, new { @class = "col-sm-2 control-label" })
         <div class="col-sm-10">
             @Html.TextBoxFor(model => model.Email, new { placeholder = "email" })
@@ -18,7 +37,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="formgroup">
         @Html.LabelFor(model => model.Senha, new { @class = "col-sm-2 control-label" })
         <div class="col-sm-10">
             @Html.PasswordFor(model => model.Senha, new { placeholder = "senha" })
@@ -26,5 +45,6 @@
         </div>
     </div>
     <h3>@ViewBag.Mensagem</h3>
-    <button type="submit">Entrar</button>
+    <button class="enter" type="submit">Entrar</button>
 }
+</div>

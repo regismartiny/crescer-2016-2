@@ -8,6 +8,15 @@
     .icons {
         float: right;
     }
+    .action{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .filter {
+        width: 50% !important;
+        margin: 0 auto !important;
+        padding: 0px !important;
+    }
 </style>
 <div id="texto">
     <a href="~/Home/CadastroEdicaoProduto" class="btn btn-primary" role="button" aria-pressed="true" style="float:right">Cadastrar Novo</a>
@@ -17,7 +26,7 @@
     {
         <h3>@ViewBag.Mensagem</h3>
 
-        <div class="form-group">
+        <div class="filter form-group">
             @Html.Label("Filtro", new { @class = "col-sm-2 control-label" })
             <div class="col-sm-10">
                 @Html.TextBox("filtro", "", new { @class = "form-control", placeholder = "Insira um critério de busca" })
@@ -34,10 +43,10 @@
                         @produto.Nome
                     </a>
                     <span class="icons">
-                        <a href="~/Home/CadastroEdicaoProduto/?id=@produto.Id">
+                        <a title="Editar" class="action" href="~/Home/CadastroEdicaoProduto/?id=@produto.Id">
                             <span class="glyphicon glyphicon-edit"></span>
                         </a>
-                        <a href="~/Home/ExclusaoProduto/?id=@produto.Id">
+                        <a title="Excluir" class="action" href="~/Home/ExclusaoProduto/?id=@produto.Id">
                             <span class="glyphicon glyphicon-trash"></span>
                         </a>
                     </span>
