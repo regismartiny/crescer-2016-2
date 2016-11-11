@@ -6,28 +6,42 @@ class TelaPrincipal {
   }
 
   registrarBindsEventos(self) {
-    self.$btnNovoHeroi = $('#btn-novo-heroi');
-    self.$btnNovoHeroi.on('click', self.cadastrarNovoHeroi);
+    self.$btnSincronizarComMarvel = $('#btn-sincronizar-com-marvel');
+    self.$btnSincronizarComMarvel.on('click', self.buscarHeroisMarvel);
   }
 
-  cadastrarNovoHeroi() {
+  sincronizarComMarvel(self) {
+    this.buscarHeroisMarvel();
+  }
+
+  buscarHeroisMarvel(self) {
+    let url = 'https://gateway.marvel.com:443/v1/public/characters?apikey=068d4b47678bcc4e93442d51baccbf19&orderBy=-modified&limit=20';
+    $.get(url).done(function (res) {
+      res.data.results.forEach(
+        (heroiMarvel) => {
+          let heroiASerCriado = {
+            nome: heroiMarvel.name,
+            urlThumbnail: heroiMarvel.thumbnail.path + '.' + heroiMarvel.thumbnail.extension
+          }
+          self.cadastrarNovoHeroi(heroiASerCriado)
+          self.buscarHeroisBanco(self);
+        })
+    });
+  }
+
+  cadastrarNovoHeroi(heroi) {
     console.log('Cadastrou!!!');
     $.post('/api/herois', {
-      nome: 'Super Debug',
-      urlThumbnail: 'http://www.ironhenry.com/wp-content/uploads/2013/06/debug.png'
+      nome: heroi.nome,
+      urlThumbnail: heroi.urlThumbnail
     }).done((res) => {
       console.log('novo id', res.id);
     });
-    
   }
 
-  renderizarEstadoInicial() {
-    $('.tela-centralizada').removeClass('tela-centralizada');
-    this.$elem.show();
-    let self = this;
-
-    /*$.get('/api/herois')
-      .done(function(res) {
+  buscarHeroisBanco(self) {
+    $.get('/api/herois')
+      .done(function (res) {
         let renderizar = marvelflix.render('.tela', 'tela-principal', {
           chars: res.map(function (item) {
             return {
@@ -41,10 +55,18 @@ class TelaPrincipal {
         renderizar.then(() => {
           this.registrarBindsEventos(this);
         })
-      }.bind(this));*/
+      }.bind(self));
+  }
+
+  renderizarEstadoInicial() {
+    $('.tela-centralizada').removeClass('tela-centralizada');
+    this.$elem.show();
+    let self = this;
+
+    self.buscarHeroisMarvel(self);    
 
     //exibir dados direto da API
-    let url = 'https://gateway.marvel.com:443/v1/public/characters?apikey=068d4b47678bcc4e93442d51baccbf19&orderBy=-modified&limit=20';
+    /*let url = 'https://gateway.marvel.com:443/v1/public/characters?apikey=068d4b47678bcc4e93442d51baccbf19&orderBy=-modified&limit=20';
     $.get(url).done(function (res) {
       console.log(res.data.results)
       let renderizar = marvelflix.render('.tela', 'tela-principal', {
@@ -59,6 +81,6 @@ class TelaPrincipal {
       renderizar.then(() => {
         self.registrarBindsEventos(self);
       });
-    });
+    });*/
   }
 }
