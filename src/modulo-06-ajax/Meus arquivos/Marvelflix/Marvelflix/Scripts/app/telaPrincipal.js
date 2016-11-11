@@ -24,9 +24,9 @@ class TelaPrincipal {
   renderizarEstadoInicial() {
     $('.tela-centralizada').removeClass('tela-centralizada');
     this.$elem.show();
-    //let self = this;
+    let self = this;
 
-    $.get('/api/herois')
+    /*$.get('/api/herois')
       .done(function(res) {
         let renderizar = marvelflix.render('.tela', 'tela-principal', {
           chars: res.map(function (item) {
@@ -41,6 +41,24 @@ class TelaPrincipal {
         renderizar.then(() => {
           this.registrarBindsEventos(this);
         })
-      }.bind(this));
+      }.bind(this));*/
+
+    //exibir dados direto da API
+    let url = 'https://gateway.marvel.com:443/v1/public/characters?apikey=068d4b47678bcc4e93442d51baccbf19&orderBy=-modified&limit=20';
+    $.get(url).done(function (res) {
+      console.log(res.data.results)
+      let renderizar = marvelflix.render('.tela', 'tela-principal', {
+        chars: res.data.results.map(function (item) {
+          return {
+            id: item.id,
+            name: item.name,
+            thumbnail: item.thumbnail.path + '.' + item.thumbnail.extension
+          }
+        })
+      });
+      renderizar.then(() => {
+        self.registrarBindsEventos(self);
+      });
+    });
   }
 }
