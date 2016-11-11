@@ -7,14 +7,11 @@ class TelaPrincipal {
 
   registrarBindsEventos(self) {
     self.$btnSincronizarComMarvel = $('#btn-sincronizar-com-marvel');
-    self.$btnSincronizarComMarvel.on('click', self.buscarHeroisMarvel);
+    self.$btnSincronizarComMarvel.on('click', self.sincronizarComMarvel);
   }
+
 
   sincronizarComMarvel(self) {
-    this.buscarHeroisMarvel();
-  }
-
-  buscarHeroisMarvel(self) {
     let url = 'https://gateway.marvel.com:443/v1/public/characters?apikey=068d4b47678bcc4e93442d51baccbf19&orderBy=-modified&limit=20';
     $.get(url).done(function (res) {
       res.data.results.forEach(
@@ -63,7 +60,7 @@ class TelaPrincipal {
     this.$elem.show();
     let self = this;
 
-    self.buscarHeroisMarvel(self);    
+    self.sincronizarComMarvel(self);
 
     //exibir dados direto da API
     /*let url = 'https://gateway.marvel.com:443/v1/public/characters?apikey=068d4b47678bcc4e93442d51baccbf19&orderBy=-modified&limit=20';
