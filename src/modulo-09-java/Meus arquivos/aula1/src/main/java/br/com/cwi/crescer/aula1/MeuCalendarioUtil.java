@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class MeuCalendarioUtil {
 
     public static void main(String[] args) {
-        System.out.println("--MeuStringUtil--");
+        System.out.println("--MeuCalendarioUtil--");
         Scanner s = new Scanner(System.in);
         int entrada = -1;
         while (entrada != 0) {
