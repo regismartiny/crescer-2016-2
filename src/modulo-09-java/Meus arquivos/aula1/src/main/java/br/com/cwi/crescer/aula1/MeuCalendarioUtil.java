@@ -77,7 +77,7 @@ public class MeuCalendarioUtil {
 		return resultado;
 	}
 
-	private static Date interpretarData(String strData) {
+	public static Date interpretarData(String strData) {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 			Date date = simpleDateFormat.parse(strData);
