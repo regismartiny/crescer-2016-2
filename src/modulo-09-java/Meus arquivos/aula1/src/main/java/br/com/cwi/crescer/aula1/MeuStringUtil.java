@@ -47,7 +47,7 @@ public class MeuStringUtil {
     }
 
     public static boolean isEmpty(String str) {
-        return str.isEmpty();
+        return str == null || str.isEmpty();
     }
 
     public static int contarVogais(String str) {
