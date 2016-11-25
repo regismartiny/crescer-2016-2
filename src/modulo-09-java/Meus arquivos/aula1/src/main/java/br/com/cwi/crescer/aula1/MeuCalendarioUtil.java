@@ -57,7 +57,7 @@ public class MeuCalendarioUtil {
         int dia = a.get(Calendar.DAY_OF_MONTH);
         int dias = Math.abs(diaAtual - dia);
         if (diaAtual < dia) {
-            dias = Math.abs(dias - 30);
+            dias = Math.abs(dias - 30);//ajustar - prever meses com 31 dias e anos bissextos
             decMes = true;
         }
 

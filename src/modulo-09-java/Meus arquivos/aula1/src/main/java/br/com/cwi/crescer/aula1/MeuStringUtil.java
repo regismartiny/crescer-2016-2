@@ -71,8 +71,11 @@ public class MeuStringUtil {
     }
 
     public static boolean isPalindrome(String str) {
-        String revertedStr = inverter(str).toLowerCase();
-        return normalize(str.toLowerCase()).equals(normalize(revertedStr));
+        if (!isEmpty(str)) {
+            String revertedStr = inverter(str);
+            return normalize(str).equalsIgnoreCase(normalize(revertedStr));
+        }
+        return false;
     }
 
 }
