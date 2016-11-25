@@ -1,5 +1,6 @@
 package br.com.cwi.crescer.aula1;
 
+import java.text.Normalizer;
 import java.util.Scanner;
 
 public class MeuStringUtil {
@@ -33,6 +34,10 @@ public class MeuStringUtil {
 			System.out.println("Resultado: " + resposta);
 		}
 	}
+        
+        private static String normalize(String str) { 
+            return Normalizer.normalize(str, Normalizer.Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", ""); 
+        }    
 	
 	public static boolean isEmpty(String str){
 		return str.isEmpty();
@@ -58,7 +63,7 @@ public class MeuStringUtil {
 	
 	public static boolean isPalindrome(String str){
 		String revertedStr = inverter(str).toLowerCase();
-		return str.toLowerCase().equals(revertedStr);
+		return normalize(str.toLowerCase()).equals(normalize(revertedStr));
 	}
 
 }
