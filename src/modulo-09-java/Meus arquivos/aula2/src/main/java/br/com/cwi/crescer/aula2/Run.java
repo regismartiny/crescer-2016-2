@@ -35,7 +35,7 @@ public class Run {
             System.err.format("SQLException: %s", e);
         }*/
         
-        MeuFileUtils mfu = new MeuFileUtils();
+        /*MeuFileUtils mfu = new MeuFileUtils();
         System.out.println("==Prompt de comandos==");
         while(true){
             try {
@@ -43,7 +43,9 @@ public class Run {
             } catch (Exception ex) {
                 Logger.getLogger(Run.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+        }*/
+        
+        MeuReaderUtils.lerArquivo("teste.txt");
     }
 
 }
