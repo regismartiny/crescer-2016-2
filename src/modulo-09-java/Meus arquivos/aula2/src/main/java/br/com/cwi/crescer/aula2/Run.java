@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,7 +19,7 @@ import java.sql.Statement;
 public class Run {
 
     public static void main(String[] args) {
-
+        /*
         final String query = "SELECT * FROM REGIS";
         try (final Statement statement = ConnectionUtils.getConnection().createStatement()) {
             try (final ResultSet resultSet = statement.executeQuery(query)) {
@@ -31,6 +33,16 @@ public class Run {
             }
         } catch (final SQLException e) {
             System.err.format("SQLException: %s", e);
+        }*/
+        
+        MeuFileUtils mfu = new MeuFileUtils();
+        System.out.println("==Prompt de comandos==");
+        while(true){
+            try {
+                mfu.executarComando(mfu.lerComando());
+            } catch (Exception ex) {
+                Logger.getLogger(Run.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
