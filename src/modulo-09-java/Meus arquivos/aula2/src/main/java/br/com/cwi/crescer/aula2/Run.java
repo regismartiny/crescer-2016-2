@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,6 +48,9 @@ public class Run {
         }*/
         
         MeuReaderUtils.lerArquivo("teste.txt");
+        
+        List<String> conteudo = Arrays.asList(new String[]{"one", "two", "three"});
+        MeuWriterUtils.gravarArquivo("teste.txt", conteudo, false);
     }
 
 }
