@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,14 +21,14 @@ import java.util.logging.Logger;
  */
 public class MeuReaderUtils {
 
-    public static void lerArquivo(String caminhoArquivo) {
+    public static String[] lerArquivo(String caminhoArquivo) {
         File arquivo = new File(caminhoArquivo);
         if (arquivo.exists()) {
             if (arquivo.isFile()) {
                 if (!arquivo.getName().split("\\.")[1].equalsIgnoreCase("txt")) {
                     System.out.println("Arquivo incompativel!");
                 } else {
-                    lerConteudo(arquivo);
+                    return lerConteudo(arquivo);
                 }
             } else {
                 System.out.println("Nao e um arquivo!");
@@ -35,17 +36,20 @@ public class MeuReaderUtils {
         } else {
             System.out.println("O arquivo nao existe!");
         }
+        return null;
     }
 
-    private static void lerConteudo(File arquivo) {
+    private static String[] lerConteudo(File arquivo) {
+        ArrayList<String> conteudo = new ArrayList<>();
         try (   
             final Reader reader = new FileReader(arquivo);
             final BufferedReader bufferReader = new BufferedReader(reader);
         ) {
             bufferReader.lines()
-                    .forEach(System.out::println);
+                    .forEach(conteudo::add);
         } catch (IOException ex) {
             Logger.getLogger(MeuReaderUtils.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return conteudo.toArray(new String[0]);
     }
 }
