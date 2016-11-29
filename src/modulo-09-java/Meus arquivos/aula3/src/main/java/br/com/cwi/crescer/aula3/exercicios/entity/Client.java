@@ -6,12 +6,15 @@
 package br.com.cwi.crescer.aula3.exercicios.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -22,6 +25,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CLIENT")
 public class Client implements Serializable {
+
+    @Basic(optional = false)
+    @Column(name = "DS_USER_NAME")
+    private String dsUserName;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "clientIdClient")
+    private List<Contract> contractList;
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_CLIENT")
     @SequenceGenerator(name = "SEQ_CLIENT", sequenceName = "SEQ_CLIENT", allocationSize = 1)
@@ -120,5 +129,24 @@ public class Client implements Serializable {
 
     public void setTpPermission(String tpPermission) {
         this.tpPermission = tpPermission;
+    }
+
+    public Client() {
+    }
+
+    public String getDsUserName() {
+        return dsUserName;
+    }
+
+    public void setDsUserName(String dsUserName) {
+        this.dsUserName = dsUserName;
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
     }
 }
