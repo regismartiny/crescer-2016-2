@@ -47,13 +47,17 @@ public class Run {
             }
         }*/
         
-        String[] linhas = MeuReaderUtils.lerArquivo("teste.txt");
+        /*String[] linhas = MeuReaderUtils.lerArquivo("teste.txt");
         for(String linha : linhas){
             System.out.println(linha);
-        }
+        }*/
         
-        List<String> conteudo = Arrays.asList(new String[]{"one", "two", "three"});
-        MeuWriterUtils.gravarArquivo("teste.txt", conteudo, false);
+        /*List<String> conteudo = Arrays.asList(new String[]{"one", "two", "three"});
+        MeuWriterUtils.gravarArquivo("teste.txt", conteudo, false);*/
+        
+        MeuSQLUtils.importarCSV("pessoas.csv");
+        
+        MeuSQLUtils.exportarCSV("pessoas.csv");
     }
 
 }

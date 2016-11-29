@@ -35,7 +35,7 @@ public class MeuWriterUtils {
         }
     }
 
-    private static void gravarConteudo(File arquivo, List<String> conteudo, boolean append) {
+    public static void gravarConteudo(File arquivo, List<String> conteudo, boolean append) {
         try (
                 final Writer writer = new FileWriter(arquivo, append);
                 final BufferedWriter bufferedWriter = new BufferedWriter(writer);) 

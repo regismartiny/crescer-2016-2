@@ -21,11 +21,12 @@ import java.util.logging.Logger;
  */
 public class MeuReaderUtils {
 
-    public static String[] lerArquivo(String caminhoArquivo) {
+    public static String[] lerArquivo(String caminhoArquivo, String extensao) {
+        if (extensao == null) extensao = "txt";
         File arquivo = new File(caminhoArquivo);
         if (arquivo.exists()) {
             if (arquivo.isFile()) {
-                if (!arquivo.getName().split("\\.")[1].equalsIgnoreCase("txt")) {
+                if (!arquivo.getName().split("\\.")[1].equalsIgnoreCase(extensao)) {
                     System.out.println("Arquivo incompativel!");
                 } else {
                     return lerConteudo(arquivo);
@@ -39,7 +40,7 @@ public class MeuReaderUtils {
         return null;
     }
 
-    private static String[] lerConteudo(File arquivo) {
+    public static String[] lerConteudo(File arquivo) {
         ArrayList<String> conteudo = new ArrayList<>();
         try (   
             final Reader reader = new FileReader(arquivo);
