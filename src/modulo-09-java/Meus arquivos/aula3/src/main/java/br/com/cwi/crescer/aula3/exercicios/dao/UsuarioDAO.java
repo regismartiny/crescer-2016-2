@@ -5,7 +5,7 @@
  */
 package br.com.cwi.crescer.aula3.exercicios.dao;
 
-import br.com.cwi.crescer.aula3.exercicios.entity.Client;
+import br.com.cwi.crescer.aula3.exercicios.entity.Usuario;
 import java.util.List;
 import javax.persistence.EntityManager;
 
@@ -13,12 +13,12 @@ import javax.persistence.EntityManager;
  *
  * @author regis
  */
-public class ClientDAO extends AbstractDao<Client, Long> {
+public class UsuarioDAO extends AbstractDao<Usuario, Long> {
 
     final EntityManager entityManager;
 
-    public ClientDAO(EntityManager entityManager) {
-        super(Client.class);
+    public UsuarioDAO(EntityManager entityManager) {
+        super(Usuario.class);
         this.entityManager = entityManager;
     }
 
@@ -28,7 +28,7 @@ public class ClientDAO extends AbstractDao<Client, Long> {
     }
 
     @Override
-    public List<Client> findAll() {
-        return this.getEntityManager().createQuery("select p from Client p").getResultList();
+    public List<Usuario> findAll() {
+        return this.getEntityManager().createQuery("select p from Usuario p").getResultList();
     }
 }
