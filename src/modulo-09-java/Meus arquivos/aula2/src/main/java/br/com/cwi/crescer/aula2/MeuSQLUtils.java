@@ -27,13 +27,13 @@ public class MeuSQLUtils {
         carregarEExecutarSQL(caminhoArquivo);
     }
 
-    public static void importarCSV(String caminhoArquivo) {
-        carregarEImportarCSV(caminhoArquivo);
+    public static void importarCSV(String caminhoArquivo, String nomeTabela) {
+        carregarEImportarCSV(caminhoArquivo, nomeTabela);
     }
 
-    public static void exportarCSV(String caminhoArquivo) {
+    public static void exportarCSV(String caminhoArquivo, String nomeTabela) {
         List<String> conteudo = new ArrayList<>();
-        String query = "SELECT * FROM PESSOA";
+        String query = "SELECT * FROM " + nomeTabela.toUpperCase();
         Pessoa[] pessoas = executarSQL(query);
         for (Pessoa p : pessoas) {
             String linha = p.getIdPessoa() + ";" + p.getNmPessoa();
@@ -84,15 +84,14 @@ public class MeuSQLUtils {
         return null;
     }
 
-    private static void carregarEImportarCSV(String caminhoArquivo) {
+    private static void carregarEImportarCSV(String caminhoArquivo, String nomeTabela) {
         String[] conteudo = MeuReaderUtils.lerArquivo(caminhoArquivo, "csv");
-        importarConteudoCSV(conteudo);
+        importarConteudoCSV(conteudo, nomeTabela);
     }
 
-    private static void importarConteudoCSV(String[] conteudo) {
+    private static void importarConteudoCSV(String[] conteudo, String nomeTabela) {
 
-        final String insert = "INSERT INTO PESSOA("
-                + "ID_PESSOA, NM_PESSOA ) "
+        final String insert = "INSERT INTO "+nomeTabela.toUpperCase()
                 + "VALUES (?, ?)";
         try (final Connection connection = ConnectionUtils.getConnection();
              final PreparedStatement preparedStatement = connection.prepareStatement(insert)) {

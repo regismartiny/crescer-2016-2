@@ -55,9 +55,9 @@ public class Run {
         /*List<String> conteudo = Arrays.asList(new String[]{"one", "two", "three"});
         MeuWriterUtils.gravarArquivo("teste.txt", conteudo, false);*/
         
-        MeuSQLUtils.importarCSV("pessoas.csv");
+        MeuSQLUtils.importarCSV("pessoas.csv", "PESSOA");
         
-        MeuSQLUtils.exportarCSV("pessoas.csv");
+        MeuSQLUtils.exportarCSV("pessoas.csv", "PESSOA");
     }
 
 }
