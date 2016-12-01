@@ -18,7 +18,7 @@
         <div class="form-group"> 
             <h:outputLabel for="genero" value="#{bundle.filme_genero}"></h:outputLabel>
             <h:selectOneMenu id="genero" required="true" requiredMessage="#{bundle.filme_genero_requiredMsg}" value="#{cadastroFilme.filme.genero}" converter="generoConverter" styleClass="form-control">
-                <f:selectItems value="#{cadastroFilme.opcoesGenero}" />
+                <f:selectItems value="#{cadastroFilme.opcoesGenero}" var="g" itemLabel="#{g.descricao}" itemValue="#{g}"/>
             </h:selectOneMenu>
         </div>
         <div class="form-group"> 
@@ -32,7 +32,7 @@
         <div class="form-group"> 
             <h:outputLabel for="elenco" value="#{bundle.filme_elenco}"></h:outputLabel>
             <h:selectOneMenu id="elenco" required="true" requiredMessage="#{bundle.filme_elenco_requiredMsg}"  value="#{cadastroFilme.filme.elenco}" converter="elencoConverter" styleClass="form-control">
-                <f:selectItems value="#{cadastroFilme.opcoesElenco}" />
+                <f:selectItems value="#{cadastroFilme.opcoesElenco}" var="e" itemLabel="#{e.nome}" itemValue="#{e}"/>
             </h:selectOneMenu>	
         </div>
 

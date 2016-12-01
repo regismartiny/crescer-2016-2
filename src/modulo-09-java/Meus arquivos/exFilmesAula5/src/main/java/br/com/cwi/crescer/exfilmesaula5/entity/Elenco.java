@@ -66,7 +66,7 @@ public class Elenco implements Serializable {
     
     @Override
     public String toString(){
-        return this.nome;
+        return String.valueOf(this.idElenco);
     }
     
 }
