@@ -31,7 +31,7 @@ public class Elenco implements Serializable {
     @SequenceGenerator(name = "SEQ_ELENCO", sequenceName = "SEQ_ELENCO", allocationSize = 1) 
     @Basic(optional = false)
     @Column(name = "ID_ELENCO")
-    private Long idELenco;
+    private Long idElenco;
 
     @Basic(optional = false)
     @Column(name = "NOME")
@@ -39,4 +39,30 @@ public class Elenco implements Serializable {
     
     @OneToMany(cascade = ALL)
     private List<Ator> atores;
+
+    public Long getIdElenco() {
+        return idElenco;
+    }
+
+    public void setIdElenco(Long idELenco) {
+        this.idElenco = idELenco;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<Ator> getAtores() {
+        return atores;
+    }
+
+    public void setAtores(List<Ator> atores) {
+        this.atores = atores;
+    }
+    
+    
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition 
+
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+
+    template="/templates/template.xhtml"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="form">
+
+        <div class="form-group"> 
+            <h:outputLabel for="nome" value="#{bundle.elenco_nome}"></h:outputLabel>
+            <h:inputText id="nome" required="true" requiredMessage="#{bundle.elenco_nome_requiredMsg}" value="#{cadastroElenco.elenco.nome}" styleClass="form-control"/>
+        </div>
+        
+        <div class="form-group"> 
+            <h:outputLabel for="atores" value="#{bundle.elenco_atores}"></h:outputLabel>
+            <h:selectManyMenu id="atores" required="true" requiredMessage="#{bundle.elenco_atores_requiredMsg}"  value="#{cadastroElenco.elenco.atores}" styleClass="form-control">
+                <f:selectItems value="#{cadastroElenco.opcoesElenco}" />
+            </h:selectManyMenu>
+        </div>
+        
+        <h:commandButton type="submit" value="Cadastrar" styleClass="btn btn-success" action="#{cadastroElenco.adicionar}">    
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+        
+        <br/><br/>
+        
+        <h:messages id="messages">
+
+        </h:messages>
+        
+
+        <h:dataTable id="elencos" value="#{cadastroElenco.elencos}" var="elenco" styleClass="table table-hover">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.elenco_id}"/>
+                </f:facet>
+                <h:outputText value="#{elenco.idElenco}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.elenco_nome}"/>
+                </f:facet>
+                <h:outputText value="#{elenco.nome}"/>
+            </h:column>
+
+        </h:dataTable>
+
+
+    </ui:define>
+
+</ui:composition>

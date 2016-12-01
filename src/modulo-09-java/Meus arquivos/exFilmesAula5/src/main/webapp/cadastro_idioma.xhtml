@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition 
+
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+
+    template="/templates/template.xhtml"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="form">
+
+        <div class="form-group"> 
+            <h:outputLabel for="nome" value="#{bundle.idioma_nome}"></h:outputLabel>
+            <h:inputText id="nome" required="true" requiredMessage="#{bundle.idioma_nome_requiredMsg}" value="#{cadastroIdioma.idioma.nome}" styleClass="form-control"/>
+        </div>
+        
+        <h:commandButton type="submit" value="Cadastrar" styleClass="btn btn-success" action="#{cadastroIdioma.adicionar}">    
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+        
+        <br/><br/>
+        
+        <h:messages id="messages">
+
+        </h:messages>
+        
+
+        <h:dataTable id="atores" value="#{cadastroIdioma.idiomas}" var="idioma" styleClass="table table-hover">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.idioma_id}"/>
+                </f:facet>
+                <h:outputText value="#{idioma.idIdioma}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.idioma_nome}"/>
+                </f:facet>
+                <h:outputText value="#{idioma.nome}"/>
+            </h:column>
+
+        </h:dataTable>
+
+
+    </ui:define>
+
+</ui:composition>

@@ -6,20 +6,46 @@
     xmlns:ui="http://java.sun.com/jsf/facelets"
 
     template="/templates/template.xhtml"
-    xmlns:f="http://java.sun.com/jsf/core">
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="form">
 
         <div class="form-group"> 
-            <h:outputLabel for="titulo" value="#{bundle.filme_nome}"></h:outputLabel>
-            <h:inputText id="titulo" value="#{home.filme.titulo}" styleClass="form-control"/>
+            <h:outputLabel for="titulo" value="#{bundle.filme_titulo}"></h:outputLabel>
+            <h:inputText id="titulo" required="true" requiredMessage="#{bundle.filme_titulo_requiredMsg}" value="#{home.filme.titulo}" styleClass="form-control"/>
+        </div>
+        <div class="form-group"> 
+            <h:outputLabel for="genero" value="#{bundle.filme_genero}"></h:outputLabel>
+            <h:selectOneMenu id="genero" required="true" requiredMessage="#{bundle.filme_genero_requiredMsg}" value="#{home.filme.genero}" styleClass="form-control">
+                <f:selectItems value="#{home.opcoesGenero}" />
+            </h:selectOneMenu>
+        </div>
+        <div class="form-group"> 
+            <h:outputLabel for="diretor" value="#{bundle.filme_diretor}"></h:outputLabel>
+            <h:inputText id="diretor" required="true" requiredMessage="#{bundle.filme_diretor_requiredMsg}" value="#{home.filme.diretor}" styleClass="form-control"/>
+        </div>
+        <div class="form-group"> 
+            <h:outputLabel for="dtLancamento" value="#{bundle.filme_dtLancamento}"></h:outputLabel>
+            <p:calendar id="dtLancamento" required="false" value="#{filme.dtLancamento}" pattern="dd/MM/yyyy" locale="pt" mask="true" styleClass="form-control"/>
+        </div>
+        <div class="form-group"> 
+            <h:outputLabel for="elenco" value="#{bundle.filme_elenco}"></h:outputLabel>
+            <h:selectOneMenu id="elenco" required="true" requiredMessage="#{bundle.filme_elenco_requiredMsg}"  value="#{home.filme.elenco}" styleClass="form-control">
+                <f:selectItems value="#{home.opcoesElenco}" />
+            </h:selectOneMenu>	
         </div>
 
-        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{home.adicionar}">    
+        <h:commandButton type="submit" value="Cadastrar" styleClass="btn btn-success" action="#{home.adicionar}">    
             <f:ajax execute="@form" render="@form" />
         </h:commandButton>
+        
+        <br/><br/>
+        <h:messages id="messages">
 
-        <h:dataTable id="pessoas" value="#{home.pessoas}" var="pessoa" styleClass="table table-hover">
+        </h:messages>
+
+        <h:dataTable id="filmes" value="#{home.filmes}" var="filme" styleClass="table table-hover">
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="#{bundle.filme_id}"/>
@@ -32,12 +58,14 @@
                 </f:facet>
                 <h:outputText value="#{filme.titulo}"/>
             </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.filme_genero}"/>
+                </f:facet>
+                <h:outputText value="#{filme.genero}"/>
+            </h:column>
 
         </h:dataTable>
-
-        <h:messages id="messages">
-
-        </h:messages>
 
 
     </ui:define>
