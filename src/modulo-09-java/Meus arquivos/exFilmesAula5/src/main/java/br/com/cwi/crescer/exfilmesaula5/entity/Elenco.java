@@ -64,5 +64,9 @@ public class Elenco implements Serializable {
         this.atores = atores;
     }
     
+    @Override
+    public String toString(){
+        return this.nome;
+    }
     
 }

@@ -1,6 +1,6 @@
 package br.com.cwi.crescer.exfilmesaula5;
 
-import br.com.cwi.crescer.exfilmesaula5.entity.Ator;
+import br.com.cwi.crescer.exfilmesaula5.entity.Genero;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -14,45 +14,44 @@ import javax.faces.context.FacesContext;
  */
 @ManagedBean
 @ViewScoped
-public class CadastroAtor {
+public class CadastroGenero {
 
     @EJB
-    private AtorBean atorBean;
+    private GeneroBean generoBean;
     
-    private Ator ator;
-    private List<Ator> atores;
+    private Genero genero;
+    private List<Genero> generos;
 
-
-    public Ator getAtor() {
-        return ator;
+    public Genero getGenero() {
+        return genero;
     }
 
-    public void setAtor(Ator ator) {
-        this.ator = ator;
+    public void setGenero(Genero genero) {
+        this.genero = genero;
     }
 
-    public List<Ator> getAtores() {
-        return atores;
+    public List<Genero> getGeneros() {
+        return generos;
     }
 
-    public void setAtores(List<Ator> atores) {
-        this.atores = atores;
+    public void setGeneros(List<Genero> generos) {
+        this.generos = generos;
     }
+
     
     
-
     @PostConstruct
     public void init() {
-        this.ator = new Ator();
-        this.atores = atorBean.findAll();
-        this.atores.sort((a,b)-> a.getIdAtor().compareTo(b.getIdAtor()));
+        this.genero = new Genero();
+        this.generos = generoBean.findAll();
+        this.generos.sort((a,b)-> a.getIdGenero().compareTo(b.getIdGenero()));
     }
 
     
     
     
     public void adicionar() {
-        atorBean.insert(ator);
+        generoBean.insert(genero);
         this.init();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro inserido com sucesso.", "OK"));
     }

@@ -1,21 +1,15 @@
 package br.com.cwi.crescer.exfilmesaula5.entity;
 
-import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.GenerationType.SEQUENCE;
-import static javax.persistence.TemporalType.DATE;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
 
 /**
  * @author Carlos H. Nonnemacher
@@ -51,6 +45,10 @@ public class Ator implements Serializable {
         this.nome = nome;
     }
     
+    @Override
+    public String toString(){
+        return this.nome;
+    }
     
     
 }

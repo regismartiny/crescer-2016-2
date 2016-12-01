@@ -28,7 +28,7 @@ public class Classificacao implements Serializable {
     @SequenceGenerator(name = "SEQ_CLASSIFICACAO", sequenceName = "SEQ_CLASSIFICACAO", allocationSize = 1) 
     @Basic(optional = false)
     @Column(name = "ID_CLASSIFICACAO")
-    private Long idGenero;
+    private Long idClassificacao;
 
     @Basic(optional = false)
     @Column(name = "DESCRICAO")
@@ -38,12 +38,12 @@ public class Classificacao implements Serializable {
     @Column(name = "IDADE")
     private int idade;
 
-    public Long getIdGenero() {
-        return idGenero;
+    public Long getIdClassificacao() {
+        return idClassificacao;
     }
 
-    public void setIdGenero(Long idGenero) {
-        this.idGenero = idGenero;
+    public void setIdClassificacao(Long idClassificacao) {
+        this.idClassificacao = idClassificacao;
     }
 
     public String getDescricao() {

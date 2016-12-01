@@ -1,5 +1,6 @@
 package br.com.cwi.crescer.exfilmesaula5;
 
+import br.com.cwi.crescer.exfilmesaula5.entity.Ator;
 import br.com.cwi.crescer.exfilmesaula5.entity.Filme;
 import br.com.cwi.crescer.exfilmesaula5.entity.Genero;
 import br.com.cwi.crescer.exfilmesaula5.entity.Elenco;
@@ -16,7 +17,7 @@ import javax.faces.context.FacesContext;
  */
 @ManagedBean
 @ViewScoped
-public class Home {
+public class CadastroFilme {
 
     @EJB
     private FilmeBean filmeBean;
@@ -29,6 +30,7 @@ public class Home {
     private List<Filme> filmes;
     private List<Genero> opcoesGenero;
     private List<Elenco> opcoesElenco;
+    private String elencoSelecionado;
 
     @PostConstruct
     public void init() {
@@ -65,12 +67,22 @@ public class Home {
         return opcoesElenco;
     }
 
+    public String getElencoSelecionado() {
+        return elencoSelecionado;
+    }
+
+    public void setElencoSelecionado(String elencoSelecionado) {
+        this.elencoSelecionado = elencoSelecionado;
+    }
+
     
     
     public void adicionar() {
+        //Elenco elenco = elencoBean.findByName(this.elencoSelecionado).get(0);
+        //this.filme.setElenco(elenco);
         filmeBean.insert(filme);
         this.init();
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Teste", "teste"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Filme cadastrado com sucesso.", "OK"));
     }
 
 

@@ -17,9 +17,9 @@
         
         <div class="form-group"> 
             <h:outputLabel for="atores" value="#{bundle.elenco_atores}"></h:outputLabel>
-            <h:selectManyMenu id="atores" required="true" requiredMessage="#{bundle.elenco_atores_requiredMsg}"  value="#{cadastroElenco.elenco.atores}" styleClass="form-control">
-                <f:selectItems value="#{cadastroElenco.opcoesElenco}" />
-            </h:selectManyMenu>
+            <h:selectManyListbox id="atores" required="true" requiredMessage="#{bundle.elenco_atores_requiredMsg}"  value="#{cadastroElenco.atoresSelecionados}" styleClass="form-control">
+                <f:selectItems value="#{cadastroElenco.opcoesAtores}" />
+            </h:selectManyListbox>
         </div>
         
         <h:commandButton type="submit" value="Cadastrar" styleClass="btn btn-success" action="#{cadastroElenco.adicionar}">    
