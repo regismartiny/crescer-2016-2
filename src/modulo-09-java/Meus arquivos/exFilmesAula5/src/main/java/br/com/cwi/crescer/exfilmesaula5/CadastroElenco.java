@@ -1,5 +1,7 @@
 package br.com.cwi.crescer.exfilmesaula5;
 
+import br.com.cwi.crescer.exfilmesaula5.bean.ElencoBean;
+import br.com.cwi.crescer.exfilmesaula5.bean.AtorBean;
 import br.com.cwi.crescer.exfilmesaula5.entity.Ator;
 import br.com.cwi.crescer.exfilmesaula5.entity.Elenco;
 import java.util.ArrayList;

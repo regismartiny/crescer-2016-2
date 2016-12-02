@@ -1,5 +1,6 @@
 package br.com.cwi.crescer.exfilmesaula5;
 
+import br.com.cwi.crescer.exfilmesaula5.bean.IdiomaBean;
 import br.com.cwi.crescer.exfilmesaula5.entity.Genero;
 import br.com.cwi.crescer.exfilmesaula5.entity.Idioma;
 import java.util.List;

@@ -1,8 +1,8 @@
-package br.com.cwi.crescer.exfilmesaula5.Converters;
+package br.com.cwi.crescer.exfilmesaula5.converter;
 
-import br.com.cwi.crescer.exfilmesaula5.IdiomaBean;
+import br.com.cwi.crescer.exfilmesaula5.bean.ClassificacaoBean;
 import br.com.cwi.crescer.exfilmesaula5.ManualCDILookup;
-import br.com.cwi.crescer.exfilmesaula5.entity.Idioma;
+import br.com.cwi.crescer.exfilmesaula5.entity.Classificacao;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
@@ -14,8 +14,8 @@ import javax.naming.NamingException;
 
 //@ManagedBean
 //@Named
-@FacesConverter(value = "idiomaConverter", forClass = Idioma.class)
-public class IdiomaConverter extends ManualCDILookup implements javax.faces.convert.Converter {
+@FacesConverter(value = "classificacaoConverter", forClass = Classificacao.class)
+public class ClassificacaoConverter extends ManualCDILookup implements javax.faces.convert.Converter {
 
     //@EJB
     //ElencoBean elencoBean;
@@ -26,15 +26,15 @@ public class IdiomaConverter extends ManualCDILookup implements javax.faces.conv
             try {
                 Long id = Long.valueOf(value);
                 
-                IdiomaBean idiomaBean = null;
-                idiomaBean = getFacadeWithJNDI(IdiomaBean.class);
+                ClassificacaoBean classificacaoBean = null;
+                classificacaoBean = getFacadeWithJNDI(ClassificacaoBean.class);
 
-                Idioma idioma = idiomaBean.find(id);
-                return idioma;
+                Classificacao classificacao = classificacaoBean.find(id);
+                return classificacao;
             } catch(NumberFormatException e) {
                 throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de Conversão", "Elenco inválido."));
             }catch (NamingException ex) {
-                Logger.getLogger(IdiomaBean.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ClassificacaoBean.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         return null;
@@ -42,9 +42,9 @@ public class IdiomaConverter extends ManualCDILookup implements javax.faces.conv
 
     @Override
     public String getAsString(FacesContext fc, UIComponent uic, Object o) {
-        if (o != null && (o instanceof Idioma)) {
-            Idioma i = (Idioma)o;
-            return String.valueOf(i.getIdIdioma());
+        if (o != null && (o instanceof Classificacao)) {
+            Classificacao c = (Classificacao)o;
+            return String.valueOf(c.getIdClassificacao());
         }
 
         return null;

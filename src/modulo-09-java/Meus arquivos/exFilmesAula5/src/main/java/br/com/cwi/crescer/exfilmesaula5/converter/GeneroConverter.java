@@ -1,8 +1,8 @@
-package br.com.cwi.crescer.exfilmesaula5.Converters;
+package br.com.cwi.crescer.exfilmesaula5.converter;
 
 
-import br.com.cwi.crescer.exfilmesaula5.ElencoBean;
-import br.com.cwi.crescer.exfilmesaula5.GeneroBean;
+import br.com.cwi.crescer.exfilmesaula5.bean.ElencoBean;
+import br.com.cwi.crescer.exfilmesaula5.bean.GeneroBean;
 import br.com.cwi.crescer.exfilmesaula5.ManualCDILookup;
 import br.com.cwi.crescer.exfilmesaula5.entity.Genero;
 import java.util.logging.Level;

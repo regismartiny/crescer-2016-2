@@ -1,5 +1,10 @@
 package br.com.cwi.crescer.exfilmesaula5;
 
+import br.com.cwi.crescer.exfilmesaula5.bean.FilmeBean;
+import br.com.cwi.crescer.exfilmesaula5.bean.IdiomaBean;
+import br.com.cwi.crescer.exfilmesaula5.bean.ClassificacaoBean;
+import br.com.cwi.crescer.exfilmesaula5.bean.GeneroBean;
+import br.com.cwi.crescer.exfilmesaula5.bean.ElencoBean;
 import br.com.cwi.crescer.exfilmesaula5.entity.Classificacao;
 import br.com.cwi.crescer.exfilmesaula5.entity.Filme;
 import br.com.cwi.crescer.exfilmesaula5.entity.Genero;

@@ -1,5 +1,6 @@
 package br.com.cwi.crescer.exfilmesaula5;
 
+import br.com.cwi.crescer.exfilmesaula5.bean.AtorBean;
 import br.com.cwi.crescer.exfilmesaula5.entity.Ator;
 import java.util.List;
 import javax.annotation.PostConstruct;

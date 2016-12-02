@@ -1,5 +1,6 @@
 package br.com.cwi.crescer.exfilmesaula5;
 
+import br.com.cwi.crescer.exfilmesaula5.bean.ClassificacaoBean;
 import br.com.cwi.crescer.exfilmesaula5.entity.Classificacao;
 import java.util.List;
 import javax.annotation.PostConstruct;
