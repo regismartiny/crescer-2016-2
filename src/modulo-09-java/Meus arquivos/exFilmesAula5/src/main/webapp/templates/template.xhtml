@@ -3,19 +3,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-    
+
     <h:head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
-        <title>Template</title>
+        <title>#{bundle.titulo}</title>
     </h:head>
-    
+
     <h:body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Filmoteca</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="faces/cadastro_filme.xhtml">Cadastro de Filmes</a></li>
+                    <li><a href="faces/cadastro_ator.xhtml">Cadastro de Atores</a></li>
+                    <li><a href="faces/cadastro_genero.xhtml">Cadastro de Generos</a></li> 
+                    <li><a href="faces/cadastro_elenco.xhtml">Cadastro de Elencos</a></li> 
+                    <li><a href="faces/cadastro_classificacao.xhtml">Cadastro de Classificaçoes</a></li>
+                    <li><a href="faces/cadastro_idioma.xhtml">Cadastro de Idiomas</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="container">
             <div class="col-md-12">
 
