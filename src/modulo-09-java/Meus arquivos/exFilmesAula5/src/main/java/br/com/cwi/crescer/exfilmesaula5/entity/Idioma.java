@@ -62,11 +62,11 @@ public class Idioma implements Serializable {
             return false;
         }
         Idioma other = (Idioma) obj;
-        if (nome == null) {
-            if (other.nome != null) {
+        if (idIdioma == null) {
+            if (other.idIdioma != null) {
                 return false;
             }
-        } else if (!nome.equals(other.nome)) {
+        } else if (!idIdioma.equals(other.idIdioma)) {
             return false;
         }
         return true;

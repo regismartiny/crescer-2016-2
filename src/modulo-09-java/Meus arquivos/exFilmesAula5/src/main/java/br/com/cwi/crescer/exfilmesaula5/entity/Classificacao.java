@@ -74,11 +74,11 @@ public class Classificacao implements Serializable {
             return false;
         }
         Classificacao other = (Classificacao) obj;
-        if (descricao == null) {
-            if (other.descricao != null) {
+        if (idClassificacao == null) {
+            if (other.idClassificacao != null) {
                 return false;
             }
-        } else if (!descricao.equals(other.descricao)) {
+        } else if (!idClassificacao.equals(other.idClassificacao)) {
             return false;
         }
         return true;

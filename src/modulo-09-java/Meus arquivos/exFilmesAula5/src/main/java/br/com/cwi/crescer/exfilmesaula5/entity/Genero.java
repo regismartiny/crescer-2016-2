@@ -62,11 +62,11 @@ public class Genero implements Serializable {
             return false;
         }
         Genero other = (Genero) obj;
-        if (descricao == null) {
-            if (other.descricao != null) {
+        if (idGenero == null) {
+            if (other.idGenero != null) {
                 return false;
             }
-        } else if (!descricao.equals(other.descricao)) {
+        } else if (!idGenero.equals(other.idGenero)) {
             return false;
         }
         return true;

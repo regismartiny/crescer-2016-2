@@ -76,11 +76,11 @@ public class Elenco implements Serializable {
             return false;
         }
         Elenco other = (Elenco) obj;
-        if (nome == null) {
-            if (other.nome != null) {
+        if (idElenco == null) {
+            if (other.idElenco != null) {
                 return false;
             }
-        } else if (!nome.equals(other.nome)) {
+        } else if (!idElenco.equals(other.idElenco)) {
             return false;
         }
         return true;

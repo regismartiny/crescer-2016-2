@@ -11,8 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
-        <title>#{bundle.titulo}</title>
+        <ui:insert name="title"></ui:insert>
     </h:head>
 
     <h:body>
@@ -22,7 +21,7 @@
                     <a class="navbar-brand" href="#">#{bundle.appName}</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="faces/cadastro_filme.xhtml">#{bundle.menu_cadastro_filmes}</a></li>
+                    <li class="active"><a href="./faces/cadastro_filme.xhtml">#{bundle.menu_cadastro_filmes}</a></li>
                     <li><a href="faces/cadastro_ator.xhtml">#{bundle.menu_cadastro_atores}</a></li>
                     <li><a href="faces/cadastro_genero.xhtml">#{bundle.menu_cadastro_generos}</a></li> 
                     <li><a href="faces/cadastro_elenco.xhtml">#{bundle.menu_cadastro_elencos}</a></li> 

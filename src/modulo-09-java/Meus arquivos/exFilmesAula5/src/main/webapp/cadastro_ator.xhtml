@@ -8,23 +8,26 @@
     template="/templates/template.xhtml"
     xmlns:f="http://java.sun.com/jsf/core">
 
+    <ui:define name="title">
+        <title>#{bundle.ator_titulo}</title>
+    </ui:define>
     <ui:define name="form">
 
         <div class="form-group"> 
             <h:outputLabel for="nome" value="#{bundle.ator_nome}"></h:outputLabel>
             <h:inputText id="nome" required="true" requiredMessage="#{bundle.ator_nome_requiredMsg}" value="#{cadastroAtor.ator.nome}" styleClass="form-control"/>
         </div>
-        
+
         <h:commandButton type="submit" value="Cadastrar" styleClass="btn btn-success" action="#{cadastroAtor.adicionar}">    
             <f:ajax execute="@form" render="@form" />
         </h:commandButton>
-        
+
         <br/><br/>
-        
+
         <h:messages id="messages">
 
         </h:messages>
-        
+
 
         <h:dataTable id="atores" value="#{cadastroAtor.atores}" var="ator" styleClass="table table-hover">
             <h:column>

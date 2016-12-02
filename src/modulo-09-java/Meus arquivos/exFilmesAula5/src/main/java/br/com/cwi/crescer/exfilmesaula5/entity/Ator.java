@@ -46,8 +46,25 @@ public class Ator implements Serializable {
     }
     
     @Override
-    public String toString(){
-        return this.nome;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Ator)) {
+            return false;
+        }
+        Ator other = (Ator) obj;
+        if (idAtor == null) {
+            if (other.idAtor != null) {
+                return false;
+            }
+        } else if (!idAtor.equals(other.idAtor)) {
+            return false;
+        }
+        return true;
     }
     
     

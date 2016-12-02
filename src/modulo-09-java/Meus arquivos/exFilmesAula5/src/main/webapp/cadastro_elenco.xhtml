@@ -8,6 +8,9 @@
     template="/templates/template.xhtml"
     xmlns:f="http://java.sun.com/jsf/core">
 
+    <ui:define name="title">
+        <title>#{bundle.elenco_titulo}</title>
+    </ui:define>
     <ui:define name="form">
 
         <div class="form-group"> 
@@ -18,7 +21,7 @@
         <div class="form-group"> 
             <h:outputLabel for="atores" value="#{bundle.elenco_atores}"></h:outputLabel>
             <h:selectManyListbox id="atores" required="true" requiredMessage="#{bundle.elenco_atores_requiredMsg}"  value="#{cadastroElenco.atoresSelecionados}" styleClass="form-control">
-                <f:selectItems value="#{cadastroElenco.opcoesAtores}" />
+                <f:selectItems value="#{cadastroElenco.opcoesAtores}" var="a" itemLabel="#{a.nome}" itemValue="#{a.idAtor}"/>
             </h:selectManyListbox>
         </div>
         

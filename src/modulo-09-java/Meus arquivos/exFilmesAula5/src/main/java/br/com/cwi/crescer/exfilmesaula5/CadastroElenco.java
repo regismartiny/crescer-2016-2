@@ -2,6 +2,7 @@ package br.com.cwi.crescer.exfilmesaula5;
 
 import br.com.cwi.crescer.exfilmesaula5.entity.Ator;
 import br.com.cwi.crescer.exfilmesaula5.entity.Elenco;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -72,10 +73,13 @@ public class CadastroElenco {
     
     
     public void adicionar() {
-        for(String nomeAtor : this.atoresSelecionados){
-            List<Ator> atores = atorBean.findByName(nomeAtor);
-            this.elenco.setAtores(atores);
+        List<Ator> atores = new ArrayList<>();
+        for(String strIdAtor : this.atoresSelecionados){
+            Long idAtor = Long.valueOf(strIdAtor);
+            Ator ator = atorBean.find(idAtor);
+            atores.add(ator);
         }
+        this.elenco.setAtores(atores);
         elencoBean.insert(elenco);
         this.init();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro inserido com sucesso.", "OK"));
