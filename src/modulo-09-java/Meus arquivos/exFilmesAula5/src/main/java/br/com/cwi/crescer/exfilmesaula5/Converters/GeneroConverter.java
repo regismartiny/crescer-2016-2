@@ -3,16 +3,17 @@ package br.com.cwi.crescer.exfilmesaula5.Converters;
 
 import br.com.cwi.crescer.exfilmesaula5.GeneroBean;
 import br.com.cwi.crescer.exfilmesaula5.entity.Genero;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.ConverterException;
-import javax.faces.convert.FacesConverter;
+import javax.inject.Named;
 
-@FacesConverter(value = "generoConverter", forClass = Genero.class)
+@ManagedBean
+//@FacesConverter(value = "generoConverter", forClass = Genero.class)
+@Named
 public class GeneroConverter implements javax.faces.convert.Converter {
 
     @EJB
@@ -26,7 +27,12 @@ public class GeneroConverter implements javax.faces.convert.Converter {
                 Genero genero = generoBean.find(id);
                 return genero;
             } catch(NumberFormatException e) {
-                throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de Conversão", "Gênero inválido."));
+                FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de Conversão", "Gênero inválido.");
+                FacesContext.getCurrentInstance().addMessage(null, fm);
+                throw new ConverterException(fm);
+            }catch(Exception e) {
+                FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de Conversão", e.getMessage());
+                throw new ConverterException(fm);
             }
         }
         return null;
