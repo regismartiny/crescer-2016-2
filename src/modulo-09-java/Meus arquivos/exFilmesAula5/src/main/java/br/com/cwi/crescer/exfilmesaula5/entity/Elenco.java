@@ -28,7 +28,7 @@ public class Elenco implements Serializable {
 
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_ELENCO")
-    @SequenceGenerator(name = "SEQ_ELENCO", sequenceName = "SEQ_ELENCO", allocationSize = 1) 
+    @SequenceGenerator(name = "SEQ_ELENCO", sequenceName = "SEQ_ELENCO", allocationSize = 1)
     @Basic(optional = false)
     @Column(name = "ID_ELENCO")
     private Long idElenco;
@@ -36,7 +36,7 @@ public class Elenco implements Serializable {
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
-    
+
     @OneToMany(cascade = ALL)
     private List<Ator> atores;
 
@@ -63,10 +63,27 @@ public class Elenco implements Serializable {
     public void setAtores(List<Ator> atores) {
         this.atores = atores;
     }
-    
+
     @Override
-    public String toString(){
-        return String.valueOf(this.idElenco);
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Elenco)) {
+            return false;
+        }
+        Elenco other = (Elenco) obj;
+        if (nome == null) {
+            if (other.nome != null) {
+                return false;
+            }
+        } else if (!nome.equals(other.nome)) {
+            return false;
+        }
+        return true;
     }
-    
+
 }

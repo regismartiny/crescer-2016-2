@@ -62,5 +62,25 @@ public class Classificacao implements Serializable {
         this.idade = idade;
     }
     
-    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Classificacao)) {
+            return false;
+        }
+        Classificacao other = (Classificacao) obj;
+        if (descricao == null) {
+            if (other.descricao != null) {
+                return false;
+            }
+        } else if (!descricao.equals(other.descricao)) {
+            return false;
+        }
+        return true;
+    }
 }

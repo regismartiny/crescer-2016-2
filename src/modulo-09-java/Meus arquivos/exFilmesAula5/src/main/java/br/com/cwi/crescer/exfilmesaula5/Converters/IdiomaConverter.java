@@ -1,8 +1,8 @@
 package br.com.cwi.crescer.exfilmesaula5.Converters;
 
-import br.com.cwi.crescer.exfilmesaula5.ElencoBean;
+import br.com.cwi.crescer.exfilmesaula5.IdiomaBean;
 import br.com.cwi.crescer.exfilmesaula5.ManualCDILookup;
-import br.com.cwi.crescer.exfilmesaula5.entity.Elenco;
+import br.com.cwi.crescer.exfilmesaula5.entity.Idioma;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
@@ -14,8 +14,8 @@ import javax.naming.NamingException;
 
 //@ManagedBean
 //@Named
-@FacesConverter(value = "elencoConverter", forClass = Elenco.class)
-public class ElencoConverter extends ManualCDILookup implements javax.faces.convert.Converter {
+@FacesConverter(value = "idiomaConverter", forClass = Idioma.class)
+public class IdiomaConverter extends ManualCDILookup implements javax.faces.convert.Converter {
 
     //@EJB
     //ElencoBean elencoBean;
@@ -26,15 +26,15 @@ public class ElencoConverter extends ManualCDILookup implements javax.faces.conv
             try {
                 Long id = Long.valueOf(value);
                 
-                ElencoBean elencoBean = null;
-                elencoBean = getFacadeWithJNDI(ElencoBean.class);
+                IdiomaBean idiomaBean = null;
+                idiomaBean = getFacadeWithJNDI(IdiomaBean.class);
 
-                Elenco elenco = elencoBean.find(id);
-                return elenco;
+                Idioma idioma = idiomaBean.find(id);
+                return idioma;
             } catch(NumberFormatException e) {
                 throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de Conversão", "Elenco inválido."));
             }catch (NamingException ex) {
-                Logger.getLogger(ElencoBean.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(IdiomaBean.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         return null;
@@ -42,9 +42,9 @@ public class ElencoConverter extends ManualCDILookup implements javax.faces.conv
 
     @Override
     public String getAsString(FacesContext fc, UIComponent uic, Object o) {
-        if (o != null && (o instanceof Elenco)) {
-            Elenco e = (Elenco)o;
-            return String.valueOf(e.getIdElenco());
+        if (o != null && (o instanceof Idioma)) {
+            Idioma i = (Idioma)o;
+            return String.valueOf(i.getIdIdioma());
         }
 
         return null;

@@ -49,10 +49,26 @@ public class Genero implements Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
+       
     @Override
-    public String toString(){
-        return String.valueOf(this.idGenero);
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Genero)) {
+            return false;
+        }
+        Genero other = (Genero) obj;
+        if (descricao == null) {
+            if (other.descricao != null) {
+                return false;
+            }
+        } else if (!descricao.equals(other.descricao)) {
+            return false;
+        }
+        return true;
     }
-    
 }

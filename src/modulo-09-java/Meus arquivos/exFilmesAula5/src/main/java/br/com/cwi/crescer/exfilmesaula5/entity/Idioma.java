@@ -51,7 +51,24 @@ public class Idioma implements Serializable {
     }
     
     @Override
-    public String toString(){
-        return this.nome;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Idioma)) {
+            return false;
+        }
+        Idioma other = (Idioma) obj;
+        if (nome == null) {
+            if (other.nome != null) {
+                return false;
+            }
+        } else if (!nome.equals(other.nome)) {
+            return false;
+        }
+        return true;
     }
 }

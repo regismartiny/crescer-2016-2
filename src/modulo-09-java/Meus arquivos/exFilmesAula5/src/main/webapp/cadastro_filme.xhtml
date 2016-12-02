@@ -22,12 +22,20 @@
             </h:selectOneMenu>
         </div>
         <div class="form-group"> 
-            <h:outputLabel for="diretor" value="#{bundle.filme_diretor}"></h:outputLabel>
-            <h:inputText id="diretor" required="true" requiredMessage="#{bundle.filme_diretor_requiredMsg}" value="#{cadastroFilme.filme.diretor}" styleClass="form-control"/>
+            <h:outputLabel for="classificacao" value="#{bundle.filme_classificacao}"></h:outputLabel>
+            <h:selectOneMenu id="classificacao" required="true" requiredMessage="#{bundle.filme_classificacao_requiredMsg}" value="#{cadastroFilme.filme.classificacao}" converter="classificacaoConverter" styleClass="form-control">
+                <f:selectItems value="#{cadastroFilme.opcoesClassificacao}" var="c" itemLabel="#{c.descricao}" itemValue="#{c}"/>
+            </h:selectOneMenu>
         </div>
         <div class="form-group"> 
-            <h:outputLabel for="dtLancamento" value="#{bundle.filme_dtLancamento}"></h:outputLabel>
-            <p:calendar id="dtLancamento" required="false" value="#{filme.dtLancamento}" pattern="dd/MM/yyyy" locale="pt" mask="true" styleClass="form-control"/>
+            <h:outputLabel for="idioma" value="#{bundle.filme_idioma}"></h:outputLabel>
+            <h:selectOneMenu id="idioma" required="true" requiredMessage="#{bundle.filme_idioma_requiredMsg}" value="#{cadastroFilme.filme.idioma}" converter="idiomaConverter" styleClass="form-control">
+                <f:selectItems value="#{cadastroFilme.opcoesIdioma}" var="i" itemLabel="#{i.nome}" itemValue="#{i}"/>
+            </h:selectOneMenu>
+        </div>
+        <div class="form-group"> 
+            <h:outputLabel for="diretor" value="#{bundle.filme_diretor}"></h:outputLabel>
+            <h:inputText id="diretor" required="true" requiredMessage="#{bundle.filme_diretor_requiredMsg}" value="#{cadastroFilme.filme.diretor}" styleClass="form-control"/>
         </div>
         <div class="form-group"> 
             <h:outputLabel for="elenco" value="#{bundle.filme_elenco}"></h:outputLabel>
@@ -35,6 +43,11 @@
                 <f:selectItems value="#{cadastroFilme.opcoesElenco}" var="e" itemLabel="#{e.nome}" itemValue="#{e}"/>
             </h:selectOneMenu>	
         </div>
+        <div class="form-group"> 
+            <h:outputLabel for="dtLancamento" value="#{bundle.filme_dtLancamento}"></h:outputLabel>
+            <p:calendar id="dtLancamento" required="false" value="#{cadastroFilme.filme.dtLancamento}" pattern="dd/MM/yyyy" locale="pt" mask="true" styleClass="form-control"/>
+        </div>
+        
 
         <h:commandButton type="submit" value="Cadastrar" styleClass="btn btn-success" action="#{cadastroFilme.adicionar}">    
             <f:ajax execute="@form" render="@form" />
@@ -62,7 +75,13 @@
                 <f:facet name="header">
                     <h:outputText value="#{bundle.filme_genero}"/>
                 </f:facet>
-                <h:outputText value="#{filme.genero}"/>
+                <h:outputText value="#{filme.genero.descricao}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.filme_idioma}"/>
+                </f:facet>
+                <h:outputText value="#{filme.idioma.nome}"/>
             </h:column>
 
         </h:dataTable>
