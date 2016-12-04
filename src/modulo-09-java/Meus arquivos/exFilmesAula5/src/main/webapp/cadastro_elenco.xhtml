@@ -20,8 +20,8 @@
         
         <div class="form-group"> 
             <h:outputLabel for="atores" value="#{bundle.elenco_atores}"></h:outputLabel>
-            <h:selectManyListbox id="atores" required="true" requiredMessage="#{bundle.elenco_atores_requiredMsg}"  value="#{cadastroElenco.atoresSelecionados}" styleClass="form-control">
-                <f:selectItems value="#{cadastroElenco.opcoesAtores}" var="a" itemLabel="#{a.nome}" itemValue="#{a.idAtor}"/>
+            <h:selectManyListbox id="atores" required="true" requiredMessage="#{bundle.elenco_atores_requiredMsg}"  value="#{cadastroElenco.elenco.atores}" converter="atorConverter" styleClass="form-control">
+                <f:selectItems value="#{cadastroElenco.opcoesAtores}" var="a" itemLabel="#{a.nome}" itemValue="#{a}"/>
             </h:selectManyListbox>
         </div>
         

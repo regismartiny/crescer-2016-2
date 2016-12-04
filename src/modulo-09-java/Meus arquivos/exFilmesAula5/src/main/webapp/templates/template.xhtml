@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
         <ui:insert name="title"></ui:insert>
     </h:head>
 
@@ -21,12 +21,25 @@
                     <a class="navbar-brand" href="#">#{bundle.appName}</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="./faces/cadastro_filme.xhtml">#{bundle.menu_cadastro_filmes}</a></li>
-                    <li><a href="faces/cadastro_ator.xhtml">#{bundle.menu_cadastro_atores}</a></li>
-                    <li><a href="faces/cadastro_genero.xhtml">#{bundle.menu_cadastro_generos}</a></li> 
-                    <li><a href="faces/cadastro_elenco.xhtml">#{bundle.menu_cadastro_elencos}</a></li> 
-                    <li><a href="faces/cadastro_classificacao.xhtml">#{bundle.menu_cadastro_classificacoes}</a></li>
-                    <li><a href="faces/cadastro_idioma.xhtml">#{bundle.menu_cadastro_idiomas}</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Filmes
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cadastro_filme.xhtml">#{bundle.menu_cadastro_filmes}</a></li>
+                            <li><a href="cadastro_ator.xhtml">#{bundle.menu_cadastro_atores}</a></li>
+                            <li><a href="cadastro_genero.xhtml">#{bundle.menu_cadastro_generos}</a></li> 
+                            <li><a href="cadastro_elenco.xhtml">#{bundle.menu_cadastro_elencos}</a></li> 
+                            <li><a href="cadastro_classificacao.xhtml">#{bundle.menu_cadastro_classificacoes}</a></li>
+                            <li><a href="cadastro_idioma.xhtml">#{bundle.menu_cadastro_idiomas}</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cadastro_usuario.xhtml">#{bundle.menu_cadastro_usuarios}</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -42,5 +55,6 @@
                 </h:form>
             </div>
         </div>
+        <h:outputScript library="js" name="css/bootstrap.min.js" />
     </h:body>
 </html>

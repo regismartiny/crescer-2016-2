@@ -4,7 +4,6 @@ import br.com.cwi.crescer.exfilmesaula5.bean.ElencoBean;
 import br.com.cwi.crescer.exfilmesaula5.bean.AtorBean;
 import br.com.cwi.crescer.exfilmesaula5.entity.Ator;
 import br.com.cwi.crescer.exfilmesaula5.entity.Elenco;
-import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -28,8 +27,8 @@ public class CadastroElenco {
     private Elenco elenco;
     private List<Elenco> elencos;
     private List<Ator> opcoesAtores;
-    private List<String> atoresSelecionados;
 
+    
     public Elenco getElenco() {
         return elenco;
     }
@@ -49,15 +48,6 @@ public class CadastroElenco {
     public List<Ator> getOpcoesAtores() {
         return opcoesAtores;
     }
-
-    public List<String> getAtoresSelecionados() {
-        return atoresSelecionados;
-    }
-
-    public void setAtoresSelecionados(List<String> atoresSelecionados) {
-        this.atoresSelecionados = atoresSelecionados;
-    }
-
    
 
 
@@ -75,13 +65,6 @@ public class CadastroElenco {
     
     
     public void adicionar() {
-        List<Ator> atores = new ArrayList<>();
-        for(String strIdAtor : this.atoresSelecionados){
-            Long idAtor = Long.valueOf(strIdAtor);
-            Ator ator = atorBean.find(idAtor);
-            atores.add(ator);
-        }
-        this.elenco.setAtores(atores);
         elencoBean.insert(elenco);
         this.init();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro inserido com sucesso.", "OK"));

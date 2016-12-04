@@ -2,7 +2,6 @@ package br.com.cwi.crescer.exfilmesaula5.bean;
 
 import br.com.cwi.crescer.exfilmesaula5.dao.AbstractDao;
 import br.com.cwi.crescer.exfilmesaula5.entity.Ator;
-import br.com.cwi.crescer.exfilmesaula5.entity.Elenco;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

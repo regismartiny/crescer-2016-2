@@ -1,53 +1,50 @@
 package br.com.cwi.crescer.exfilmesaula5.converter;
 
-import br.com.cwi.crescer.exfilmesaula5.bean.ElencoBean;
-import br.com.cwi.crescer.exfilmesaula5.ManualCDILookup;
 import br.com.cwi.crescer.exfilmesaula5.entity.Elenco;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.faces.application.FacesMessage;
+import java.util.HashMap;
+import java.util.Map;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
-import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
-import javax.naming.NamingException;
 
-//@ManagedBean
-//@Named
+
 @FacesConverter(value = "elencoConverter", forClass = Elenco.class)
-public class ElencoConverter extends ManualCDILookup implements javax.faces.convert.Converter {
+public class ElencoConverter implements javax.faces.convert.Converter {
 
-    //@EJB
-    //ElencoBean elencoBean;
-
-    @Override
-    public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
-        if (value != null && !value.isEmpty()) {
-            try {
-                Long id = Long.valueOf(value);
-                
-                ElencoBean elencoBean = null;
-                elencoBean = getFacadeWithJNDI(ElencoBean.class);
-
-                Elenco elenco = elencoBean.find(id);
-                return elenco;
-            } catch(NumberFormatException e) {
-                throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de Conversão", "Elenco inválido."));
-            }catch (NamingException ex) {
-                Logger.getLogger(ElencoBean.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return null;
-    }
-
-    @Override
-    public String getAsString(FacesContext fc, UIComponent uic, Object o) {
-        if (o != null && (o instanceof Elenco)) {
-            Elenco e = (Elenco)o;
-            return String.valueOf(e.getIdElenco());
-        }
-
-        return null;
-    }
-
+   @Override 
+    public Object getAsObject(FacesContext context, UIComponent uIComponent, String value) { 
+        if (value != null) { 
+            return this.getInComponent(uIComponent, value); 
+        } 
+        return null; 
+    } 
+ 
+    @Override 
+    public String getAsString(FacesContext context, UIComponent component, Object value) { 
+        final Elenco elenco = (Elenco) value; 
+        if (elenco != null) { 
+            this.setInComponent(component, elenco); 
+            return elenco.getIdElenco().toString(); 
+        } 
+        return null; 
+    } 
+ 
+    private void setInComponent(final UIComponent uIComponent, final Elenco elenco) { 
+        Map<Long, Elenco> elencos; 
+        elencos = (Map<Long, Elenco>) uIComponent.getAttributes().get("elencos"); 
+        if (elencos == null) { 
+            elencos = new HashMap<>(); 
+        } 
+        elencos.put(elenco.getIdElenco(), elenco); 
+        uIComponent.getAttributes().put("elencos", elencos); 
+    } 
+ 
+    private Object getInComponent(UIComponent uIComponent, String value) throws NumberFormatException { 
+        Map<Long, Elenco> elencos; 
+        elencos = (Map<Long, Elenco>) uIComponent.getAttributes().get("elencos"); 
+        if (elencos != null) { 
+            return elencos.get(Long.valueOf(value)); 
+        } 
+        return null; 
+    } 
 }

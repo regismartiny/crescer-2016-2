@@ -1,53 +1,51 @@
 package br.com.cwi.crescer.exfilmesaula5.converter;
 
-import br.com.cwi.crescer.exfilmesaula5.bean.ClassificacaoBean;
-import br.com.cwi.crescer.exfilmesaula5.ManualCDILookup;
 import br.com.cwi.crescer.exfilmesaula5.entity.Classificacao;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.faces.application.FacesMessage;
+import java.util.HashMap;
+import java.util.Map;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
-import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
-import javax.naming.NamingException;
 
-//@ManagedBean
-//@Named
+
 @FacesConverter(value = "classificacaoConverter", forClass = Classificacao.class)
-public class ClassificacaoConverter extends ManualCDILookup implements javax.faces.convert.Converter {
+public class ClassificacaoConverter implements javax.faces.convert.Converter {
 
-    //@EJB
-    //ElencoBean elencoBean;
-
-    @Override
-    public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
-        if (value != null && !value.isEmpty()) {
-            try {
-                Long id = Long.valueOf(value);
-                
-                ClassificacaoBean classificacaoBean = null;
-                classificacaoBean = getFacadeWithJNDI(ClassificacaoBean.class);
-
-                Classificacao classificacao = classificacaoBean.find(id);
-                return classificacao;
-            } catch(NumberFormatException e) {
-                throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de Conversão", "Elenco inválido."));
-            }catch (NamingException ex) {
-                Logger.getLogger(ClassificacaoBean.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return null;
-    }
-
-    @Override
-    public String getAsString(FacesContext fc, UIComponent uic, Object o) {
-        if (o != null && (o instanceof Classificacao)) {
-            Classificacao c = (Classificacao)o;
-            return String.valueOf(c.getIdClassificacao());
-        }
-
-        return null;
-    }
+    @Override 
+    public Object getAsObject(FacesContext context, UIComponent uIComponent, String value) { 
+        if (value != null) { 
+            return this.getInComponent(uIComponent, value); 
+        } 
+        return null; 
+    } 
+ 
+    @Override 
+    public String getAsString(FacesContext context, UIComponent component, Object value) { 
+        final Classificacao classificacao = (Classificacao) value; 
+        if (classificacao != null) { 
+            this.setInComponent(component, classificacao); 
+            return classificacao.getIdClassificacao().toString(); 
+        } 
+        return null; 
+    } 
+ 
+    private void setInComponent(final UIComponent uIComponent, final Classificacao classificacao) { 
+        Map<Long, Classificacao> classificacoes; 
+        classificacoes = (Map<Long, Classificacao>) uIComponent.getAttributes().get("classificacoes"); 
+        if (classificacoes == null) { 
+            classificacoes = new HashMap<>(); 
+        } 
+        classificacoes.put(classificacao.getIdClassificacao(), classificacao); 
+        uIComponent.getAttributes().put("classificacoes", classificacoes); 
+    } 
+ 
+    private Object getInComponent(UIComponent uIComponent, String value) throws NumberFormatException { 
+        Map<Long, Classificacao> classificacoes; 
+        classificacoes = (Map<Long, Classificacao>) uIComponent.getAttributes().get("classificacoes"); 
+        if (classificacoes != null) { 
+            return classificacoes.get(Long.valueOf(value)); 
+        } 
+        return null; 
+    } 
 
 }

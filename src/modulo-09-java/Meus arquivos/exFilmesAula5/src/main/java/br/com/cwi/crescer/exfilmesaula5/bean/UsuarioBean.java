@@ -1,7 +1,7 @@
 package br.com.cwi.crescer.exfilmesaula5.bean;
 
 import br.com.cwi.crescer.exfilmesaula5.dao.AbstractDao;
-import br.com.cwi.crescer.exfilmesaula5.entity.Elenco;
+import br.com.cwi.crescer.exfilmesaula5.entity.Usuario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -12,13 +12,13 @@ import javax.persistence.Query;
  * @author regis
  */
 @Stateless
-public class ElencoBean extends AbstractDao<Elenco, Long>{
+public class UsuarioBean extends AbstractDao<Usuario, Long>{
 
     @PersistenceContext(unitName = "crescer")
     private EntityManager entityManager;
 
-    public ElencoBean() {
-        super(Elenco.class);
+    public UsuarioBean() {
+        super(Usuario.class);
     }
 
     @Override
@@ -27,13 +27,13 @@ public class ElencoBean extends AbstractDao<Elenco, Long>{
     }
 
     @Override
-    public List<Elenco> findAll() {
-        return this.getEntityManager().createQuery("select e from Elenco e").getResultList();
+    public List<Usuario> findAll() {
+        return this.getEntityManager().createQuery("select u from Usuario u").getResultList();
     }
     
     //JPA
-    public List<Elenco> findByName(String nome) {
-        final Query query = this.getEntityManager().createQuery("select e from Elenco e where upper(e.nome) like :nome");
+    public List<Usuario> findByName(String nome) {
+        final Query query = this.getEntityManager().createQuery("select u from Usuario u where upper(u.nome) like :nome");
         query.setParameter("nome", nome.toUpperCase());
         return query.getResultList();
     }

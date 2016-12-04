@@ -12,7 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
- * @author Carlos H. Nonnemacher
+ * @author regis
  */
 @Entity
 @Table(name = "ATOR")
