@@ -10,7 +10,7 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author Carlos H. Nonnemacher
+ * @author regis
  */
 @FacesValidator("emailValidator")
 public class EmailValidator implements Validator {
@@ -23,7 +23,8 @@ public class EmailValidator implements Validator {
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         if (value == null || !value.toString().matches(EMAIL_PATTERN)) {
             FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, "E-mail invalido! ", "");
-            getContext().addMessage(component.getId(), facesMessage);
+            //getContext().addMessage(component.getId(), facesMessage);
+            throw new ValidatorException(facesMessage);
         }
     }
 

@@ -38,4 +38,10 @@ public class UsuarioBean extends AbstractDao<Usuario, Long>{
         return query.getResultList();
     }
 
+    public List<Usuario> findByEmail(String email) {
+        final Query query = this.getEntityManager().createQuery("select u from Usuario u where upper(u.email) = :email");
+        query.setParameter("email", email.toUpperCase());
+        return query.getResultList();
+    }
+
 }

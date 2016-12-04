@@ -8,26 +8,37 @@
     template="/templates/template.xhtml"
     xmlns:f="http://java.sun.com/jsf/core">
 
+    <ui:define name="title">
+        <title>#{bundle.usuario_titulo}</title>
+    </ui:define>
+    
     <ui:define name="form">
 
         <div class="form-group"> 
-            <h:outputLabel for="nome" value="#{bundle.pessoa_nome}"></h:outputLabel>
-            <h:inputText id="nome" value="#{cadastroUsuario.usuario.nome}" required="true" styleClass="form-control"/>
+            <h:outputLabel for="nome" value="#{bundle.usuario_nome}"></h:outputLabel>
+            <h:inputText id="nome" value="#{cadastroUsuario.usuario.nome}" label="#{bundle.usuario_nome}" required="true" requiredMessage="#{bundle.usuario_nome_requiredMsg}" styleClass="form-control"/>
         </div>
         <div class="form-group"> 
-            <h:outputLabel for="email" value="#{bundle.pessoa_email}"></h:outputLabel>
-            <h:inputText id="email" value="#{cadastroUsuario.usuario.email}" required="true" styleClass="form-control"/>
+            <h:outputLabel for="email" value="#{bundle.usuario_email}"></h:outputLabel>
+            <h:inputText id="email" value="#{cadastroUsuario.usuario.email}" label="#{bundle.usuario_email}" required="true" requiredMessage="#{bundle.usuario_email_requiredMsg}" validator="emailValidator" styleClass="form-control"/>
         </div>
         <div class="form-group"> 
-            <h:outputLabel for="senha" value="#{bundle.pessoa_senha}"></h:outputLabel>
-            <h:inputSecret id="senha" value="#{cadastroUsuario.usuario.senha}" required="true" styleClass="form-control"/>
+            <h:outputLabel for="senha" value="#{bundle.usuario_senha}"></h:outputLabel>
+            <h:inputSecret id="senha" value="#{cadastroUsuario.usuario.senha}" label="#{bundle.usuario_senha}" required="true" requiredMessage="#{bundle.usuario_senha_requiredMsg}" styleClass="form-control"/>
         </div>
 
         <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{cadastroUsuario.adicionar}">    
             <f:ajax execute="@form" render="@form" />
         </h:commandButton>
 
-        <h:dataTable id="pessoas" value="#{cadastroUsuario.usuarios}" var="pessoa" styleClass="table table-hover">
+        <br/><br/>
+
+        <div class="messages">
+            <h:messages errorClass="alert alert-danger"/>
+        </div>
+
+
+        <h:dataTable id="pessoas" value="#{cadastroUsuario.usuarios}" var="usuario" styleClass="table table-hover">
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="#{bundle.usuario_id}"/>
@@ -48,10 +59,6 @@
             </h:column>
 
         </h:dataTable>
-
-        <h:messages id="messages">
-
-        </h:messages>
 
 
     </ui:define>

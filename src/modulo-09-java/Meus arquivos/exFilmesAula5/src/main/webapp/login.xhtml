@@ -31,12 +31,12 @@
 
                         <div class="panel-body">
                             <div class="form-group">
-                                <h:outputLabel for="username" value="#{bundle.login_username}"/>
-                                <h:inputText id="username" styleClass="form-control" label="#{bundle.login_username}" value="#{loginMBean.user.username}" required="true" validator="emailValidator"/>
+                                <h:outputLabel for="email" value="#{bundle.login_email}"/>
+                                <h:inputText id="email" styleClass="form-control" label="#{bundle.login_email}" value="#{loginMBean.user.username}" required="true" requiredMessage="#{bundle.login_email_requiredMsg}" validator="emailValidator"/>
                             </div>
                             <div class="form-group">
                                 <h:outputLabel for="password" value="#{bundle.login_password}"/>
-                                <h:inputSecret id="password" styleClass="form-control" label="#{bundle.login_password}" value="#{loginMBean.user.password}" required="true"/>
+                                <h:inputSecret id="password" styleClass="form-control" label="#{bundle.login_password}" value="#{loginMBean.user.password}" required="true" requiredMessage="#{bundle.login_senha_requiredMsg}"/>
                             </div>
                             <div class="form-group">
                                 <h:commandButton styleClass="btn btn-success" value="#{bundle.login_enviar}" action="#{loginMBean.login}"/>

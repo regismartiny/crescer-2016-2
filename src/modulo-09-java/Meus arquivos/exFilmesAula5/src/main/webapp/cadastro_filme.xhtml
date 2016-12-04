@@ -16,7 +16,7 @@
 
         <div class="form-group"> 
             <h:outputLabel for="titulo" value="#{bundle.filme_nome}"></h:outputLabel>
-            <h:inputText id="titulo" required="true" requiredMessage="#{bundle.filme_nome_requiredMsg}" value="#{cadastroFilme.filme.titulo}" styleClass="form-control"/>
+            <h:inputText id="titulo" required="true" requiredMessage="#{bundle.filme_titulo_requiredMsg}" value="#{cadastroFilme.filme.titulo}" styleClass="form-control"/>
         </div>
         <div class="form-group"> 
             <h:outputLabel for="genero" value="#{bundle.filme_genero}"></h:outputLabel>
@@ -48,18 +48,21 @@
         </div>
         <div class="form-group"> 
             <h:outputLabel for="dtLancamento" value="#{bundle.filme_dtLancamento}"></h:outputLabel>
-            <p:calendar id="dtLancamento" required="false" value="#{cadastroFilme.filme.dtLancamento}" pattern="dd/MM/yyyy" locale="pt" mask="true" styleClass="form-control"/>
+            <h:inputText id="dtLancamento" value="#{cadastroFilme.filme.dtLancamento}" styleClass="form-control" converter="dateConverter"> 
+                <f:passThroughAttribute name="type" value="date"/>
+                <f:passThroughAttribute name="dateFormat" value="dd/m/yyyy"/> 
+            </h:inputText> 
         </div>
-        
+
 
         <h:commandButton type="submit" value="Cadastrar" styleClass="btn btn-success" action="#{cadastroFilme.adicionar}">    
             <f:ajax execute="@form" render="@form" />
         </h:commandButton>
-        
-        <br/><br/>
-        <h:messages id="messages">
 
-        </h:messages>
+        <br/><br/>
+        <div class="messages">
+            <h:messages errorClass="alert alert-danger"/>
+        </div>
 
         <h:dataTable id="filmes" value="#{cadastroFilme.filmes}" var="filme" styleClass="table table-hover">
             <h:column>
@@ -91,5 +94,4 @@
 
 
     </ui:define>
-
 </ui:composition>

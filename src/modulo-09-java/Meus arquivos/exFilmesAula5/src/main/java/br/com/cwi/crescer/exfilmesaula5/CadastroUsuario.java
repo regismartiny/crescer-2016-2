@@ -19,10 +19,9 @@ public class CadastroUsuario {
 
     @EJB
     private UsuarioBean usuarioBean;
-    
+
     private Usuario usuario;
     private List<Usuario> usuarios;
-
 
     public Usuario getUsuario() {
         return usuario;
@@ -39,22 +38,23 @@ public class CadastroUsuario {
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
-    
-    
 
     @PostConstruct
     public void init() {
         this.usuario = new Usuario();
         this.usuarios = usuarioBean.findAll();
-        this.usuarios.sort((a,b)-> a.getIdUsuario().compareTo(b.getIdUsuario()));
+        this.usuarios.sort((a, b) -> a.getIdUsuario().compareTo(b.getIdUsuario()));
     }
 
-    
-    
-    
     public void adicionar() {
-        usuarioBean.insert(usuario);
-        this.init();
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro inserido com sucesso.", "OK"));
+        //validar email unico
+        boolean valido = usuarioBean.findByEmail(this.usuario.getEmail()).isEmpty();
+        if (valido) {
+            usuarioBean.insert(usuario);
+            this.init();
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro inserido com sucesso.", "OK"));
+        } else {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email informado ja existe!", "Erro"));
+        }
     }
 }

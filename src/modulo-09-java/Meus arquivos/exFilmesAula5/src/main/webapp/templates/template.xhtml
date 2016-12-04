@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <ui:insert name="title"></ui:insert>
     </h:head>
 
@@ -33,13 +33,10 @@
                             <li><a href="cadastro_idioma.xhtml">#{bundle.menu_cadastro_idiomas}</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="cadastro_usuario.xhtml">#{bundle.menu_cadastro_usuarios}</a></li>
-                        </ul>
-                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="cadastro_usuario.xhtml"><span class="glyphicon glyphicon-user"></span> #{bundle.menu_cadastro_usuarios}</a></li>
+                    <li><a href="logout.xhtml"><span class="glyphicon glyphicon-log-out"></span> #{bundle.menu_logout}</a></li>
                 </ul>
             </div>
         </nav>
@@ -55,6 +52,7 @@
                 </h:form>
             </div>
         </div>
-        <h:outputScript library="js" name="css/bootstrap.min.js" />
+        <h:outputScript name="js/jquery-3.1.1.min.js" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </h:body>
 </html>

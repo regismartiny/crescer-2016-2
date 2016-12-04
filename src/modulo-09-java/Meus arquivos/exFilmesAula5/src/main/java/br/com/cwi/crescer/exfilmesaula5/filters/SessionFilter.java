@@ -45,6 +45,10 @@ public class SessionFilter implements Filter {
         if (!request.getRequestURI().contains("login.xhtml") && user == null) {
             response.sendRedirect(request.getContextPath() + "/faces/login.xhtml");
         }
+        else if(request.getRequestURI().contains("logout.xhtml") && user != null){
+            session.invalidate();
+            response.sendRedirect(request.getContextPath() + "/faces/login.xhtml");
+        }
     }
 
 }
