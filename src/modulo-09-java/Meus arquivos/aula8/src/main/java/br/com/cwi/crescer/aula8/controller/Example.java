@@ -1,6 +1,6 @@
 package br.com.cwi.crescer.aula8.controller;
 
-import br.com.cwi.crescer.aula8.dto.Pessoa;
+import br.com.cwi.crescer.aula8.dto.PessoaDto;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

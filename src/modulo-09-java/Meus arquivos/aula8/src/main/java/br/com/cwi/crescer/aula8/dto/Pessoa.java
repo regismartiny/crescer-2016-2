@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author regis.martiny
  */
-public class Pessoa {
+public class PessoaDto {
     
     private String nome;
     private Date nascimento;

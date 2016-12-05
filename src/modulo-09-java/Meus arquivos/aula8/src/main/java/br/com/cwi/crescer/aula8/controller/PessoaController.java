@@ -5,13 +5,10 @@
  */
 package br.com.cwi.crescer.aula8.controller;
 
-import br.com.cwi.crescer.aula8.dto.Pessoa;
+import br.com.cwi.crescer.aula8.dto.PessoaDto;
+import br.com.cwi.crescer.aula8.entity.Pessoa;
 import br.com.cwi.crescer.aula8.service.PessoaService;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,22 +25,24 @@ public class PessoaController {
     @Autowired
     PessoaService service;
 
-    private List<Pessoa> pessoas;
-
     @RequestMapping(value = "/pessoa.json", method = RequestMethod.GET)
-    public List<Pessoa> list() {
-        return pessoas;
+    public Iterable<Pessoa> list() {
+        return service.listAll();
     }
 
     @RequestMapping(value = "/pessoa.json", method = RequestMethod.POST)
-    public List<Pessoa> list(@RequestBody Pessoa p) {
-        p.setNascimento(new Date());
-
-        if (pessoas == null) {
-            pessoas = new ArrayList<>();
-        }
-        pessoas.add(p);
-        return Stream.of(p).collect(Collectors.toList());
+    public Iterable<Pessoa> add(@RequestBody Pessoa p) {
+        p.setDtNascimento(new Date());
+        service.add(p);
+        return service.listAll();
+    }
+    
+    @RequestMapping(value = "/pessoa.json", method = RequestMethod.DELETE)
+    public Iterable<Pessoa> delete(long id) {
+        Pessoa p = service.findById(id);
+        if (p != null)
+            service.delete(p);
+        return service.listAll();
     }
 
 }

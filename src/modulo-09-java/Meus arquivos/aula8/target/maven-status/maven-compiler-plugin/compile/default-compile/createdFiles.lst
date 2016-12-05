@@ -1,0 +1,7 @@
+br/com/cwi/crescer/aula8/controller/DataController.class
+br/com/cwi/crescer/aula8/repository/IPessoaRepository.class
+br/com/cwi/crescer/aula8/service/PessoaService.class
+br/com/cwi/crescer/aula8/AppRun.class
+br/com/cwi/crescer/aula8/controller/PessoaController.class
+br/com/cwi/crescer/aula8/controller/Example.class
+br/com/cwi/crescer/aula8/dto/Pessoa.class

@@ -5,7 +5,7 @@
  */
 package br.com.cwi.crescer.aula8.service;
 
-import br.com.cwi.crescer.aula8.dto.Pessoa;
+import br.com.cwi.crescer.aula8.entity.Pessoa;
 import br.com.cwi.crescer.aula8.repository.IPessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,11 +20,19 @@ public class PessoaService {
     @Autowired
     IPessoaRepository pessoaRepository;
 
-    public List<Pessoa> list() {
-        Pessoa p = new Pessoa();
-        p.setNome("Carlos H. Nonnemacher");
-        p.setNascimento(new Date());
-        return Stream.of(p).collect(Collectors.toList());
+    public Iterable<Pessoa> listAll() {
+        return pessoaRepository.findAll();
     }
-
+    
+    public void add(Pessoa p) {
+        pessoaRepository.save(p);
+    }
+    
+    public void delete(Pessoa p){
+        pessoaRepository.delete(p);
+    }
+    
+    public Pessoa findById(long id){
+        return pessoaRepository.findById(id);
+    }
 }

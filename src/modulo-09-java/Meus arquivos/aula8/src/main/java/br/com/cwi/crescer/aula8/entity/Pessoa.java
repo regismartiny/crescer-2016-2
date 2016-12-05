@@ -1,0 +1,66 @@
+package br.com.cwi.crescer.aula8.entity; 
+ 
+import static javax.persistence.GenerationType.SEQUENCE; 
+ 
+import java.io.Serializable; 
+import java.util.Date;
+import javax.persistence.Basic; 
+import javax.persistence.Column; 
+import javax.persistence.Entity; 
+import javax.persistence.GeneratedValue; 
+import javax.persistence.Id; 
+import javax.persistence.SequenceGenerator; 
+import javax.persistence.Table; 
+import javax.persistence.Temporal;
+import static javax.persistence.TemporalType.DATE;
+ 
+/** 
+ * @author Carlos H. Nonnemacher 
+ */ 
+@Entity 
+@Table(name = "Pessoa") 
+public class Pessoa implements Serializable { 
+ 
+    private static final String SQ_NAME = "SQ_PESSOA"; 
+ 
+    @Id 
+    @GeneratedValue(strategy = SEQUENCE, generator = SQ_NAME) 
+    @SequenceGenerator(name = SQ_NAME, sequenceName = SQ_NAME, allocationSize = 1) 
+    @Column(name = "ID_PESSOA") 
+    private Long id; 
+ 
+    @Basic(optional = false) 
+    @Column(name = "NM_PESSOA") 
+    private String nome; 
+    
+    @Column(name = "DT_NASCIMENTO", nullable = true)
+    @Temporal(DATE)
+    @Basic(optional = true)
+    private Date dtNascimento;
+ 
+    public Long getId() { 
+        return id; 
+    } 
+ 
+    public void setId(Long id) { 
+        this.id = id; 
+    } 
+ 
+    public String getNome() { 
+        return nome; 
+    } 
+ 
+    public void setNome(String nome) { 
+        this.nome = nome; 
+    } 
+
+    public Date getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public void setDtNascimento(Date dtNascimento) {
+        this.dtNascimento = dtNascimento;
+    }
+ 
+    
+}

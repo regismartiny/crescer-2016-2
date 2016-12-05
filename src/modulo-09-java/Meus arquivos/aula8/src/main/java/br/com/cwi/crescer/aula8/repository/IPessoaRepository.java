@@ -5,7 +5,7 @@
  */
 package br.com.cwi.crescer.aula8.repository;
 
-import br.com.cwi.crescer.aula8.dto.Pessoa;
+import br.com.cwi.crescer.aula8.entity.Pessoa;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  * @author regis.martiny
  */
 public interface IPessoaRepository extends CrudRepository<Pessoa, Long> {
-    Pessoa findById(int id);
+    Pessoa findById(long id);
     Iterable<Pessoa> findByNome(String nome);
 }
