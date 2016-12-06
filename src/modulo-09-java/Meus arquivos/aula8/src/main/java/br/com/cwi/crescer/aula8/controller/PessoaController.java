@@ -5,7 +5,6 @@
  */
 package br.com.cwi.crescer.aula8.controller;
 
-import br.com.cwi.crescer.aula8.dto.PessoaDto;
 import br.com.cwi.crescer.aula8.entity.Pessoa;
 import br.com.cwi.crescer.aula8.service.PessoaService;
 import java.util.Date;
