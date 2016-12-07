@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="fragments :: head('Manutençao de Filmes')">
+        <!-- pega do templates/fragments.html o frament:head -->
+    </head>
+
+    <body>
+
+        <div th:replace="fragments :: navbar">
+            <!-- pega do templates/fragments.html o frament:navbar -->
+        </div>
+
+        <div class="container">
+
+            <h1 th:text="#{filme.form}" class="page-header"></h1>
+
+            <form action="#" th:action="@{/filme}" th:object="${filme}" method="POST">
+
+                <input type="hidden" th:field="*{idFilme}"/> 
+
+                <div class="form-group" th:classappend="${#fields.hasErrors('titulo')} ? has-error">
+                    <label for="titulo" th:text="#{filme.titulo}"></label>
+                    <input class="form-control" type="text" th:field="*{titulo}" autofocus="true" />
+                    <span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="help-block"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="genero" th:text="#{filme.genero}"></label>
+                    <select class="form-control" th:filed="*{generos}">
+                        <option value="0">selecione um genero</option>
+                        <option th:each="genero : ${generos}" th:value="${genero}" th:text="${genero.descricao}"></option>
+                    </select>
+                    <span th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="classificacao" th:text="#{filme.classificacao}"></label>
+                    <select class="form-control" th:filed="*{classificacoes}">
+                        <option value="0"></option>
+                        <option th:each="classificacao : ${classificacoes}" th:value="${classificacao}" th:text="${classificacao.descricao}"></option>
+                    </select>
+                    <span th:if="${#fields.hasErrors('classificacao')}" th:errors="*{classificacao}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="idioma" th:text="#{filme.idioma}"></label>
+                    <select class="form-control" th:filed="*{idiomas}">
+                        <option value="0">selecione um idioma</option>
+                        <option th:each="idioma : ${idiomas}" th:value="${idioma}" th:text="${idioma.nome}"></option>
+                    </select>
+                    <span th:if="${#fields.hasErrors('idioma')}" th:errors="*{idioma}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="diretor" th:text="#{filme.diretor}"></label>
+                    <input class="form-control" type="text" th:field="*{diretor}" />
+                    <span th:if="${#fields.hasErrors('diretor')}" th:errors="*{diretor}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="elenco" th:text="#{filme.elenco}"></label>
+                    <select class="form-control" th:filed="*{elencos}">
+                        <option value="0">selecione um elenco</option>
+                        <option th:each="elenco : ${elencos}" th:value="${elenco}" th:text="${elenco.nome}"></option>
+                    </select>
+                    <span th:if="${#fields.hasErrors('elenco')}" th:errors="*{elenco}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dtLancamento" th:text="#{filme.dtLancamento}"></label>
+                    <input class="form-control" type="date" th:field="*{dtLancamento}" />
+                    <span th:if="${#fields.hasErrors('dtLancamento')}" th:errors="*{dtLancamento}"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
+                    <input class="btn btn-primary" type="reset" th:value="#{form.reset}" />
+                </div>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th th:text="#{filme.id}" />
+                            <th th:text="#{filme.titulo}" />
+                            <th th:text="#{filme.genero}" />
+                            <th th:text="#{filme.classificacao}" />
+                            <th th:text="#{filme.idioma}" />
+                            <th th:text="#{filme.diretor}" />
+                            <th th:text="#{filme.elenco}" />
+                            <th th:text="#{filme.dtLancamento}" />
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="f : ${filmes}">
+                            <td th:text="${f.idFilme}">ID</td>
+                            <td th:text="${f.titulo}">TITULO</td>
+                            <td th:text="${f.genero}">GENERO</td>
+                            <td th:text="${f.classificacao}">CLASSIFICAÇAO</td>
+                            <td th:text="${f.idioma}">IDIOMA</td>
+                            <td th:text="${f.diretor}">DIRETOR</td>
+                            <td th:text="${f.elenco}">ELENCO</td>
+                            <td th:text="${#dates.format(f.dtLancamento, 'dd/MM/yyyy')}">DATA LANÇAMENTO</td>
+                            <td>
+                                <a th:href="@{${'/filme'}(id=${f.idFilme})}" class="btn btn-default btn-xs">Editar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+
+
+            <div class="alert alert-success" th:if="${msg}">
+                <strong>Sucess!</strong> <span th:text="${msg}"></span>
+            </div>
+
+
+            <div th:replace="fragments :: paginator(${filmes}, '/filme')">
+
+            </div>
+
+
+
+            <!--
+                            <ul th:if="${not #lists.isEmpty(filmes)}" class="pagination">
+                
+                                <li th:class="${filmes.first} ? 'disabled' : ''">
+                                    <a th:if="${not filmes.first}" th:href="@{${'/filme'}(page=${0},size=${filmes.size})}">
+                                        <span class="glyphicon glyphicon-backward"></span>
+                                    </a>
+                                    <a th:if="${filmes.first}" href="javascript:void(0);">
+                                        <span class="glyphicon glyphicon-backward"></span>
+                                    </a>
+                                </li>
+                
+                                <li th:each="i : ${#numbers.sequence(0, filmes.totalPages -1)}"  th:class="${filmes.number eq i} ? 'active' : ''">
+                                    <a th:if="${not(filmes.number eq i)}" th:href="@{${'/filme'}(page=${i},size=${filmes.size})}" th:text="${i}"></a>
+                                    <a th:if="${filmes.number eq i}" href="javascript:void(0);" th:text="${i}"></a>
+                                </li>
+                
+                                <li th:class="${filmes.last} ? 'disabled' : ''">
+                                    <a th:if="${not filmes.last}" th:href="@{${'/filme'}(page=${filmes.totalPages -1},size=${filmes.size})}">
+                                        <span class="glyphicon glyphicon-forward"></span>
+                                    </a>
+                                    <a th:if="${filmes.last}" href="javascript:void(0);">
+                                        <span class="glyphicon glyphicon-forward"></span>
+                                    </a>
+                                </li>
+                
+                            </ul>-->
+
+        </div>
+
+        <div th:replace="fragments :: footer">
+            <!-- pega do templates/fragments.html o frament:footer -->
+        </div>
+
+
+    </body>
+
+</html>
