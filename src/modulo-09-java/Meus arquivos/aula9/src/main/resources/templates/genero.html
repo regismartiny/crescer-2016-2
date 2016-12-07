@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="fragments :: head('Manutenção de Generos')">
+        <!-- pega do templates/fragments.html o frament:head -->
+    </head>
+
+    <body>
+
+        <div th:replace="fragments :: navbar">
+            <!-- pega do templates/fragments.html o frament:navbar -->
+        </div>
+
+        <div class="container">
+
+            <h1 th:text="#{genero.form}" class="page-header"></h1>
+
+            <form action="#" th:action="@{/genero}" th:object="${genero}" method="POST">
+
+                <input type="hidden" th:field="*{idGenero}"/> 
+
+                <div class="form-group" th:classappend="${#fields.hasErrors('descricao')} ? has-error">
+                    <label for="descricao" th:text="#{genero.descricao}"></label>
+                    <input class="form-control" type="text" th:field="*{descricao}" autofocus="true" />
+                    <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="help-block"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
+                    <input class="btn btn-primary" type="reset" th:value="#{form.reset}" />
+                </div>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th th:text="#{genero.id}" />
+                            <th th:text="#{genero.descricao}" />
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="g : ${generos}">
+                            <td th:text="${g.idGenero}">ID</td>
+                            <td th:text="${g.descricao}">TITULO</td>
+                            <td>
+                                <a th:href="@{${'/genero'}(id=${g.idGenero})}" class="btn btn-default btn-xs">Editar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+
+
+            <div class="alert alert-success" th:if="${msg}">
+                <strong>Sucess!</strong> <span th:text="${msg}"></span>
+            </div>
+
+
+            <div th:replace="fragments :: paginator(${generos}, '/genero')">
+
+            </div>
+
+        </div>
+
+        <div th:replace="fragments :: footer">
+            <!-- pega do templates/fragments.html o frament:footer -->
+        </div>
+
+
+    </body>
+
+</html>

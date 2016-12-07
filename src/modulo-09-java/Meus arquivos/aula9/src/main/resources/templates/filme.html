@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-    <head th:replace="fragments :: head('Manutençao de Filmes')">
+    <head th:replace="fragments :: head('Manutenção de Filmes')">
         <!-- pega do templates/fragments.html o frament:head -->
     </head>
 
@@ -27,27 +27,27 @@
 
                 <div class="form-group">
                     <label for="genero" th:text="#{filme.genero}"></label>
-                    <select class="form-control" th:filed="*{generos}">
+                    <select class="form-control" th:field="*{genero}">
                         <option value="0">selecione um genero</option>
-                        <option th:each="genero : ${generos}" th:value="${genero}" th:text="${genero.descricao}"></option>
+                        <option th:each="genero : ${generos}" th:value="${genero.idGenero}" th:text="${genero.descricao}"></option>
                     </select>
                     <span th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="classificacao" th:text="#{filme.classificacao}"></label>
-                    <select class="form-control" th:filed="*{classificacoes}">
-                        <option value="0"></option>
-                        <option th:each="classificacao : ${classificacoes}" th:value="${classificacao}" th:text="${classificacao.descricao}"></option>
+                    <select class="form-control" th:field="*{classificacao}">
+                        <option value="0">selecione uma classificação</option>
+                        <option th:each="classificacao : ${classificacoes}" th:value="${classificacao.idClassificacao}" th:text="${classificacao.descricao}"></option>
                     </select>
                     <span th:if="${#fields.hasErrors('classificacao')}" th:errors="*{classificacao}"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="idioma" th:text="#{filme.idioma}"></label>
-                    <select class="form-control" th:filed="*{idiomas}">
+                    <select class="form-control" th:field="*{idioma}">
                         <option value="0">selecione um idioma</option>
-                        <option th:each="idioma : ${idiomas}" th:value="${idioma}" th:text="${idioma.nome}"></option>
+                        <option th:each="idioma : ${idiomas}" th:value="${idioma.idIdioma}" th:text="${idioma.nome}"></option>
                     </select>
                     <span th:if="${#fields.hasErrors('idioma')}" th:errors="*{idioma}"></span>
                 </div>
@@ -60,9 +60,9 @@
 
                 <div class="form-group">
                     <label for="elenco" th:text="#{filme.elenco}"></label>
-                    <select class="form-control" th:filed="*{elencos}">
+                    <select class="form-control" th:field="*{elenco}">
                         <option value="0">selecione um elenco</option>
-                        <option th:each="elenco : ${elencos}" th:value="${elenco}" th:text="${elenco.nome}"></option>
+                        <option th:each="elenco : ${elencos}" th:value="${elenco.idElenco}" th:text="${elenco.nome}"></option>
                     </select>
                     <span th:if="${#fields.hasErrors('elenco')}" th:errors="*{elenco}"></span>
                 </div>
@@ -95,13 +95,13 @@
                     <tbody>
                         <tr th:each="f : ${filmes}">
                             <td th:text="${f.idFilme}">ID</td>
-                            <td th:text="${f.titulo}">TITULO</td>
-                            <td th:text="${f.genero}">GENERO</td>
-                            <td th:text="${f.classificacao}">CLASSIFICAÇAO</td>
-                            <td th:text="${f.idioma}">IDIOMA</td>
+                            <td th:text="${f.titulo}">TÍTULO</td>
+                            <td th:text="${f.genero?.descricao}">GÊNERO</td>
+                            <td th:text="${f.classificacao?.descricao}">CLASSIFICAÇÃO</td>
+                            <td th:text="${f.idioma?.nome}">IDIOMA</td>
                             <td th:text="${f.diretor}">DIRETOR</td>
-                            <td th:text="${f.elenco}">ELENCO</td>
-                            <td th:text="${#dates.format(f.dtLancamento, 'dd/MM/yyyy')}">DATA LANÇAMENTO</td>
+                            <td th:text="${f.elenco?.nome}">ELENCO</td>
+                            <td th:if="${f.dtLancamento != null}" th:text="${#dates.format(f.dtLancamento, 'dd/MM/yyyy')}">DATA LANÇAMENTO</td>
                             <td>
                                 <a th:href="@{${'/filme'}(id=${f.idFilme})}" class="btn btn-default btn-xs">Editar</a>
                             </td>

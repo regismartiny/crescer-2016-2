@@ -1,6 +1,7 @@
 package br.com.cwi.crescer.aula9.controller;
 
 import br.com.cwi.crescer.aula9.entity.Elenco;
+import br.com.cwi.crescer.aula9.service.AtorService;
 import br.com.cwi.crescer.aula9.service.ElencoService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,9 @@ public class ElencoController {
 
     @Autowired
     ElencoService service;
-
+    @Autowired
+    AtorService atorService;
+    
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model model, @RequestParam(required = false) Long id, Pageable p) {
         Pageable pageable = new PageRequest(p.getPageNumber(), 5, p.getSort());
@@ -39,6 +42,7 @@ public class ElencoController {
         }
         model.addAttribute("elenco", elenco);
         model.addAttribute("elencos", service.findAll(pageable));
+        model.addAttribute("atores", atorService.findAll());
         return "elenco";
     }
     
